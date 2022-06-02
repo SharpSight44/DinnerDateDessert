@@ -17,3 +17,74 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+
+class Dinner(db.Model):
+    __tablename__ = 'dinner'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120))
+    image1 = db.Column(db.String(200))
+    image2 = db.Column(db.String(200))
+    image3 = db.Column(db.String(200))
+    location = db.Column(db.String(120))
+    time = db.Column(db.String(120))
+
+    def __repr__(self):
+        return self.title
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "image1": self.image1,
+            "image2": self.image2,
+            "image3": self.image3,
+            "location": self.location,
+            "time": self.time
+            # do not serialize the password, its a security breach
+        }
+class Fridate(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120))
+    image1 = db.Column(db.String(200))
+    image2 = db.Column(db.String(200))
+    image3 = db.Column(db.String(200))
+    location = db.Column(db.String(120))
+    time = db.Column(db.String(120))
+
+    def __repr__(self):
+        return f'<Fridate {self.title}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "image1": self.image1,
+            "image2": self.image2,
+            "image3": self.image3,
+            "location": self.location,
+            "time": self.time
+            # do not serialize the password, its a security breach
+        }
+class Dessert(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120))
+    image1 = db.Column(db.String(200))
+    image2 = db.Column(db.String(200))
+    image3 = db.Column(db.String(200))
+    location = db.Column(db.String(120))
+    time = db.Column(db.String(120))
+
+    def __repr__(self):
+        return f'<Dessert {self.title}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "image1": self.image1,
+            "image2": self.image2,
+            "image3": self.image3,
+            "location": self.location,
+            "time": self.time
+            # do not serialize the password, its a security breach
+        }
