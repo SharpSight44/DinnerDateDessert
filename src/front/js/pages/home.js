@@ -3,12 +3,13 @@ import { Context } from "../store/appContext";
 import dinnerImageUrl from "../../img/dinner-date.png";
 import "../../styles/home.css";
 import ReactPlayer from "react-player";
-// import Video from "../../Videos/boatvid.mp4";
+import Video from "../../Videos/boatvid.mp4";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
+
 		<div className="text-center mt-5">
 			<h5 style={{color:"white"}}> White Text  </h5>
 		<div style={{display:"flex"}}>
@@ -27,6 +28,7 @@ export const Home = () => {
 					Read documentation
 				</a>
 			</p>
+			<video autoPlay width={"400px"} loop > <source src={Video} /></video>
 			<div> Hello there Leo</div>
 			<div> 
 
