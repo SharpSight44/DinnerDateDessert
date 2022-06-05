@@ -12,6 +12,7 @@ import { Footer } from "./component/footer";
 import Sandbox from "./component/Sandbox.jsx";
 import { Login } from "./pages/login";
 import { QuestionnairePage } from "./pages/questionnairepage";
+import { UpcomingOutingsPage } from "./pages/upcomingoutingspage";
 
 //create your first component
 const Layout = () => {
@@ -35,6 +36,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/questionnaire">
               <QuestionnairePage />
+            </Route>
+            <Route exact path="/upcomingoutings">
+              <UpcomingOutingsPage />
             </Route>
             <Route exact path="/sandbox">
               <Sandbox />
