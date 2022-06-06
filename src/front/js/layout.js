@@ -9,10 +9,10 @@ import { Demo } from "./pages/demo";
 import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer";
-import Sandbox from "./component/Sandbox.jsx";
 import { Login } from "./pages/login";
 import { QuestionnairePage } from "./pages/questionnairepage";
 import { UpcomingOutingsPage } from "./pages/upcomingoutingspage";
+import { Sandbox } from "./pages/sandbox";
 
 //create your first component
 const Layout = () => {
@@ -41,7 +41,7 @@ const Layout = () => {
               <UpcomingOutingsPage />
             </Route>
             <Route exact path="/sandbox">
-              <Sandbox />
+              <Sandbox/>
             </Route>
           </Switch>
           <Footer />
