@@ -8,7 +8,7 @@ import { Demo } from "./pages/demo";
 
 import injectContext from "./store/appContext";
 
-import { Footer } from "./component/footer";
+// import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { QuestionnairePage } from "./pages/questionnairepage";
 import { UpcomingOutingsPage } from "./pages/upcomingoutingspage";

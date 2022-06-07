@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "../component/navbar";
+import { Navbar } from "..component/navbar";
 import { HeroBanner } from "../component/herobanner";
 
 export const Home = () => {
