@@ -26,7 +26,7 @@ export const Navbar = () => {
             <Link to="/questionnaire">
               <button className="btn btn-primary">Questionnaire</button>
             </Link>
-            <div className="userdropdown">
+            {/* <div className="userdropdown">
               <div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown link
@@ -40,7 +40,7 @@ export const Navbar = () => {
                   <li><a class="dropdown-item" href="dinnerdatedessert.com/about">About</a></li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
