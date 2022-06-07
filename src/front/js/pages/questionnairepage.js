@@ -1,11 +1,11 @@
 import React from "react";
-import { Navbar } from "../component/navbar";
+import { MemberNavbar } from "../component/memberNavbar";
 import { Questionnaire } from "../component/questionnaire";
 
 export const QuestionnairePage = () => {
   return (
     <>
-      <Navbar />
+      <MemberNavbar />
       <div className="container-fluid">
         <div className="row">
           <div className="col"></div>
