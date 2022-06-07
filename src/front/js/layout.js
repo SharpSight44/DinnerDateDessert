@@ -16,6 +16,8 @@ import { Sandbox } from "./pages/sandbox";
 import { Accountsettings } from "./pages/accountsettings";
 import { Tailor } from "./pages/tailor";
 import { Desires } from "./pages/desires";
+import { Memories } from "./pages/memories";
+import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
@@ -53,13 +55,14 @@ const Layout = () => {
               <Desires />
             </Route>
             <Route exact path="/memories">
-              <Memories />
+              <Memories/>
+             
             </Route>
             <Route exact path="/sandbox">
               <Sandbox />
             </Route>
           </Switch>
-          <Footer />
+          <Footer/>
         </ScrollToTop>
       </BrowserRouter>
     </div>
