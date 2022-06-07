@@ -13,6 +13,9 @@ import { Login } from "./pages/login";
 import { QuestionnairePage } from "./pages/questionnairepage";
 import { UpcomingOutingsPage } from "./pages/upcomingoutingspage";
 import { Sandbox } from "./pages/sandbox";
+import { Accountsettings } from "./pages/accountsettings";
+import { Tailor } from "./pages/tailor";
+import { Desires } from "./pages/desires";
 
 //create your first component
 const Layout = () => {
@@ -40,8 +43,20 @@ const Layout = () => {
             <Route exact path="/upcomingoutings">
               <UpcomingOutingsPage />
             </Route>
+            <Route exact path="/accountsettings">
+              <Accountsettings />
+            </Route>
+            <Route exact path="/tailor">
+              <Tailor />
+            </Route>
+            <Route exact path="/desires">
+              <Desires />
+            </Route>
+            <Route exact path="/memories">
+              <Memories />
+            </Route>
             <Route exact path="/sandbox">
-              <Sandbox/>
+              <Sandbox />
             </Route>
           </Switch>
           <Footer />
