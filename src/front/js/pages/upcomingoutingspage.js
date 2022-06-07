@@ -1,16 +1,12 @@
 import React from "react";
-import { Navbar } from "../component/navbar";
-import { Questionnaire } from "../component/questionnaire";
 
 export const UpcomingOutingsPage = () => {
   return (
     <>
-      <Navbar />
       <div className="container-fluid">
         <div className="row">
           <div className="col"></div>
         </div>
-        <Questionnaire />
         <div className="row">
           <div className="col"></div>
         </div>
