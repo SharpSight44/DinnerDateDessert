@@ -5,7 +5,7 @@ import { Questionnaire } from "../component/questionnaire";
 export const QuestionnairePage = () => {
   return (
     <>
-      <Navbar />
+    
       <div className="container-fluid">
         <div className="row">
           <div className="col"></div>

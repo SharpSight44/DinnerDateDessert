@@ -1,11 +1,12 @@
 import React from "react";
 import { HeroBanner } from "../component/herobanner";
-import { Navbar } from "../component/navbar";
+
+
 
 export const Home = () => {
   return (
     <>
-   <Navbar/>
+
       <div className="container-fluid">
         <div className="row">
           <div className="col"></div>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { getYelpp, getKarin, getErin } from '../component/api'
+import { getYelpp, getKarin, getErin, getEvent1 } from '../component/api'
 
 
 export const Sandbox = () => {
@@ -7,7 +7,16 @@ export const Sandbox = () => {
   const [yelpp, setYelpp] = useState([]);
   const [karino, setKarino] = useState([]);
   const [erin, setErin] = useState([]);
+  const [event11, setEvent11] = useState([]);
+  
 
+  useEffect(() => {
+    const fn = async () => {
+      const apiEvent1 = await getEvent1();
+     return setEvent11(apiEvent1) ; 
+    };
+    fn();
+  }, []);
   useEffect(() => {
     const fn = async () => {
       const apiYelpp = await getYelpp();
@@ -33,7 +42,7 @@ export const Sandbox = () => {
 
   return (
     <>
-    <nav className="navbar" style={{"background-color": "#58ccdb"}}>
+    <nav className="navbar" style={{"backgroundColor": "#58ccdb"}}>
     <div className="container-fluid">
     <a className="navbar-brand">Dinner Date Dessert</a>
     <form className="d-flex" role="search">
@@ -59,10 +68,10 @@ export const Sandbox = () => {
   </div>
 </div></div>
 <div className="col-1" style={{ marginLeft:"2.5rem"}}><div className="card m-1" style={{width: "12rem", marginLeft:"8rem"}}>
-    <img style={{"width": "100%"}}src={karino?.photos?.[2]} className="card-img-top" alt="..."/>
+    <img style={{"width": "100%"}}src={event11?.photos?.[2]} className="card-img-top" alt="..."/>
   <div className="card-body">
-    <p className="card-text"><b>Date: {karino?.name} </b> <br/>
-    <b>Type: </b>{karino?.categories?.[1]?.title} <b> Rating </b>{karino.rating}
+    <p className="card-text"><b>Date: {event11?.name} </b> <br/>
+    <b>Type: </b>{event11?.categories?.[1]?.title} <b> Rating </b>{event11.rating}
 </p>
   </div>
 </div></div>
