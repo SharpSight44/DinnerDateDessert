@@ -1,4 +1,5 @@
 import React from "react";
+import banner from "../../img/banner.png";
 
 export const HeroBanner = () => {
   return (
@@ -7,7 +8,7 @@ export const HeroBanner = () => {
         <div className="row">
           <div className="col">
             <div className="homebanner">
-              <img src="https://img.lovepik.com/background/20211021/large/lovepik-a-couple-of-fireworks-in-the-new-year-background-image_500219542.jpg" alt="Italian Trulli" />
+              <img src={banner} alt="Banner" />
             </div>
           </div>
           <div className="row">
