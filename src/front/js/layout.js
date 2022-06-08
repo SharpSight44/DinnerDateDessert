@@ -8,16 +8,16 @@ import { Demo } from "./pages/demo";
 
 import injectContext from "./store/appContext";
 
-// import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { QuestionnairePage } from "./pages/questionnairepage";
-import { UpcomingOutingsPage } from "./pages/upcomingoutingspage";
+import { UpcomingOutingsPage } from "./component/memberhome/upcomingoutingspage";
 import { Sandbox } from "./pages/sandbox";
-import { Accountsettings } from "./pages/accountsettings";
-import { Tailor } from "./pages/tailor";
-import { Desires } from "./pages/desires";
-import { Memories } from "./pages/memories";
+import { Accountsettings } from "./component/memberhome/accountsettings";
+import { Tailor } from "./component/memberhome/tailor";
+import { Desires } from "./component/memberhome/desires";
+import { Memories } from "./component/memberhome/memories";
 import { Footer } from "./component/footer";
+import { MemberHome } from "./pages/memberhome";
 
 //create your first component
 const Layout = () => {
@@ -55,14 +55,16 @@ const Layout = () => {
               <Desires />
             </Route>
             <Route exact path="/memories">
-              <Memories/>
-             
+              <Memories />
+            </Route>
+            <Route exact path="/memberhome">
+              <MemberHome />
             </Route>
             <Route exact path="/sandbox">
               <Sandbox />
             </Route>
           </Switch>
-          <Footer/>
+          <Footer />
         </ScrollToTop>
       </BrowserRouter>
     </div>

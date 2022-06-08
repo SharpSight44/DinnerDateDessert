@@ -1,5 +1,9 @@
 img {
-    border-radius: 50%;
+  border-radius: 50%;
+}
+.homebanner {
+  height: 600px;
+  width: 1300px;
 }
 /*
     home.css: This website contains selectors only used in home.css
