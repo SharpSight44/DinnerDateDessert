@@ -1,3 +1,9 @@
+body {
+  background: #102721;
+}
+.homebody {
+  color: #102721;
+}
 img {
   border-radius: 50%;
 }
