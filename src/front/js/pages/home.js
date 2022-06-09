@@ -14,11 +14,9 @@ export const Home = () => {
           <div className="row">
             <div className="col">
               <HomePageCard />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <h1>Call to Action/Signup</h1>
+              <div className="row">
+                <div className="col"></div>
+              </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import banner from "../../img/banner.png";
 export const HeroBanner = () => {
   return (
     <div className="container">
-      <div className="hero-banner">
+      <div className="hero-banner rounded">
         <div className="row">
           <div className="col">
             <div className="homebanner">

@@ -1,16 +1,23 @@
 body {
-  background: #102721;
+  background: #0e4b3b;
 }
 .homebody {
   background-color: #0e4b3b;
 }
 img {
-  border-radius: 50%;
+  border-radius: 1%;
+}
+img:hover {
+  border-radius: 1%;
+  opacity: 80%;
 }
 .homebanner {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 0%;
+  padding-bottom: 3rem;
   width: 50%;
   height: 600px;
   width: 1300px;
@@ -19,12 +26,25 @@ img {
   background-color: #102721;
 } */
 .card {
-  background-color: #f9f9f9;
+  background-color: #0e4b3b;
 }
 .card-body {
+  font-family: "Playfair Display", serif;
   text-align: center;
+  text-decoration-color: #102721;
   background-color: #f9f9f9;
+  margin-bottom: 160px;
 }
+.card-body:hover {
+  opacity: 80%;
+}
+.card-title {
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+}
+/* .col {
+  margin: 0%;
+} */
 /*
     home.css: This website contains selectors only used in home.css
 
