@@ -9,9 +9,6 @@ export const Home = () => {
       <Navbar />
       <div className="homebody">
         <div className="container">
-          <div className="row">
-            <div className="col"></div>
-          </div>
           <HeroBanner />
           <div className="row">
             <div className="col">

@@ -1,16 +1,27 @@
-body {
+/* body {
   background: #102721;
 }
 .homebody {
-  color: #102721;
-}
+  background-color: #102721 !important;
+} */
 img {
   border-radius: 50%;
 }
 .homebanner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
   height: 600px;
   width: 1300px;
 }
+/* .aboutbackground {
+  background-color: #102721;
+} */
+/* .card-body {
+  text-align: center;
+  background-color: #102721 !important;
+} */
 /*
     home.css: This website contains selectors only used in home.css
 
