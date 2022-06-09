@@ -1,7 +1,7 @@
 
 export async function getYelpp() {
 	const response = await fetch(
-		"https://3001-sharpsight4-dinnerdated-xy563w5g3v9.ws-us47.gitpod.io/api/leo"
+		process.env.BACKEND_URL + "/api/leo"
 		);
 		const payload = await response.json();
 		
