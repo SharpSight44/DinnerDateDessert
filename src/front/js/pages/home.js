@@ -2,6 +2,7 @@ import React from "react";
 import { HeroBanner } from "../component/herobanner";
 import { HomePageCard } from "../component/homepagecard";
 import { Navbar } from "../component/navbar";
+import "../../styles/home.css";
 
 export const Home = () => {
   return (

@@ -1,9 +1,9 @@
-/* body {
+body {
   background: #102721;
 }
 .homebody {
-  background-color: #102721 !important;
-} */
+  background-color: #0e4b3b;
+}
 img {
   border-radius: 50%;
 }
@@ -18,10 +18,13 @@ img {
 /* .aboutbackground {
   background-color: #102721;
 } */
-/* .card-body {
+.card {
+  background-color: #f9f9f9;
+}
+.card-body {
   text-align: center;
-  background-color: #102721 !important;
-} */
+  background-color: #f9f9f9;
+}
 /*
     home.css: This website contains selectors only used in home.css
 

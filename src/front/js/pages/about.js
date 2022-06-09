@@ -1,14 +1,16 @@
 import React from "react";
-// import logosize300x268 from ".../../img/logosize300x268.png";
+import logosize300x268 from "../../img/logosize300x268.jpg";
+import { Navbar } from "../component/navbar";
 
 export const About = () => {
     return (
         <>
+            <Navbar />
             <div className="container-fluid">
                 <div className="aboutbackground">
                     <div className="row">
                         <div className="col-4">
-                            {/* <img src={logosize300x268} alt="logo" /> */}
+                            <img src={logosize300x268} alt="logo" />
                         </div>
                     </div>
                     <div className="row">
