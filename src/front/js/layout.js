@@ -18,6 +18,7 @@ import { Desires } from "./component/memberhome/desires";
 import { Memories } from "./component/memberhome/memories";
 import { Footer } from "./component/footer";
 import { MemberHome } from "./pages/memberhome";
+import RecipeReviewCard from "./component/memberhome/test";
 
 //create your first component
 const Layout = () => {
@@ -43,7 +44,7 @@ const Layout = () => {
               <QuestionnairePage />
             </Route>
             <Route exact path="/upcomingoutings">
-              <UpcomingOutingsPage />
+              <RecipeReviewCard />
             </Route>
             <Route exact path="/accountsettings">
               <Accountsettings />
@@ -62,6 +63,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/sandbox">
               <Sandbox />
+            </Route>
+            <Route exact path="/test">
+              <RecipeReviewCard />
             </Route>
           </Switch>
           <Footer />
