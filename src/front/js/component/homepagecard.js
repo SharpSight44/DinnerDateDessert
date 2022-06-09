@@ -27,7 +27,7 @@ export const HomePageCard = () => {
                         <img src="https://cdn.create.vista.com/api/media/medium/234029416/stock-photo-boyfriend-feeding-woman-sweet-dessert?token=" className="card-img-top" alt="..." />
                         <div className="card-body rounded">
                             <h5 className="card-title">Dessert</h5>
-                            <p className="card-text">Finally, we'll find the best local nightcap to end your perfect outing. A candle lit bistro? Maybe a bustling nighttime cafe for a quick espresso? We'll provide you with the right romantic nightcap.</p>
+                            <p className="card-text">Finally, we'll find the best local nightcap to end your perfect outing. A candle lit bistro? Perhaps a bustling nighttime cafe for a quick espresso? The sky is the limit!</p>
                         </div>
                     </div>
                 </div>
