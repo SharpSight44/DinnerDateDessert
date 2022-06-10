@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logosize300x268 from "../../img/logosize300x268.jpg";
 
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-sucess bg-success">
       <div className="container-fluid">
         <Link to="/about">
-          <span className="navbar-brand mb-0 h1">Logo</span>
+          <span className="navbar-brand mb-0 h1">
+            <img src={logosize300x268} height={80} width={170} alt="logo" />
+          </span>
         </Link>
         <div className="ml-auto">
           <Link to="/">

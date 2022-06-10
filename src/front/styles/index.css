@@ -18,6 +18,8 @@
 .btn {
   background-color: #c39546 !important;
   border: none;
+  margin-right: 200px;
+  margin-top: 10px;
 }
 .btn:hover {
   background-color: #eb990cf0 !important;
