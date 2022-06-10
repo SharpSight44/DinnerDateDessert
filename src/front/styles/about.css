@@ -7,16 +7,21 @@ body {
     rgba(16, 39, 33, 1) 67.1%,
     rgba(14, 75, 59, 1) 83%
   );
+  font-family: "Playfair Display", serif;
 }
 .logo {
-  margin-top: 5rem;
-  margin-left: 6rem;
+  position: relative;
 }
 .vision-statement {
   margin-top: 3rem;
   margin-left: 6rem;
   /* margin-bottom: 3rem; */
-  width: 600px;
+  width: 100%;
   text-align: center;
   background-color: #f9f9f9;
+}
+.blurbs {
+  position: relative;
+  padding-left: 6rem;
+  padding-right: 0;
 }
