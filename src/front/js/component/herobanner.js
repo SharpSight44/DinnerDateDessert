@@ -5,8 +5,8 @@ export const HeroBanner = () => {
   return (
     <div className="container">
       <div className="hero-banner rounded">
-        <div className="row">
-          <div className="col">
+        <div className="row g-0">
+          <div className="col-md">
             <div className="homebanner">
               <img src={banner} alt="Banner" />
             </div>

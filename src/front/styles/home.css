@@ -1,6 +1,3 @@
-body {
-  background: #0e4b3b;
-}
 .homebody {
   background-image: linear-gradient(
     285.4deg,
@@ -26,6 +23,7 @@ body {
 }
 img {
   border-radius: 1%;
+  width: 100%;
 }
 img:hover {
   border-radius: 1%;

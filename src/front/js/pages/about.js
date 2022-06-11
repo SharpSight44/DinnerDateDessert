@@ -30,12 +30,13 @@ export const About = () => {
                             <div className="karinblurb">
                                 <img src={KarinOhana} className="Karinimg" alt="KarinBlurb" />
                             </div>
-                            <div className="erinblurb">
-                                <img src={ErinLash} className="Erinimg" alt="ErinBlurb" />
-                            </div>
                             <div className="leoblurb">
                                 <img src={LeoEstrella} className="Leoimg" alt="LeoBlurb" />
                             </div>
+                            <div className="erinblurb">
+                                <img src={ErinLash} className="Erinimg" alt="ErinBlurb" />
+                            </div>
+
                         </div>
 
                     </div>
