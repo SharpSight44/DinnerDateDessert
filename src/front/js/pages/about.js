@@ -42,18 +42,6 @@ export const About = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="row g-0">
-                    <div className="col-md-5">
-                        <div className="vision-statement rounded">
-                            <p>Dinner Date Dessert is a premiere production of the 3D Geek Team.
-                                Incepted in Spring of 2022, our vision was to create a simple, all-encompassing App that would provide custom-tailored mini-itineraries for your weekend plans, date nights, special occasions, even travels to a new city.
-                                Let our team take the stress out of finding and coordinating the perfect Saturday with the family, first date ideas, maybe a staycation that needs some excitement. Or even better a new city that needs your discovering... We are here for you!
-                                We will bring personalized options to you. Specific to location, occasion, time of day, personal preferences and much more. We bring you options that make your choice simple so that you can enjoy and create new core memories!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </>
     );
 };

@@ -40,18 +40,15 @@ img:hover {
   height: 600px;
   width: 1300px;
 }
-/* .aboutbackground {
-  background-color: #102721;
-} */
 .card-img-top {
-  width: 460px;
+  width: 375px;
 }
 .card {
   background-color: #0e4b3b;
-  width: 460px;
+  width: 375px;
 }
 .card-body {
-  width: 460px;
+  width: 380px;
   font-family: "Playfair Display", serif;
   text-align: center;
   text-decoration-color: #102721;
@@ -66,7 +63,10 @@ img:hover {
   font-family: "Playfair Display", serif;
 }
 .col {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   margin-bottom: 4rem;
+  width: 410px;
 }
 /*
     home.css: This website contains selectors only used in home.css
