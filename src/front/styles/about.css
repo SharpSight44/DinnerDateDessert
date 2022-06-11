@@ -9,19 +9,43 @@ body {
   );
   font-family: "Playfair Display", serif;
 }
+.logodiv {
+  height: 500px;
+}
 .logo {
-  position: relative;
+  padding-top: 3rem;
+  padding-left: 4rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+  float: left;
+  position: center;
+  size: 100%;
+  border-radius: 50%;
 }
 .vision-statement {
-  margin-top: 3rem;
-  margin-left: 6rem;
-  /* margin-bottom: 3rem; */
-  width: 100%;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+  padding-right: 2rem;
+  width: 90%;
   text-align: center;
   background-color: #f9f9f9;
 }
 .blurbs {
+  margin-top: 3rem;
+  padding-left: 3rem;
+  padding-right: 4rem;
+  float: right;
   position: relative;
   padding-left: 6rem;
   padding-right: 0;
+}
+.Karinimg {
+  paddin-top: 3rem;
+  margin-top: 3rem;
+}
+.Erinimg {
+  margin-top: 1rem;
+}
+.Leoimg {
+  margin-top: 1rem;
 }
