@@ -10,7 +10,6 @@ import injectContext from "./store/appContext";
 
 import { Login } from "./pages/login";
 import { QuestionnairePage } from "./pages/questionnairepage";
-import { UpcomingOutingsPage } from "./component/memberhome/upcomingoutingspage";
 import { Sandbox } from "./pages/sandbox";
 import { Accountsettings } from "./component/memberhome/accountsettings";
 import { Tailor } from "./component/memberhome/tailor";
@@ -18,7 +17,8 @@ import { Desires } from "./component/memberhome/desires";
 import { Memories } from "./component/memberhome/memories";
 import { Footer } from "./component/footer";
 import { MemberHome } from "./pages/memberhome";
-import RecipeReviewCard from "./component/memberhome/test";
+import { Test } from "./component/memberhome/test";
+import { Upcomingoutingspage } from "./component/memberhome/upcomingoutingspage";
 
 //create your first component
 const Layout = () => {
@@ -44,7 +44,7 @@ const Layout = () => {
               <QuestionnairePage />
             </Route>
             <Route exact path="/upcomingoutings">
-              <RecipeReviewCard />
+              <Upcomingoutingspage />
             </Route>
             <Route exact path="/accountsettings">
               <Accountsettings />
@@ -65,7 +65,7 @@ const Layout = () => {
               <Sandbox />
             </Route>
             <Route exact path="/test">
-              <RecipeReviewCard />
+              <Test />
             </Route>
           </Switch>
           <Footer />
