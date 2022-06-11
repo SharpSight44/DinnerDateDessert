@@ -22,12 +22,13 @@ export const MemberNavbar = () => {
           <Link to="/memories">
             <button className="btn btn-dark">Memories</button>
           </Link>
-          <div className="ml-auto">
+          
+        </div>
+        <div className="ml-auto">
             <Link to="/upcomingoutings">
               <button className="btn btn-dark">Upcoming Outings</button>
             </Link>
           </div>
-        </div>
       </div>
     </nav>
   );

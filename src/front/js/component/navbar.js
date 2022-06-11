@@ -22,14 +22,15 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="ml-auto">
+        <Link to="/questionnaire">
+              <button className="btn btn-dark">Questionnaire</button>
+            </Link>
+        </div>
+        <div className="ml-auto">
           <Link to="/sandbox">
             <button className="btn btn-dark">Leo's Sandbox</button>
           </Link>
-          <div className="ml-auto">
-            <Link to="/questionnaire">
-              <button className="btn btn-dark">Questionnaire</button>
-            </Link>
-          </div>
+          
         </div>
       </div>
     </nav>
