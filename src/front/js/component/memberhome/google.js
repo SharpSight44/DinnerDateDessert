@@ -6,7 +6,7 @@ function Google() {
 
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
-    const userObject = jwt_decode(response.crediential);
+    const userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
     document.getElementById("signInDiv").hidden = true;
