@@ -1,21 +1,15 @@
 import React from "react";
-import { Footer } from "../component/footer";
+import Google from "../component/memberhome/google";
+import { MemberNavbar } from "../component/memberNavbar";
 
 export const Login = () => {
   return (
     <>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col"></div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <h1>This is the Login Component Page</h1>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col"></div>
-        </div>
+      <div className="membernavbar">
+        <MemberNavbar />
+      </div>
+      <div className="Google">
+        <Google />
       </div>
     </>
   );
