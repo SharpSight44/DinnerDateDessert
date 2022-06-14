@@ -68,6 +68,16 @@ img:hover {
   margin-bottom: 4rem;
   width: 410px;
 }
+.my-facebook-button-class {
+  width: 270px;
+  margin-bottom: 2rem;
+}
+.fa-facebook {
+  margin-right: 30px;
+  padding-right: 0px;
+  margin-left: o;
+  color: #4267b2;
+}
 /*
     home.css: This website contains selectors only used in home.css
 

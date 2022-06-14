@@ -8,21 +8,21 @@ import { LoginWindow } from "../layout";
 
 
 export const Home = () => {
-  const {logStatus, setLogStatus} = useContext(LoginWindow)
+  const { logStatus, setLogStatus } = useContext(LoginWindow)
 
- 
+
 
   return (
     <>
       <Navbar />
-      { logStatus == true ? (<div style={{width:"100vw", height:"150vh", background:"rgba(223, 242, 228, 0.3)",backdropFilter:"blur(5px)", position:"absolute", zIndex:"2"}}><div style={{marginLeft:"33%", marginTop:"10%"}}><Login/></div></div>) : (<div></div>) }
+      {logStatus == true ? (<div style={{ width: "100vw", height: "150vh", background: "rgba(223, 242, 228, 0.3)", backdropFilter: "blur(5px)", position: "absolute", zIndex: "2" }}><div style={{ marginLeft: "33%", marginTop: "10%" }}><Login /></div></div>) : (<div></div>)}
       <div className="homebody">
 
         <div className="container">
           <HeroBanner />
           <div className="row">
             <div className="col">
-            
+
               <HomePageCard />
               <div className="row">
                 <div className="col"></div>
@@ -32,7 +32,7 @@ export const Home = () => {
         </div>
       </div>
       <div></div>
-    
+
     </>
   );
 };
