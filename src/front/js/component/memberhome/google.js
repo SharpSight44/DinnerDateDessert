@@ -22,7 +22,7 @@ function Google() {
 
     google.accounts.id.renderButton(document.getElementById("signInDiv"), {
       theme: "outline",
-      size: "large",
+      size: "medium",
     });
     google.accounts.id.prompt();
   }, []);
@@ -33,7 +33,7 @@ function Google() {
 
   return (
     <>
-      <div id="signInDiv"></div>
+      <div id="signInDiv" style={{width:"270px"}}></div>
       <div>
         {Object.keys(user).length != 0 && (
           <button onClick={() => signOut()}> Sign Out </button>

@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useContext}from "react";
 import { Link } from "react-router-dom";
 import logosize300x268 from "../../img/logosize300x268.jpg";
+import { LoginWindow } from "../layout";
 
 export const Navbar = () => {
+  const {logStatus, setLogStatus} = useContext(LoginWindow)
+  const promptLogin = ()=>{
+return setLogStatus(true);
+  };
   return (
     <nav className="navbar navbar-sucess bg-success">
       <div className="container-fluid">
@@ -17,9 +22,9 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="ml-auto">
-          <Link to="/login">
-            <button className="btn btn-dark">Signup/Login</button>
-          </Link>
+        
+            <button onClick={()=> promptLogin() } className="btn btn-dark">Signup/Login</button>
+        
         </div>
         <div className="ml-auto">
         <Link to="/questionnaire">
