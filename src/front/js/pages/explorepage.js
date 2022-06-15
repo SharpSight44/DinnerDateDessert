@@ -4,15 +4,15 @@ export const Explore = () => {
     return (
         <>
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col">Category 1</div>
-                </div>
-                <div className="row">
+                <ul className="row">
+                    <div className="col"><h1>Category 1</h1></div>
+                </ul>
+                <ul className="row">
                     <div className="col">Category 2</div>
-                </div>
-                <div className="row">
+                </ul>
+                <ul className="row">
                     <div className="col">Category 3</div>
-                </div>
+                </ul>
             </div>
         </>
     );

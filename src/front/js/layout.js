@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
@@ -17,6 +17,7 @@ import { Memories } from "./component/memberhome/memories";
 import { Footer } from "./component/footer";
 import { MemberHome } from "./pages/memberhome";
 import { Upcomingoutingspage } from "./component/memberhome/upcomingoutingspage";
+import { Explore } from "../../front/js/pages/explorepage";
 
 //Global Context for Login
 export const LoginWindow = React.createContext();
@@ -26,8 +27,8 @@ const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
-  const [logStatus, setLogStatus] = useState(false); 
-	const value = {logStatus, setLogStatus};
+  const [logStatus, setLogStatus] = useState(false);
+  const value = { logStatus, setLogStatus };
 
   return (
     <div>
@@ -35,38 +36,40 @@ const Layout = () => {
         <ScrollToTop>
           <Switch>
             <LoginWindow.Provider value={value}>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/about">
-              <About />
-            </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/about">
+                <About />
+              </Route>
+              <Route exact path="/questionnaire">
+                <QuestionnairePage />
+              </Route>
+              <Route exact path="/upcomingoutings">
+                <Upcomingoutingspage />
+              </Route>
+              <Route exact path="/accountsettings">
+                <Accountsettings />
+              </Route>
+              <Route exact path="/tailor">
+                <Tailor />
+              </Route>
+              <Route exact path="/desires">
+                <Desires />
+              </Route>
+              <Route exact path="/memories">
+                <Memories />
+              </Route>
+              <Route exact path="/memberhome">
+                <MemberHome />
+              </Route>
+              <Route exact path="/explore">
+                <Explore />
+              </Route>
+              <Route exact path="/sandbox">
+                <Sandbox />
+              </Route>
             </LoginWindow.Provider>
-            
-            <Route exact path="/questionnaire">
-              <QuestionnairePage />
-            </Route>
-            <Route exact path="/upcomingoutings">
-              <Upcomingoutingspage />
-            </Route>
-            <Route exact path="/accountsettings">
-              <Accountsettings />
-            </Route>
-            <Route exact path="/tailor">
-              <Tailor />
-            </Route>
-            <Route exact path="/desires">
-              <Desires />
-            </Route>
-            <Route exact path="/memories">
-              <Memories />
-            </Route>
-            <Route exact path="/memberhome">
-              <MemberHome />
-            </Route>
-            <Route exact path="/sandbox">
-              <Sandbox />
-            </Route>
           </Switch>
           <Footer />
         </ScrollToTop>
