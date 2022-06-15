@@ -52,3 +52,31 @@ def handle_event1():
     run = r.json()
     
     return jsonify(run), 200
+
+@api.route('/exploredinner', methods=['GET'])
+def handle_exdinner():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33130&radius=1600&limit=10&term=restaurants&categories=dinner&sort_by=rating', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+
+@api.route('/date', methods=['GET'])
+def handle_exdate():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/events?location=MIAMI,Florida,33128&radius=1600&end_date=1656646941&limit=10', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+@api.route('/exploredessert', methods=['GET'])
+def handle_exdessert():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33130&radius=1600&limit=10&term=dessert&categories=desserts&sort_by=rating', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
