@@ -32,17 +32,17 @@ export const ExploreTest = () => {
     return (
         <>
             <div>
-<h1>Restaurants</h1>
+<h1>Restaurants Row </h1>
 <div className='row'>{restaurants.map((item, index)=>
 
 <div key={index} style={{width:"100px"}} > <img src={item?.image_url} style={{width:"100px"}}/><p>{item?.name} </p> </div> )}</div>
 
-<h1>Events</h1>
+<h1>Events Row</h1>
 <div className='row'> {events.map((item, index)=>
 
 <div key={index} style={{width:"100px"}} > <img src={item?.image_url} style={{width:"100px"}}/><p>{item?.name} </p> </div> )} </div>
 
-<h1>Desserts</h1>
+<h1>Desserts Row</h1>
 <div className='row'>{desserts.map((item, index)=>
 
 <div key={index} style={{width:"100px"}} > <img src={item?.image_url} style={{width:"100px"}}/><p>{item?.name} </p> </div> )} </div>
