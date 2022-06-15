@@ -1,7 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export const MemberNavbar = () => {
+
+  const history = useHistory();
+
+  const exeLogOut = ()=>{
+   return history.push('/')
+
+
+  };
+  const logOut =()=>{
+
+    return history.push('/goodbye'), setTimeout(()=> exeLogOut(), 8000);
+
+  };
   return (
     <nav className="navbar navbar-success bg-success">
       <div className="container-fluid">
@@ -28,6 +42,11 @@ export const MemberNavbar = () => {
             <Link to="/upcomingoutings">
               <button className="btn btn-dark">Upcoming Outings</button>
             </Link>
+          </div>
+          <div className="ml-auto">
+
+              <button onClick={()=> logOut()} className="btn btn-dark">Log Off</button>
+            
           </div>
       </div>
     </nav>

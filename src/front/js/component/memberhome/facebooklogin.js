@@ -22,7 +22,7 @@ export class Fb extends Component {
                 (<div>
                     <FacebookLogin className="fbbutton"
                         appId="1402573673591526"
-                        autoLoad={true}
+                        autoLoad={false}
                         fields="name,email,picture"
                         callback={this.responseFacebook}
                         cssClass="my-facebook-button-class"

@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
+import { ProtectedPath } from "../../layout";
 
 
 function Google() {
+  const { approved, setApproved} = useContext(ProtectedPath);
   const [user, setUser] = useState({});
 const history = useHistory();
   function handleCallbackResponse(response) {
@@ -12,14 +14,16 @@ const history = useHistory();
     console.log(userObject);
     setUser(userObject);
     document.getElementById("signInDiv").hidden = true;
+    setApproved(true);
     history.push('/memberhome')
+    
   }
 
   useEffect(() => {
     /* global google*/
     google.accounts.id.initialize({
       client_id:
-        "823617715264-bfu3shvkj57k376fuser2nnd4rv19f2h.apps.googleusercontent.com",
+        "396032578158-dv3petmhr394s7fsdcot1aui3g3a363c.apps.googleusercontent.com",
       callback: handleCallbackResponse,
     });
 

@@ -18,9 +18,11 @@ import { Footer } from "./component/footer";
 import { MemberHome } from "./pages/memberhome";
 import { Upcomingoutingspage } from "./component/memberhome/upcomingoutingspage";
 import { Explore } from "../../front/js/pages/explorepage";
+import { Goodbye } from "./pages/goodbyePage";
 
 //Global Context for Login
 export const LoginWindow = React.createContext();
+export const ProtectedPath = React.createContext();
 
 //create your first component
 const Layout = () => {
@@ -29,6 +31,8 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
   const [logStatus, setLogStatus] = useState(false);
   const value = { logStatus, setLogStatus };
+  const [approved, setApproved] = useState(false);
+  const access = {approved, setApproved };
 
   return (
     <div>
@@ -36,6 +40,7 @@ const Layout = () => {
         <ScrollToTop>
           <Switch>
             <LoginWindow.Provider value={value}>
+              <ProtectedPath.Provider value={access}>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -65,10 +70,16 @@ const Layout = () => {
               </Route>
               <Route exact path="/explore">
                 <Explore />
+                
+              </Route>
+              <Route exact path="/goodbye">
+                <Goodbye />
+                
               </Route>
               <Route exact path="/sandbox">
                 <Sandbox />
               </Route>
+              </ProtectedPath.Provider>
             </LoginWindow.Provider>
           </Switch>
           <Footer />
