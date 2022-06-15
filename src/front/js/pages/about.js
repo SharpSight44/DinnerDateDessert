@@ -14,7 +14,7 @@ export const About = () => {
             <div className="container-fluid">
                 <div className="aboutbackground">
                     <div className="row g-0">
-                        <div className="logodiv col-md-6">
+                        <div className="logodiv col-md-6 col-sm-12">
                             <div className="d-flex justify-content-center">
                                 <img src={logosize300x268} className="logo" alt="logo" />
                             </div>
@@ -26,7 +26,7 @@ export const About = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 col-sm-12">
                             <div className="karinblurb">
                                 <img src={KarinOhana} className="Karinimg" alt="KarinBlurb" />
                             </div>
