@@ -10,7 +10,7 @@ export const MemberNavbar = () => {
         </Link>
         <div className="ml-auto">
           <Link to="/tailor">
-            <button className="btn btn-dark">Tailor</button>
+            <button className="btn btn-dark">Preferences</button>
           </Link>
         </div>
         <div className="ml-auto">

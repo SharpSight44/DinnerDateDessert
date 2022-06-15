@@ -7,17 +7,8 @@ export const MemberHome = () => {
             <div className="membernavbar">
                 <MemberNavbar />
             </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col"></div>
-                </div>
-                <div className="row">
-                    <div className="col"></div>
-                </div>
-                <div className="row">
-                    <div className="col"></div>
-                </div>
-            </div>
+            <h1 style={{fontSize:"100px", color:"white"}}>Member Home</h1>
+         
         </>
     );
 };

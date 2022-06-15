@@ -2,10 +2,14 @@ import React, {useContext}from "react";
 import { Link } from "react-router-dom";
 import logosize300x268 from "../../img/logosize300x268.jpg";
 import { LoginWindow } from "../layout";
+import { useHistory } from "react-router-dom";
 
 export const Navbar = () => {
   const {logStatus, setLogStatus} = useContext(LoginWindow)
+ const history = useHistory();
   const promptLogin = ()=>{
+    history.push('/')
+    
 return setLogStatus(true);
   };
   return (
@@ -17,26 +21,11 @@ return setLogStatus(true);
           </span>
         </Link>
         <div className="ml-auto">
-          <Link to="/">
-            <button className="btn btn-dark">DinnerDateDessert</button>
-          </Link>
-        </div>
-        <div className="ml-auto">
         
             <button onClick={()=> promptLogin() } className="btn btn-dark">Signup/Login</button>
         
         </div>
-        <div className="ml-auto">
-        <Link to="/questionnaire">
-              <button className="btn btn-dark">Questionnaire</button>
-            </Link>
-        </div>
-        <div className="ml-auto">
-          <Link to="/sandbox">
-            <button className="btn btn-dark">Leo's Sandbox</button>
-          </Link>
-          
-        </div>
+        
       </div>
     </nav>
   );

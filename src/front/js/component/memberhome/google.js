@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
+import { useHistory } from "react-router-dom";
+
 
 function Google() {
   const [user, setUser] = useState({});
-
+const history = useHistory();
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
     const userObject = jwt_decode(response.credential);
     console.log(userObject);
     setUser(userObject);
     document.getElementById("signInDiv").hidden = true;
+    history.push('/memberhome')
   }
 
   useEffect(() => {
