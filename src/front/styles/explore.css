@@ -1,0 +1,13 @@
+.scroll {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+}
+.titles {
+  color: #f9f9f9;
+  margin-top: 10px;
+}
+.card {
+  min-height: 300px;
+  margin-bottom: 10px;
+}

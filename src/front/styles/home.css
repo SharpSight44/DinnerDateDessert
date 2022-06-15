@@ -1,5 +1,5 @@
 .homebody {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     285.4deg,
     rgba(16, 39, 33, 1) 8.1%,
     rgba(14, 75, 59, 1) 25.1%,
@@ -11,15 +11,15 @@
     rgba(3, 94, 71, 1) 71.3%,
     rgba(14, 75, 59, 1) 77.6%,
     rgba(16, 39, 33, 1) 96%
-  );
-  /* background-image: radial-gradient(
+  ); */
+  background-image: radial-gradient(
     circle farthest-corner at 50.2% 48.8%,
     rgba(14, 75, 59, 1) 0.9%,
     rgba(16, 39, 33, 1) 17.2%,
     rgba(14, 75, 59, 1) 41.7%,
     rgba(16, 39, 33, 1) 67.1%,
     rgba(14, 75, 59, 1) 83%
-  ); */
+  );
 }
 img {
   border-radius: 1%;
