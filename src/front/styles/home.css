@@ -71,9 +71,15 @@ img:hover {
 .my-facebook-button-class {
   width: 270px;
   margin-bottom: 2rem;
+  margin-top: 1rem;
+  padding: 0.23rem;
+  background: white;
+  border: 1px solid #ccc !important;
+  font-family: sans-serif;
+  font-size: 14px;
 }
 .fa-facebook {
-  margin-right: 30px;
+  margin-right: 30px !important;
   padding-right: 0px;
   margin-left: 0;
   color: #4267b2;

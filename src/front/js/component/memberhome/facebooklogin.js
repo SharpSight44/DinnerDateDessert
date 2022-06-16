@@ -25,7 +25,7 @@ export class Fb extends Component {
                         autoLoad={false}
                         fields="name,email,picture"
                         callback={this.responseFacebook}
-                        cssClass="my-facebook-button-class"
+                        cssClass="my-facebook-button-class rounded" style={{ margin: "1rem", background: "white", border: "1px solid #ccc!important" }}
                         icon="fa-facebook"
                     />
                 </div>)
