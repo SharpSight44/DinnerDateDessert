@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getApiRestaurants, getApiDesserts, getApiEvents } from '../component/apiExplore';
-import AccountMenu from '../component/mui/accountMenu';
+
 
 export const ExploreTest = () => {
     const [restaurants, setRestaurants] = useState([]);
@@ -32,7 +32,6 @@ export const ExploreTest = () => {
 
     return (
         <>
-        <AccountMenu/>
             <div>
 <h1>Restaurants Row </h1>
 <div className='row'>{restaurants.map((item, index)=>
