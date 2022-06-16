@@ -24,6 +24,7 @@ import { ExploreTest } from "./pages/exploreTest";
 //Global Context for Login
 export const LoginWindow = React.createContext();
 export const ProtectedPath = React.createContext();
+export const UserProfile = React.createContext();
 
 //create your first component
 const Layout = () => {
@@ -34,6 +35,8 @@ const Layout = () => {
   const value = { logStatus, setLogStatus };
   const [approved, setApproved] = useState(false);
   const access = {approved, setApproved };
+  const [user, setUser] = useState({});
+  const userProfile = {user, setUser };
 
   return (
     <div>
@@ -42,6 +45,7 @@ const Layout = () => {
           <Switch>
             <LoginWindow.Provider value={value}>
               <ProtectedPath.Provider value={access}>
+                <UserProfile.Provider value={userProfile}>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -83,6 +87,7 @@ const Layout = () => {
               <Route exact path="/sandbox">
                 <Sandbox />
               </Route>
+              </UserProfile.Provider>
               </ProtectedPath.Provider>
             </LoginWindow.Provider>
           </Switch>

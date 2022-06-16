@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import AccountMenu from "./mui/accountMenu";
+import { UserProfile } from "../layout";
 
 export const MemberNavbar = () => {
+  const {user, setUser} = useContext(UserProfile);
 
   const history = useHistory();
 
@@ -46,8 +49,12 @@ export const MemberNavbar = () => {
           <div className="ml-auto">
 
               <button onClick={()=> logOut()} className="btn btn-dark">Log Off</button>
-            
+           
           </div>
+          <div className="ml-auto">
+            <AccountMenu/>
+          </div>
+
       </div>
     </nav>
   );

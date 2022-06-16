@@ -2,11 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 import { ProtectedPath } from "../../layout";
+import { UserProfile } from "../../layout";
 
 
 function Google() {
   const { approved, setApproved} = useContext(ProtectedPath);
-  const [user, setUser] = useState({});
+  const {user, setUser} = useContext(UserProfile);
 const history = useHistory();
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
