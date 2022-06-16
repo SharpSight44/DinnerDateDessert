@@ -23,7 +23,7 @@
 }
 img {
   border-radius: 1%;
-  width: 100%;
+  width: 98%;
 }
 img:hover {
   border-radius: 1%;
@@ -44,11 +44,12 @@ img:hover {
   width: 375px;
 }
 .card {
+  margin: auto;
   background-color: #0e4b3b;
   width: 375px;
 }
 .card-body {
-  width: 380px;
+  width: 100%;
   font-family: "Playfair Display", serif;
   text-align: center;
   text-decoration-color: #102721;
