@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Switch from '@mui/material/Switch';
 import { MemberNavbar } from "../../memberNavbar";
 import { Sandbox } from "../../../pages/sandbox";
@@ -7,8 +7,11 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
 import select from '/src/front/img/selectone.png';
+import { GlobalZipCode } from "../../../layout";
+import { HeartBeat } from "./heartBeat1";
 
 export const Testing = () => {
+  const {zipCode, setZipCode} = useContext(GlobalZipCode);
     const [appear, setAppear] = useState(false)
     const [luv, setLuv] = useState(false)
     const [loader, setLoader] = useState(false)
@@ -36,6 +39,7 @@ export const Testing = () => {
     return (
     <>
     <MemberNavbar/>
+    <div><HeartBeat/></div>
       <div></div><div style={luv === false ? {background:"",marginLeft:"200px", marginRight:"200px", position:"relative"}:{position:"relative",background:"rgba(255,182,193, 0.55)",marginLeft:"200px", marginRight:"200px", border:"3px dashed pink"}}>
       
       
@@ -52,9 +56,9 @@ export const Testing = () => {
     >
       
       <ButtonGroup variant="text" aria-label="text button group">
-        <Button style={{color:"#e8d190"}}>Wynwood</Button>
-        <Button style={{color:"#e8d190"}}>Brickell</Button>
-        <Button style={{color:"#e8d190"}}>South Beach</Button>
+        <Button onClick={()=> setZipCode(33128) } style={{color:"#e8d190"}}>Wynwood</Button>
+        <Button onClick={()=> setZipCode(33130) } style={{color:"#e8d190"}}>Brickell</Button>
+        <Button onClick={()=> setZipCode(33139) } style={{color:"#e8d190"}}>South Beach</Button>
       </ButtonGroup>
     </Box>
       <button type="button" className="btn btn-primary btn-sm" style={{marginLeft:"45%", marginTop:"1%"}} onClick={()=> run()} >Next Core Moment</button>

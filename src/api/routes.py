@@ -80,3 +80,87 @@ def handle_exdessert():
     run = r.json()
     
     return jsonify(run), 200
+
+
+
+@api.route('/dinner33130', methods=['GET'])
+def handle_33130():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33130&radius=1600&limit=15&term=restaurants&categories=dinner&sort_by=rating', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+@api.route('/dinner33128', methods=['GET'])
+def handle_33128():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33128&radius=1600&limit=15&term=restaurants&categories=dinner&sort_by=rating', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+@api.route('/dinner33139', methods=['GET'])
+def handle_33139():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33139&radius=1600&limit=15&term=restaurants&categories=dinner&sort_by=rating', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+@api.route('/date33130', methods=['GET'])
+def handle_date33130():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/events?location=MIAMI,Florida,33130&radius=1600&end_date=1656646941&limit=15', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+@api.route('/date33128', methods=['GET'])
+def handle_date33128():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/events?location=MIAMI,Florida,33128&radius=1600&end_date=1656646941&limit=15', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+@api.route('/date33139', methods=['GET'])
+def handle_date33139():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/events?location=MIAMI,Florida,33139&radius=1600&end_date=1656646941&limit=15', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+
+
+@api.route('/dessert33130', methods=['GET'])
+def handle_dess33130():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33130&radius=1600&limit=10&term=dessert&categories=desserts&sort_by=rating', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+@api.route('/dessert33128', methods=['GET'])
+def handle_dess33128():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33128&radius=1600&limit=10&term=dessert&categories=desserts&sort_by=rating', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200
+
+@api.route('/dessert33139', methods=['GET'])
+def handle_dess33139():
+    
+    
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33139&radius=1600&limit=10&term=dessert&categories=desserts&sort_by=rating', headers=HEADERS)
+    run = r.json()
+    
+    return jsonify(run), 200

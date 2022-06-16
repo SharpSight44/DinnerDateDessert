@@ -26,6 +26,7 @@ import { Testing } from "./component/memberhome/Engine Room/heart1";
 export const LoginWindow = React.createContext();
 export const ProtectedPath = React.createContext();
 export const UserProfile = React.createContext();
+export const GlobalZipCode = React.createContext();
 
 //create your first component
 const Layout = () => {
@@ -38,7 +39,9 @@ const Layout = () => {
   const access = {approved, setApproved };
   const [user, setUser] = useState({});
   const userProfile = {user, setUser };
-
+  const [zipCode, setZipCode] = useState(33139);
+  const zipCodeGlobal = {zipCode, setZipCode };
+ 
   return (
     <div>
       <BrowserRouter basename={basename}>
@@ -47,6 +50,7 @@ const Layout = () => {
             <LoginWindow.Provider value={value}>
               <ProtectedPath.Provider value={access}>
                 <UserProfile.Provider value={userProfile}>
+                  <GlobalZipCode.Provider value={zipCodeGlobal}>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -91,6 +95,7 @@ const Layout = () => {
               <Route exact path="/sandbox">
                 <Sandbox />
               </Route>
+              </GlobalZipCode.Provider>
               </UserProfile.Provider>
               </ProtectedPath.Provider>
             </LoginWindow.Provider>
