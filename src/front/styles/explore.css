@@ -11,3 +11,10 @@
   min-height: 300px;
   margin-bottom: 10px;
 }
+.innertitle {
+  margin-top: 15.5rem;
+  margin-left: 5rem;
+}
+.img:hover {
+  opacity: 80%;
+}
