@@ -3,7 +3,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 export const Footer = () => (
-  <footer className="footer mt-5 py-3 text-center">
+  <footer className="footer mt-20 py-3 text-center">
     <div>
       <a href="https://facebook.com" rel="noreferrer">
         <FacebookIcon />
