@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
-import { getEngineDate33128, getEngineDate33130, getEngineDate33139, getEngineDess33128, getEngineDess33130, getEngineDess33139, getEngineDinner33128, getEngineDinner33130, getEngineDinner33139 } from "./apiEngine";
+import { getEngineDate, getEngineDess33128, getEngineDess33130, getEngineDess33139, getEngineDessert, getEngineDinner } from "./apiEngine";
 import { GlobalZipCode } from "../../../layout";
+import { DinnerDining } from "@mui/icons-material";
 
 
 
@@ -16,39 +17,77 @@ export const HeartBeat = () => {
 
     useEffect(() => {
         const fn = async () => {
-          const din33130 = await getEngineDinner33130();
-          const din33128 = await getEngineDinner33128();
-          const din33139 = await getEngineDinner33139();
-         return setDinner(din33130) ; 
+          const dinnerZip = await getEngineDinner(zipCode);
+         
+         return setDinner(dinnerZip) ; 
         };
         fn();
-      }, []);
+      }, [zipCode]);
       useEffect(() => {
         const fn = async () => {
-          const date33130 = await getEngineDate33130();
-          const date33128 = await getEngineDate33128();
-          const date33139 = await getEngineDate33139();
-         return setDate(date33130) ; 
+          const dateZip = await getEngineDate(zipCode);
+        
+         return setDate(dateZip) ; 
         };
         fn();
-      }, []);
+      }, [zipCode]);
       useEffect(() => {
         const fn = async () => {
-          const dess33130 = await getEngineDess33130();
-          const dess33128 = await getEngineDess33128();
-          const dess33139 = await getEngineDess33139();
-         return setDessert(dess33130) ; 
+          const dessertZip = await getEngineDessert(zipCode);
+        
+         return setDessert(dessertZip) ; 
         };
         fn();
-      }, []);
+      }, [zipCode]);
    
    
    
     return (
         <>
-            <div>
-                {dinner[1]?.name}
+        <div style={{display:"flex"}}>
+            <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
+              <img src={dinner[0]?.image_url} />
+                <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dinner[0]?.name}</b>
             </div>
+            <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
+              <img src={dinner[1]?.image_url} />
+                <b style={{color:"white", fontSize:"20px"}}>{dinner[1]?.name}</b>
+            </div>
+            <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
+              <img src={dinner[2]?.image_url} />
+                <b style={{color:"white", fontSize:"20px"}}>{dinner[2]?.name}</b>
+            </div>
+             </div>
+
+             <div style={{display:"flex"}}>
+            <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
+              <img src={date[3]?.image_url} />
+                <b style={{color:"white", fontSize:"16px", margin:"10px"}}>{date[3]?.name}</b>
+            </div>
+            <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
+              <img src={date[4]?.image_url} />
+                <b style={{color:"white", fontSize:"16px"}}>{date[4]?.name}</b>
+            </div>
+            <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
+              <img src={date[8]?.image_url} />
+                <b style={{color:"white", fontSize:"16px"}}>{date[8]?.name}</b>
+            </div>
+             </div>
+
+             <div style={{display:"flex"}}>
+            <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
+              <img src={dessert[0]?.image_url} />
+                <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dessert[0]?.name}</b>
+            </div>
+            <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
+              <img src={dessert[1]?.image_url} />
+                <b style={{color:"white", fontSize:"20px"}}>{dessert[1]?.name}</b>
+            </div>
+            <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
+              <img src={dessert[2]?.image_url} />
+                <b style={{color:"white", fontSize:"20px"}}>{dessert[2]?.name}</b>
+            </div>
+             </div>
         </>
     );
 };
