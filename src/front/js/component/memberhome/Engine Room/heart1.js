@@ -24,8 +24,8 @@ export const Testing = () => {
   
       };
     const wynwoodLoad =() => {
-      const wyn ="https://therealdeal.com/miami/wp-content/uploads/2019/06/Wynwood-Credit-Metro-1-650x365.jpg";
-        return setZipCode(33127), setImageZip(wyn);
+      const wynwood ="https://therealdeal.com/miami/wp-content/uploads/2019/06/Wynwood-Credit-Metro-1-650x365.jpg";
+        return setZipCode(33127), setImageZip(wynwood);
   
       };
 
