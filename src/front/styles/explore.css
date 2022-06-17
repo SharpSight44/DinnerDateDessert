@@ -2,6 +2,7 @@
   overflow-x: scroll;
   overflow-y: hidden;
   flex-wrap: nowrap;
+  scrollbar-base-color: #04775a !important;
 }
 .titles {
   color: #f9f9f9;
@@ -15,6 +16,7 @@
   margin-top: 15.5rem;
   margin-left: 5rem;
 }
-.img:hover {
-  opacity: 80%;
+.card:hover {
+  border-radius: 1%;
+  opacity: 85%;
 }

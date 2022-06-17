@@ -20,12 +20,12 @@ export class Fb extends Component {
         return (
             this.state.isLoggedIn ? '' :
                 (<div>
-                    <FacebookLogin className="fbbutton"
+                    <FacebookLogin
                         appId="1402573673591526"
                         autoLoad={false}
                         fields="name,email,picture"
                         callback={this.responseFacebook}
-                        cssClass="my-facebook-button-class"
+                        cssClass="my-facebook-button-class rounded"
                         icon="fa-facebook"
                     />
                 </div>)

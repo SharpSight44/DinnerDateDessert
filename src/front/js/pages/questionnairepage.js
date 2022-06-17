@@ -1,6 +1,7 @@
 import React from "react";
 import { MemberNavbar } from "../component/memberNavbar";
 import { Questionnaire } from "../component/questionnaire";
+import Surveyone from "../component/survey";
 
 export const QuestionnairePage = () => {
   return (
@@ -11,6 +12,7 @@ export const QuestionnairePage = () => {
           <div className="col"></div>
         </div>
         <Questionnaire />
+        <Surveyone />
         <div className="row">
           <div className="col"></div>
         </div>
