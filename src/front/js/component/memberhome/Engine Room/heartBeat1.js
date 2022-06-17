@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
-import { getEngineDate, getEngineDess33128, getEngineDess33130, getEngineDess33139, getEngineDessert, getEngineDinner } from "./apiEngine";
+import { getEngineDate, getEngineDessert, getEngineDinner } from "./apiEngine";
 import { GlobalZipCode } from "../../../layout";
-import { DinnerDining } from "@mui/icons-material";
+
 
 
 
@@ -13,7 +13,19 @@ export const HeartBeat = () => {
     const [dinner, setDinner] =useState([]);
     const [date, setDate] =useState([]);
     const [dessert, setDessert] =useState([]);
+  const [inX, setInX] = useState(0);
+  const [inY, setInY] = useState(1);
+  const [inZ, setInZ] = useState(2);
 
+
+
+
+  useEffect(() => {
+    if(inX > 18)
+     
+    return setInX(0), setInY(1), setInZ(2);
+    
+  }, [inX]);
 
     useEffect(() => {
         const fn = async () => {
@@ -39,55 +51,69 @@ export const HeartBeat = () => {
         };
         fn();
       }, [zipCode]);
+
+      const getMore = ()=>{
+
+        const newX = inX + 3;
+        const newY = inY + 3;
+        const newZ = inZ + 3;
+
+        return setInX(newX), setInY(newY), setInZ(newZ);
+
+      };
    
    
    
     return (
         <>
+        
         <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
-              <img src={dinner[0]?.image_url} />
-                <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dinner[0]?.name}</b>
+              <img style={{width:"100%"}} src={dinner[inX]?.image_url} />
+                <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dinner[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img src={dinner[1]?.image_url} />
-                <b style={{color:"white", fontSize:"20px"}}>{dinner[1]?.name}</b>
+              <img style={{width:"100%"}}  src={dinner[inY]?.image_url} />
+                <b style={{color:"white", fontSize:"20px"}}>{dinner[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img src={dinner[2]?.image_url} />
-                <b style={{color:"white", fontSize:"20px"}}>{dinner[2]?.name}</b>
+              <img style={{width:"100%"}}  src={dinner[inZ]?.image_url} />
+                <b style={{color:"white", fontSize:"20px"}}>{dinner[inZ]?.name}</b>
             </div>
              </div>
 
              <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
-              <img src={date[3]?.image_url} />
-                <b style={{color:"white", fontSize:"16px", margin:"10px"}}>{date[3]?.name}</b>
+              <img style={{width:"100%"}}  src={date[inX]?.image_url} />
+                <b style={{color:"white", fontSize:"16px", margin:"10px"}}>{date[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img src={date[4]?.image_url} />
-                <b style={{color:"white", fontSize:"16px"}}>{date[4]?.name}</b>
+              <img style={{width:"100%"}}  src={date[inY]?.image_url} />
+                <b style={{color:"white", fontSize:"16px"}}>{date[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img src={date[8]?.image_url} />
-                <b style={{color:"white", fontSize:"16px"}}>{date[8]?.name}</b>
+              <img style={{width:"100%"}}  src={date[inZ]?.image_url} />
+                <b style={{color:"white", fontSize:"16px"}}>{date[inZ]?.name}</b>
             </div>
+            
              </div>
 
              <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
-              <img src={dessert[0]?.image_url} />
-                <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dessert[0]?.name}</b>
+              <img style={{width:"100%"}}  src={dessert[inX]?.image_url} />
+                <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dessert[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img src={dessert[1]?.image_url} />
-                <b style={{color:"white", fontSize:"20px"}}>{dessert[1]?.name}</b>
+              <img style={{width:"100%"}}  src={dessert[inY]?.image_url} />
+                <b style={{color:"white", fontSize:"20px"}}>{dessert[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img src={dessert[2]?.image_url} />
-                <b style={{color:"white", fontSize:"20px"}}>{dessert[2]?.name}</b>
+              <img style={{width:"100%"}}  src={dessert[inZ]?.image_url} />
+                <b style={{color:"white", fontSize:"20px"}}>{dessert[inZ]?.name}</b>
             </div>
              </div>
+             <div style={{marginLeft:"39%",marginTop:"3%"}}><button onClick={()=>getMore()}>Get More!</button></div>
+       
         </>
     );
 };
