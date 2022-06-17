@@ -9,20 +9,24 @@
   margin-top: 10px;
 }
 .card {
-  min-height: 300px;
+  min-height: 305px;
   margin-bottom: 10px;
 }
 .innertitle {
-  margin-top: 15.5rem;
-  margin-left: 5rem;
+  text-decoration-style: double;
+  color: #f9f9f9;
 }
 .card:hover {
   border-radius: 1%;
   opacity: 85%;
 }
 .card-img {
-  height: 300px;
+  height: 305px;
   width: 300px;
+}
+.row {
+  width: 1100px;
+  margin: 1rem;
 }
 /* .row.scroll {
   scroll-snap-type: x mandatory;
