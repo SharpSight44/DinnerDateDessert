@@ -1,0 +1,12 @@
+.surveycss {
+  margin-top: 0.09%;
+  padding-bottom: 5%;
+  margin-left: 0.003%;
+  background-color: #90c7b1;
+}
+.surveytitle {
+  text-align: center;
+  font-size: 50px;
+  font-family: sans-serif;
+  color: #102721;
+}

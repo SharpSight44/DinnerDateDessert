@@ -2,6 +2,7 @@ import React from "react";
 import { MemberNavbar } from "../component/memberNavbar";
 import { Questionnaire } from "../component/questionnaire";
 import Surveyone from "../component/survey";
+import "../../styles/survey.css";
 
 export const QuestionnairePage = () => {
   return (
@@ -11,8 +12,10 @@ export const QuestionnairePage = () => {
         <div className="row">
           <div className="col"></div>
         </div>
-        <Questionnaire />
-        <Surveyone />
+        <div className="surveycss">
+          <Questionnaire />
+          <Surveyone />
+        </div>
         <div className="row">
           <div className="col"></div>
         </div>
