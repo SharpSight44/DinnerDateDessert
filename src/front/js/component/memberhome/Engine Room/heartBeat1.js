@@ -30,27 +30,14 @@ export const HeartBeat = () => {
     useEffect(() => {
         const fn = async () => {
           const dinnerZip = await getEngineDinner(zipCode);
-         
-         return setDinner(dinnerZip) ; 
-        };
-        fn();
-      }, [zipCode]);
-      useEffect(() => {
-        const fn = async () => {
           const dateZip = await getEngineDate(zipCode);
-        
-         return setDate(dateZip) ; 
-        };
-        fn();
-      }, [zipCode]);
-      useEffect(() => {
-        const fn = async () => {
           const dessertZip = await getEngineDessert(zipCode);
-        
-         return setDessert(dessertZip) ; 
+         
+         return setDinner(dinnerZip),setDate(dateZip), setDessert(dessertZip); 
         };
         fn();
       }, [zipCode]);
+      
 
       const getMore = ()=>{
 
