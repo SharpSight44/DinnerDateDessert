@@ -22,7 +22,7 @@ const surveyJson = {
         {
           type: "matrix",
           name: "test question",
-          title: "Q1",
+          title: "Do You Like Pizza?",
           hideNumber: true,
           columns: [
             {
@@ -48,15 +48,15 @@ const surveyJson = {
           ],
           rows: [
             {
-              value: "Row 1",
-              text: "SAMPLE Q 1",
+              value: "",
+              text: "",
             },
           ],
         },
         {
           type: "matrix",
           name: "question1",
-          title: "Q2",
+          title: "Are You Vegan?",
           hideNumber: true,
           columns: [
             {
@@ -82,15 +82,15 @@ const surveyJson = {
           ],
           rows: [
             {
-              value: "Row 1",
-              text: "SAMPLE Q 2",
+              value: "",
+              text: "",
             },
           ],
         },
         {
           type: "matrix",
           name: "question2",
-          title: "Q3",
+          title: "Do you like middle-eastern food?",
           hideNumber: true,
           columns: [
             {
@@ -116,15 +116,15 @@ const surveyJson = {
           ],
           rows: [
             {
-              value: "Row 1",
-              text: "SAMPLE Q 3",
+              value: "",
+              text: "",
             },
           ],
         },
         {
           type: "matrix",
           name: "question3",
-          title: "Q4",
+          title: "Are you here for Vacation?",
           hideNumber: true,
           columns: [
             {
@@ -150,15 +150,15 @@ const surveyJson = {
           ],
           rows: [
             {
-              value: "Row 1",
-              text: "SAMPLE Q 4",
+              value: "",
+              text: "",
             },
           ],
         },
         {
           type: "matrix",
           name: "question4",
-          title: "Q5",
+          title: "Do you like to eat meat?",
           hideNumber: true,
           columns: [
             {
@@ -184,15 +184,15 @@ const surveyJson = {
           ],
           rows: [
             {
-              value: "Row 1",
-              text: "SAMPLE Q 5",
+              value: "",
+              text: "",
             },
           ],
         },
         {
           type: "matrix",
           name: "question5",
-          title: "Q6",
+          title: "Do You Enjoy Doing Activities at night?",
           hideNumber: true,
           columns: [
             {
@@ -218,15 +218,15 @@ const surveyJson = {
           ],
           rows: [
             {
-              value: "Row 1",
-              text: "SAMPLE Q 6",
+              value: "",
+              text: "",
             },
           ],
         },
         {
           type: "matrix",
           name: "question6",
-          title: "Q7",
+          title: "Do You Like Music?",
           hideNumber: true,
           columns: [
             {
@@ -252,8 +252,8 @@ const surveyJson = {
           ],
           rows: [
             {
-              value: "Row 1",
-              text: "SAMPLE Q 7",
+              value: "",
+              text: "",
             },
           ],
         },

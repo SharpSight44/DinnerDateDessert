@@ -8,16 +8,11 @@ export const QuestionnairePage = () => {
   return (
     <>
       <MemberNavbar />
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col"></div>
-        </div>
+      <div>
         <div className="surveycss">
+          <h1></h1>
           <Questionnaire />
           <Surveyone />
-        </div>
-        <div className="row">
-          <div className="col"></div>
         </div>
         <div className="row">
           <div className="col"></div>
