@@ -20,3 +20,13 @@
   border-radius: 1%;
   opacity: 85%;
 }
+.card-img {
+  height: 300px;
+  width: 300px;
+}
+/* .row.scroll {
+  scroll-snap-type: x mandatory;
+} */
+/* .card.text-white.text-end {
+  scroll-snap-align: start;
+} */
