@@ -40,7 +40,7 @@ export const Testing = () => {
   const run = ()=> {
 
     if(appear === false){
-    return setTimeout(() => setLoader(false), 5000), setTimeout(() => setAppear(true), 3000),setLoader(true)}
+    return setTimeout(() => setLoader(false), 4000), setTimeout(() => setAppear(true), 3000),setLoader(true)}
     else {return setAppear(false)
     }
 

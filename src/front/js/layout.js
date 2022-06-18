@@ -21,6 +21,7 @@ import { Explore } from "../../front/js/pages/explorepage";
 import { Goodbye } from "./pages/goodbyePage";
 import { ExploreTest } from "./pages/exploreTest";
 import { Testing } from "./component/memberhome/Engine Room/heart1";
+import { Version1 } from "./component/memberhome/Main Page Version 1/MemberMainPage";
 
 //Global Context for Login
 export const LoginWindow = React.createContext();
@@ -59,6 +60,9 @@ const Layout = () => {
               </Route>
               <Route exact path="/testing">
                 <Testing />
+              </Route>
+              <Route exact path="/version1">
+                <Version1 />
               </Route>
               <Route exact path="/exploretest">
                 <ExploreTest />

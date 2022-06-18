@@ -13,6 +13,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { UserProfile } from '../../layout';
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default function AccountMenu() {
     const {user, setUser} = useContext(UserProfile);
@@ -23,6 +24,19 @@ export default function AccountMenu() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const history = useHistory();
+
+  const exeLogOut = ()=>{
+   return history.push('/')
+
+
+  };
+  const logOutNow =()=>{
+
+    return history.push('/goodbye'), setTimeout(()=> exeLogOut(), 8000);
+
   };
   return (
     <React.Fragment>
@@ -75,9 +89,7 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem>
-          <Avatar><img src={user.picture} /></Avatar> Profile
-        </MenuItem>
+        
         <MenuItem>
           <Avatar><img src={user.picture} /></Avatar> My account
         </MenuItem>
@@ -86,7 +98,7 @@ export default function AccountMenu() {
           <ListItemIcon>
             <PersonAdd fontSize="small" />
           </ListItemIcon>
-          Add another account
+          Invite Friends
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
@@ -94,7 +106,7 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={()=> logOutNow()}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

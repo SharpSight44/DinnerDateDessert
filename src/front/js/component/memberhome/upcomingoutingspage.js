@@ -4,30 +4,17 @@ import { Redirect } from "react-router-dom";
 import { ProtectedPath, LoginWindow } from "../../layout";
 import { MemberNavbar } from "../memberNavbar";
 import { useHistory } from "react-router-dom";
+import { UpComingEngine } from "./SavedOutings/upComingEngine";
 
 export const Upcomingoutingspage = () => {
   const { approved, setApproved} = useContext(ProtectedPath);
   const { logStatus, setLogStatus} = useContext(LoginWindow);
-
-  const history = useHistory();
-
-  if( approved == false){
-    return  history.push('/'), setLogStatus(true) ;
-  } else {
+//Above Code is not in use yet// Will Be For Protected paths MUST BE LOGGED IN TO ACCESS When ENABLED
   
   return (
     <>
     <MemberNavbar/>
-      <div style={{ display: "inline-block", marginLeft: "30px" }}>
-        Hello
-        <RecipeReviewCard />
-      </div>
-      <div style={{ display: "inline-block", marginLeft: "30px" }}>
-        <RecipeReviewCard />
-      </div>
-      <div style={{ display: "inline-block", marginLeft: "30px" }}>
-        <RecipeReviewCard />
-      </div>
+      <UpComingEngine/>
     </>
   );}
-};
+

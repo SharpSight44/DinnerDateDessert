@@ -7,7 +7,7 @@ export const MemberHome = () => {
         <MemberNavbar />
       </div>
 
-      <h1 style={{ fontSize: "100px", color: "white" }}>Member Home</h1>
+      <h1 style={{ fontSize: "100px", color: "white" }}>Member Home  Sending to Version 1 now....</h1>
     </>
   );
 };

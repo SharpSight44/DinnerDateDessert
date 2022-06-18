@@ -49,6 +49,22 @@ export const HeartBeat = () => {
 
       };
    
+      const selectedDinner = (selectedId) =>{
+
+        return localStorage.setItem("dinner",JSON.stringify(selectedId))
+
+      };
+
+      const selectedDate = (selectedId) =>{
+
+        return localStorage.setItem("date",JSON.stringify(selectedId))
+
+      };
+      const selectedDessert = (selectedId) =>{
+
+        return localStorage.setItem("dessert",JSON.stringify(selectedId))
+
+      };
    
    
     return (
@@ -57,14 +73,17 @@ export const HeartBeat = () => {
         <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}} src={dinner[inX]?.image_url} />
+              <button onClick={()=> selectedDinner(dinner[inX]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dinner[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dinner[inY]?.image_url} />
+              <button onClick={()=> selectedDinner(dinner[inY]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"20px"}}>{dinner[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dinner[inZ]?.image_url} />
+              <button onClick={()=> selectedDinner(dinner[inZ]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"20px"}}>{dinner[inZ]?.name}</b>
             </div>
              </div>
@@ -72,14 +91,17 @@ export const HeartBeat = () => {
              <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}}  src={date[inX]?.image_url} />
+              <button onClick={()=> selectedDate(date[inX]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"16px", margin:"10px"}}>{date[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={date[inY]?.image_url} />
+              <button onClick={()=> selectedDate(date[inY]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"16px"}}>{date[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={date[inZ]?.image_url} />
+              <button onClick={()=> selectedDate(date[inZ]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"16px"}}>{date[inZ]?.name}</b>
             </div>
             
@@ -88,14 +110,17 @@ export const HeartBeat = () => {
              <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inX]?.image_url} />
+              <button onClick={()=> selectedDessert(dessert[inX]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dessert[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inY]?.image_url} />
+              <button onClick={()=> selectedDessert(dessert[inY]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"20px"}}>{dessert[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inZ]?.image_url} />
+              <button onClick={()=> selectedDessert(dessert[inZ]?.id)}>Save/select</button>
                 <b style={{color:"white", fontSize:"20px"}}>{dessert[inZ]?.name}</b>
             </div>
              </div>

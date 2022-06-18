@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getApiRestaurants, getApiDesserts, getApiEvents } from '../component/apiExplore';
+import { UpComingEngine } from '../component/memberhome/SavedOutings/upComingEngine';
 
 
 export const ExploreTest = () => {
@@ -49,6 +50,7 @@ export const ExploreTest = () => {
 <div key={index} style={{width:"100px"}} > <img src={item?.image_url} style={{width:"100px"}}/><p>{item?.name} </p> </div> )} </div>
                 
             </div>
+            <UpComingEngine/>
         </>
     );
 };

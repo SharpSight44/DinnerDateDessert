@@ -17,6 +17,7 @@ const history = useHistory();
     document.getElementById("signInDiv").hidden = true;
     setApproved(true);
     history.push('/memberhome')
+    setTimeout(()=> history.push('/version1'),4000 )
     
   }
 
