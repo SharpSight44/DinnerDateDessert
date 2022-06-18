@@ -4,9 +4,14 @@
   padding-bottom: 5%;
   padding: 10px;
   margin-left: 0.003%;
-  background-color: #dfecdb;
-  border: 50px solid rgb(3, 37, 3);
-  opacity: 0.58;
+  background-image: radial-gradient(
+    circle farthest-corner at 50.2% 48.8%,
+    rgb(9, 164, 122) 41.7%,
+    rgb(82, 170, 143) 17.2%,
+    rgb(9, 164, 122) 41.7%,
+    rgb(9, 142, 106) 41.7%,
+    rgb(9, 164, 122) 41.7%
+  );
 }
 .surveytitle {
   text-align: center;

@@ -10,12 +10,11 @@ export const QuestionnairePage = () => {
       <MemberNavbar />
       <div>
         <div className="surveycss">
-          <h1></h1>
+          <h1 className="surveytitle">
+            Answer a few questions to find your perfect night out!
+          </h1>
           <Questionnaire />
           <Surveyone />
-        </div>
-        <div className="row">
-          <div className="col"></div>
         </div>
       </div>
     </>
