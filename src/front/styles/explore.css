@@ -11,9 +11,12 @@
   margin-bottom: 2rem;
   font-size: 45px;
   font-weight: bolder;
-  color: #ebc17a;
+  color: #f9f9f9;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+.pagetitle:hover {
+  opacity: 85%;
 }
 .titles {
   font-size: 40px;
@@ -21,6 +24,9 @@
   color: #ebc17a;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+.titles:hover {
+  opacity: 80%;
 }
 .card {
   min-height: 305px;
@@ -37,11 +43,15 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
-.explorecard:hover {
-  filter: blur(0.75px);
-  border-radius: 1%;
+.innertitle:hover {
   opacity: 90%;
   color: white;
+  font-style: normal;
+  font-size: 45px;
+}
+.explorecard:hover {
+  filter: blur(0.6px);
+  border-radius: 1%;
 }
 .card-img {
   height: 305px;
@@ -49,7 +59,8 @@
 }
 .row {
   width: 100%;
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
 }
 /* .row.scroll {
   scroll-snap-type: x mandatory;
