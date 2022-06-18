@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import Switch from '@mui/material/Switch';
 import { MemberNavbar } from "../../memberNavbar";
-import { Sandbox } from "../../../pages/sandbox";
 import RingLoader from "react-spinners/RingLoader";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';

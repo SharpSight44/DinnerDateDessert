@@ -9,7 +9,6 @@ import { Demo } from "./pages/demo";
 import injectContext from "./store/appContext";
 
 import { QuestionnairePage } from "./pages/questionnairepage";
-import { Sandbox } from "./pages/sandbox";
 import { Accountsettings } from "./component/memberhome/accountsettings";
 import { Tailor } from "./component/memberhome/tailor";
 import { Desires } from "./component/memberhome/desires";
@@ -96,9 +95,7 @@ const Layout = () => {
                 <Goodbye />
                 
               </Route>
-              <Route exact path="/sandbox">
-                <Sandbox />
-              </Route>
+          
               </GlobalZipCode.Provider>
               </UserProfile.Provider>
               </ProtectedPath.Provider>
