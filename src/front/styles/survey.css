@@ -1,9 +1,10 @@
 .surveycss {
   margin-top: 0.09%;
-  margin-bottom: 0.5%;
+  margin-bottom: 2px !important;
   padding-bottom: 5%;
   padding: 10px;
   margin-left: 0.003%;
+  border: 10px solid rgb(255, 255, 255) !important;
   background-image: radial-gradient(
     circle farthest-corner at 50.2% 48.8%,
     rgb(9, 164, 122) 41.7%,
@@ -16,6 +17,15 @@
 .surveytitle {
   text-align: center;
   font-size: 50px;
-  font-family: sans-serif;
+  font-weight: bold;
   color: #102721;
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
+
+.surveyline {
+  padding: 2px;
+  background-color: rgb(255, 255, 255);
+  opacity: 90%;
 }

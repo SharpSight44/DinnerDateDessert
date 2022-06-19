@@ -91,7 +91,7 @@ const surveyJson = {
         {
           type: "matrix",
           name: "question2",
-          title: "Do you like middle-eastern food?",
+          title: "Do You Like Middle-Eastern Food?",
           hideNumber: true,
           columns: [
             {
@@ -125,7 +125,7 @@ const surveyJson = {
         {
           type: "matrix",
           name: "question3",
-          title: "Are you here for Vacation?",
+          title: "Are You Here For Vacation?",
           hideNumber: true,
           columns: [
             {
@@ -159,7 +159,7 @@ const surveyJson = {
         {
           type: "matrix",
           name: "question4",
-          title: "Do you like to eat meat?",
+          title: "Do You Like To Eat Meat?",
           hideNumber: true,
           columns: [
             {
@@ -193,7 +193,7 @@ const surveyJson = {
         {
           type: "matrix",
           name: "question5",
-          title: "Do You Enjoy Doing Activities at night?",
+          title: "Do You Enjoy Doing Activities At Night?",
           hideNumber: true,
           columns: [
             {
