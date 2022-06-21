@@ -1,8 +1,26 @@
 .scroll {
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   flex-wrap: nowrap;
   scrollbar-base-color: #04775a !important;
+}
+.leftarrow {
+  color: white;
+  font-size: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+.leftarrow:hover {
+  opacity: 50%;
+}
+.rightarrow {
+  color: white;
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+.rightarrow:hover {
+  opacity: 50%;
 }
 .pagetitle {
   margin-top: 2rem;
@@ -35,21 +53,28 @@
 .h2 {
   box-shadow: 10px 5px 5px #c39546;
 }
-/* .favsicon {
+.favsicon {
+  color: white;
   align-items: flex-start;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 40px;
   margin-right: 0px;
   margin-left: 0rem;
+  margin-bottom: 14rem;
   padding: 0px;
   width: 50%;
-} */
-/* .favsicon:hover {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.favsicon:hover {
+  font-sixe: 45px;
   opacity: 50%;
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-} */
+  margin-right: 0px;
+  margin-left: 0rem;
+}
 .a:link {
   text-decoration: none;
 }
