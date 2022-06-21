@@ -35,43 +35,40 @@ export const ExploreComponent = () => {
 
             <div className='container'>
                 <h1 className="pagetitle text-center">Explore </h1>
-                <h1 className="titles">A Bite to Eat</h1>
+                <h1 className="categories">A Bite to Eat</h1>
                 <div className='row scroll'>{restaurants.map((item, index) =>
 
                     <div className="card explorecard text-white text-end fw-bolder" key={index} style={{ width: "300px" }} >
-                        <a href={item.url}>
-                            <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
-                            <div className="card-img-overlay d-flex align-items-end justify-content-end">
-                                <h2 className='innertitle'>{item?.name} </h2>
-                            </div>
-                        </a>
+                        <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
+                        <div className="card-img-overlay d-flex align-items-end justify-content-end">
+                            {/* <button className="btn favsicon border-0 d-flex justify-content-start rounded-circle">♡</button> */}
+                            <a href={item.url}><h2 className='locationname'>{item?.name} </h2></a>
+                        </div>
                     </div>
                 )}
                 </div>
 
-                <h1 className="titles">Activities</h1>
+                <h1 className="categories">Activities</h1>
                 <div className='row scroll'> {events.map((item, index) =>
 
                     <div className="card explorecard text-white text-end fw-bolder" key={index} style={{ width: "300px" }} >
-                        <a href={item.url}>
-                            <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
-                            <div className="card-img-overlay d-flex align-items-end justify-content-end">
-                                <h2 className="innertitle">{item?.name} </h2>
-                            </div>
-                        </a>
+                        <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
+                        <div className="card-img-overlay d-flex align-items-end justify-content-end">
+                            {/* <button className="btn favsicon border-0 d-flex justify-content-start rounded-circle">♡</button> */}
+                            <a href={item.url}><h2 className='locationname'>{item?.name} </h2></a>
+                        </div>
                     </div>)}
                 </div>
 
-                <h1 className="titles">Something Sweet</h1>
+                <h1 className="categories">Something Sweet</h1>
                 <div className='row scroll'>{desserts.map((item, index) =>
 
                     <div className="card explorecard text-white text-end fw-bolder" key={index} style={{ width: "300px" }} >
-                        <a href={item.url}>
-                            <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
-                            <div className="card-img-overlay d-flex align-items-end justify-content-end">
-                                <h2 className="innertitle">{item?.name} </h2>
-                            </div>
-                        </a>
+                        <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
+                        <div className="card-img-overlay d-flex align-items-end justify-content-end">
+                            {/* <button className="btn favsicon border-0 d-flex justify-content-start rounded-circle">♡</button> */}
+                            <a href={item.url}><h2 className='locationname'>{item?.name} </h2></a>
+                        </div>
                     </div>)}
                 </div>
 
