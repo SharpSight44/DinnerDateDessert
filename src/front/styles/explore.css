@@ -23,7 +23,7 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
-.titles:hover {
+.categories:hover {
   opacity: 80%;
 }
 .card-img-overlay {
@@ -82,7 +82,7 @@
   width: 300px;
 }
 .row {
-  width: 110%;
+  width: 100%;
   margin-top: 1rem;
   margin-bottom: 5rem;
 }
