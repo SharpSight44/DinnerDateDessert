@@ -1,4 +1,5 @@
 .scroll {
+  scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: hidden;
   flex-wrap: nowrap;
@@ -7,8 +8,6 @@
 .leftarrow {
   color: white;
   font-size: 40px;
-  margin: 0px;
-  padding: 0px;
 }
 .leftarrow:hover {
   opacity: 50%;
@@ -16,8 +15,6 @@
 .rightarrow {
   color: white;
   font-size: 40px;
-  height: 40px;
-  width: 40px;
 }
 .rightarrow:hover {
   opacity: 50%;
@@ -45,8 +42,8 @@
   opacity: 80%;
 }
 .card-img-overlay {
-  width: 303px;
-  margin-bottom: 0.5rem;
+  /* width: 25%; */
+  /* padding-bottom: 0.5rem; */
   margin-right: 0;
   margin-left: 0rem;
 }
@@ -54,36 +51,34 @@
   box-shadow: 10px 5px 5px #c39546;
 }
 .favsicon {
-  color: white;
+  font-weight: bolder;
+  color: #f9f9f9;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   align-items: flex-start;
   font-weight: bolder;
   font-size: 40px;
   margin-right: 0px;
-  margin-left: 0rem;
+  margin-left: 1rem;
   margin-bottom: 14rem;
   padding: 0px;
-  width: 50%;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  width: 10%;
 }
 .favsicon:hover {
-  font-sixe: 45px;
-  opacity: 50%;
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-  margin-right: 0px;
-  margin-left: 0rem;
+  font-weight: bolder;
+  color: #deb060;
+  font-size: 45px;
+  opacity: 75%;
 }
-.a:link {
-  text-decoration: none;
-}
+
 .locationname {
+  float: right;
   padding: 0;
-  /* margin-right: 1rem;
-  margin-left: 2rem; */
+  margin-right: 0px;
+  margin-bottom: 0;
+  text-decoration: none;
   font-style: italic;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bolder;
   color: #f9f9f9;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
