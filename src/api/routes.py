@@ -36,7 +36,7 @@ def handle_eventDetails(name):
 def handle_exdinner():
     
     
-    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33130&radius=1600&limit=10&term=restaurants&categories=dinner&sort_by=rating', headers=HEADERS)
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=miami,fl,33130&radius=10000&limit=10&term=restaurants&categories=dinner&sort_by=rating', headers=HEADERS)
     run = r.json()
     
     return jsonify(run), 200
@@ -55,7 +55,7 @@ def handle_exdate():
 def handle_exdessert():
     
     
-    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33130&radius=2000&limit=10&term=dessert&categories=desserts&sort_by=rating', headers=HEADERS)
+    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33130&radius=10000&limit=10&term=dessert&categories=desserts&sort_by=rating', headers=HEADERS)
     run = r.json()
     
     return jsonify(run), 200
