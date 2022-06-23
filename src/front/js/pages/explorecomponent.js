@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 import "../../styles/explore.css";
 import { getApiRestaurants, getApiDesserts, getApiEvents } from '../component/apiExplore';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill, BsFillHeartFill } from "react-icons/bs";
@@ -7,9 +9,14 @@ import { RiHeartsLine } from "react-icons/ri";
 
 
 export const ExploreComponent = () => {
+    const { store, actions } = useContext(Context);
     const [restaurants, setRestaurants] = useState([]);
     const [events, setEvents] = useState([]);
     const [desserts, setDesserts] = useState([]);
+    console.log(store.desires);
+    // console.log(events);
+    // console.log(restaurants);
+
 
 
     const slideLeft = () => {
@@ -64,20 +71,23 @@ export const ExploreComponent = () => {
         fn();
     }, []);
 
+
+    // addDesire={actions.addDesire}
     return (
         <>
 
             <div className='container'>
                 <h1 className="pagetitle text-center">Explore </h1>
+                <Link to="/desires"><button>Click Me</button></Link>
                 <div className='mb-3'>
                     <h1 className="categories">A Bite to Eat</h1>
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="leftarrow rounded-circle justify-content-start"><BsFillArrowLeftCircleFill onClick={slideLeft} /></div>
-                        <div id="slider" className='row scroll overflow-x-scroll whitespace-nowrap scroll-smooth m-0'>{restaurants.map((item, index) =>
+                        <div id="slider" className='row scroll overflow-x-scroll whitespace-nowrap scroll-smooth m-0 '>{restaurants.map((item, index) =>
                             <div className="card explorecard text-white text-end fw-bolder mx-2 bg-transparent border-0" key={index} style={{ width: "300px" }} >
                                 <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
                                 <div className="card-img-overlay d-flex align-items-end justify-content-between">
-                                    <button className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
+                                    <button onClick={() => actions.editDesires(item)} className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
                                     <a className='locationname' href={item.url}><h2 className='locationname'>{item?.name} </h2></a>
                                 </div>
                             </div>
@@ -98,8 +108,8 @@ export const ExploreComponent = () => {
                             <div className="card explorecard text-white text-end fw-bolder mx-2 bg-transparent border-0" key={index} style={{ width: "300px" }} >
                                 <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
                                 <div className="card-img-overlay d-flex align-items-end justify-content-end">
-                                    <button className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
-                                    <a className='locationname' href={item.url}><h2 className='locationname'>{item?.name} </h2></a>
+                                    <button onClick={() => actions.editDesires(item)} className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
+                                    <a className='locationname' href={item.event_site_url}><h2 className='locationname'>{item?.name} </h2></a>
                                 </div>
                             </div>)}
                         </div>
@@ -116,7 +126,7 @@ export const ExploreComponent = () => {
                             <div className="card explorecard text-white text-end fw-bolder mx-2 bg-transparent border-0" key={index} style={{ width: "300px" }} >
                                 <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
                                 <div className="card-img-overlay d-flex align-items-end justify-content-end">
-                                    <button className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
+                                    <button onClick={() => actions.editDesires(item)} className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
                                     <a className='locationname' href={item.url}><h2 className='locationname'>{item?.name} </h2></a>
                                 </div>
                             </div>)}

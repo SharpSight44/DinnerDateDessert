@@ -5,7 +5,7 @@ export const HomePageCard = () => {
         <>
             <div className="row row-cols-1 row-cols-md-3 g-4 ">
                 <div className="col justify-content-center">
-                    <div className="card border-0">
+                    <div className="card border-0 ">
                         <img src="https://media.istockphoto.com/photos/romantic-evening-picture-id649672132?k=20&m=649672132&s=612x612&w=0&h=8-BY5q_zcMdkvgYi0kY2d1rDgO6MwrGdJ08pEpCsPTQ=" className="card-img-top" alt="..." />
                         <div className="card-body rounded">
                             <h5 className="card-title">Dinner</h5>

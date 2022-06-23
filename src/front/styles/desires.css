@@ -1,0 +1,9 @@
+.page-title {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 45px;
+  font-weight: bolder;
+  color: #f9f9f9;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
