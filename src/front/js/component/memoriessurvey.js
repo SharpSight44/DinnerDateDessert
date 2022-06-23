@@ -12,7 +12,7 @@ let surveyJson = {
   description: "Survey ",
   logoFit: "none",
   logoPosition: "right",
-  completedHtml: "<h3>Thank you for completing the Questionnaire!</h3>",
+  completedHtml: "<h3>Thank you for letting us know your feedback!</h3>",
   completedBeforeHtml:
     "<h3>Our records show that you have already completed this Questionnaire.</h3>",
   loadingHtml: "<h3>Loading Questionnaire...</h3>",
@@ -48,9 +48,7 @@ let surveyJson = {
           maxRateDescription: "Stars",
         },
       ],
-      visible: false,
-      title: "Survey",
-      description: "Survey",
+      title: "Share Your Feedback!",
     },
   ],
   triggers: [
@@ -60,7 +58,7 @@ let surveyJson = {
   ],
   showTitle: false,
   navigateToUrlOnCondition: [{}],
-  showPageNumbers: true,
+  showPageNumbers: false,
   showQuestionNumbers: "off",
   showProgressBar: "bottom",
   progressBarType: "questions",

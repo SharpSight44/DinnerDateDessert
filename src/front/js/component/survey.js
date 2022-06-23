@@ -285,6 +285,19 @@ const surveyJson = {
 
 function Surveyone() {
   const survey = new Model(surveyJson);
+  survey.onUpdateQuestionCssClasses.add(function (survey, options) {
+    var classes = options.cssClasses;
+    classes.mainRoot += " sv_qstn2";
+    classes.root = "sq-root";
+    classes.title += " sq-title";
+    if (options.question.isRequired) {
+      classes.title += " sq-title-required";
+      classes.root += " sq-root-required";
+    }
+    if (options.question.getType() === "checkbox") {
+      classes.root += " sq-root-cb";
+    }
+  });
   return <Survey model={survey} />;
 }
 export default Surveyone;
