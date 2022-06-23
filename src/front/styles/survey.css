@@ -29,3 +29,11 @@
   background-color: rgb(255, 255, 255);
   opacity: 90%;
 }
+
+.memoriesheader {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  border: 3px solid #091512;
+}

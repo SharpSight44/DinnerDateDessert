@@ -1,16 +1,14 @@
 import React from "react";
 import { MemberNavbar } from "../memberNavbar";
 import TitlebarImageList from "../memberhome/memoriescard";
-
+import Surveytwo from "../memoriessurvey";
 export const Memories = () => {
   return (
     <>
       <MemberNavbar />
+      <Surveytwo />
+      <h1 className="memoriesheader">See your memories here!</h1>
       <TitlebarImageList />
-      <h1 style={{ fontSize: "33px", color: "white" }}>
-        ALL Items from Outings WENT On.. will go here --Think of how to make it
-        memorable? upload pictures? Journal experience??{" "}
-      </h1>
       <div className="container-fluid">
         <div className="row">
           <div className="col"></div>

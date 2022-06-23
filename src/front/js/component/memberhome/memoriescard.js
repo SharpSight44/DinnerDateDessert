@@ -10,7 +10,7 @@ export default function TitlebarImageList() {
   return (
     <ImageList sx={{ width: 1500, height: 450 }}>
       <ImageListItem key="Subheader" cols={2}>
-        <ListSubheader component="div">Memories</ListSubheader>
+        <ListSubheader component="div"></ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
