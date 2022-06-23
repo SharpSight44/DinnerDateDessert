@@ -46,7 +46,7 @@ def handle_exdinner():
 def handle_exdate():
     
     
-    r =requests.get('https://api.yelp.com/v3/events?location=MIAMI,Florida,33128&radius=1600&end_date=1656646941&limit=10', headers=HEADERS)
+    r =requests.get('https://api.yelp.com/v3/events?location=MIAMI,Florida,33128&radius=10000&start_date=1656646941&sort_on=popularity&limit=10', headers=HEADERS)
     run = r.json()
     
     return jsonify(run), 200
