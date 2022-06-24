@@ -46,7 +46,7 @@ def handle_exdinner():
 def handle_exdate():
     
     
-    r =requests.get('https://api.yelp.com/v3/events?location=MIAMI,Florida,33128&radius=10000&start_date=1656646941&sort_on=popularity&limit=10', headers=HEADERS)
+    r =requests.get('https://api.yelp.com/v3/events?location=MIAMI,Florida,33128&radius=10000&start_date=1656646941&limit=10', headers=HEADERS)
     run = r.json()
     
     return jsonify(run), 200
@@ -64,7 +64,7 @@ def handle_exdessert():
 
 @api.route('/dinner/<int:id>', methods=['GET'])
 def handle_dinner(id):
-    url= 'https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,{id}&radius=1600&limit=21&term=restaurants&categories=dinner&sort_by=rating'
+    url= 'https://api.yelp.com/v3/businesses/search?location={id}&radius=1600&limit=21&term=restaurants&categories=dinner&sort_by=rating'
     r =requests.get(url.format(id=id), headers=HEADERS)
     run = r.json()
     
@@ -74,7 +74,7 @@ def handle_dinner(id):
 @api.route('/date/<int:id>', methods=['GET'])
 def handle_date(id):
     
-    url= 'https://api.yelp.com/v3/events?location=MIAMI,Florida,{id}&radius=1600&end_date=1656646941&limit=21'
+    url= 'https://api.yelp.com/v3/events?location={id}&radius=1600&end_date=1656646941&limit=21'
     r =requests.get(url.format(id=id), headers=HEADERS)
     run = r.json()
     
@@ -86,7 +86,7 @@ def handle_date(id):
 @api.route('/dessert/<int:id>', methods=['GET'])
 def handle_dessert(id):
     
-    url ='https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,{id}&radius=3200&limit=21&term=dessert&categories=desserts&sort_by=rating'
+    url ='https://api.yelp.com/v3/businesses/search?location={id}&radius=3200&limit=21&term=dessert&categories=desserts&sort_by=rating'
     r =requests.get(url.format(id=id), headers=HEADERS)
     run = r.json()
     

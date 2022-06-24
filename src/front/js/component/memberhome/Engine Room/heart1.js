@@ -17,23 +17,18 @@ export const Testing = () => {
     const [imageZip, setImageZip] = useState(false)
 
 
-    const brickellLoad =() => {
-      const brick ="https://a.cdn-hotels.com/gdcs/production156/d397/81ce7a3b-5be9-4d0c-89e2-ab7920d94bb9.jpg";
-        return setZipCode(33129), setImageZip(brick);
+    const img33139 = "https://seeklogo.com/images/M/miami-beach-logo-C677AF8447-seeklogo.com.png"; 
+    const img33127 = "https://therealdeal.com/miami/wp-content/uploads/2019/06/Wynwood-Credit-Metro-1-650x365.jpg";
+    const img33129 = "https://a.cdn-hotels.com/gdcs/production156/d397/81ce7a3b-5be9-4d0c-89e2-ab7920d94bb9.jpg";
+    const img94133 = "https://www.dylanstours.com/wp-content/uploads/2020/02/unnamed-2.png";
+    const img94110="https://gmcdn-sxcqif3sepi.netdna-ssl.com/city-guides/img/uploads/nhood/original/1492229650.75250.jpg";
+    const img94107="https://www.hiusa.org/wp-content/uploads/2020/02/sanfrancisco-lights-2000-1075x840.jpg";
+    
+    const cityPicker =(img,zip) => {
+      
+        return setZipCode(zip), setImageZip(img);
   
       };
-    const wynwoodLoad =() => {
-      const wynwood ="https://therealdeal.com/miami/wp-content/uploads/2019/06/Wynwood-Credit-Metro-1-650x365.jpg";
-        return setZipCode(33127), setImageZip(wynwood);
-  
-      };
-
-    const southBeachLoad =() => {
-    const beach ="https://seeklogo.com/images/M/miami-beach-logo-C677AF8447-seeklogo.com.png";
-      return setZipCode(33139), setImageZip(beach);
-
-    };
-
 
   
   const run = ()=> {
@@ -74,9 +69,26 @@ export const Testing = () => {
     >
       
       <ButtonGroup variant="text" aria-label="text button group">
-        <Button onClick={()=> wynwoodLoad() } style={{color:"#e8d190"}}>Wynwood</Button>
-        <Button onClick={()=> brickellLoad() } style={{color:"#e8d190"}}>Brickell</Button>
-        <Button onClick={()=> southBeachLoad()} style={{color:"#e8d190"}}>South Beach</Button>
+        <Button onClick={()=> cityPicker(img33127,33127) } style={{color:"#e8d190"}}>Wynwood</Button>
+        <Button onClick={()=> cityPicker(img33129,33129) } style={{color:"#e8d190"}}>Brickell</Button>
+        <Button onClick={()=> cityPicker(img33139,33139)} style={{color:"#e8d190"}}>South Beach</Button>
+      </ButtonGroup>
+    </Box>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        '& > *': {
+          m: 1,
+        },
+      }}
+    >
+      
+      <ButtonGroup variant="text" aria-label="text button group">
+        <Button onClick={()=> cityPicker(img94107,94107) } style={{color:"#e8d190"}}>Downtown SF</Button>
+        <Button onClick={()=> cityPicker(img94110,94110) } style={{color:"#e8d190"}}>Mission</Button>
+        <Button onClick={()=> cityPicker(img94133,94133)} style={{color:"#e8d190"}}>Fisherman's Wharf</Button>
       </ButtonGroup>
     </Box>
       <button type="button" className="btn btn-primary btn-sm" style={{marginLeft:"45%", marginTop:"1%"}} onClick={()=> run()} >Next Core Moment</button>
