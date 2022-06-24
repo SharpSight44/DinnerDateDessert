@@ -83,6 +83,12 @@ img:hover {
   color: #4267b2;
 }
 
+.footerlogo {
+  height: 35px;
+  width: 35px;
+  margin-right: 2000px;
+  margin-bottom: -30px;
+}
 /*
     home.css: This website contains selectors only used in home.css
 
