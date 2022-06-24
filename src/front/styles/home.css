@@ -39,6 +39,10 @@ img:hover {
   height: 100%;
   width: 100%;
 }
+.fluid-video {
+  height: auto;
+  width: 100%;
+}
 .card-img-top {
   width: 375px;
 }

@@ -7,3 +7,11 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+.desirecard-body {
+  width: 350px;
+  margin-bottom: 2rem;
+}
+.desirecard-img {
+  height: 300px;
+  width: 350px;
+}

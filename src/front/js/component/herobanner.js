@@ -1,5 +1,6 @@
 import React from "react";
 import banner from "../../img/banner.png";
+import couplevid from "../../Videos/couplevid.mp4";
 
 export const HeroBanner = () => {
   return (
@@ -8,7 +9,9 @@ export const HeroBanner = () => {
         <div className="row g-0">
           <div className="col-md">
             <div className="homebanner">
-              <img src={banner} alt="Banner" />
+              <video className="fluid-video" controls autoplay muted loop playsinline>
+                <source src={couplevid} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

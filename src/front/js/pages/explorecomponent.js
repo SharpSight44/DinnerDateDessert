@@ -14,8 +14,8 @@ export const ExploreComponent = () => {
     const [events, setEvents] = useState([]);
     const [desserts, setDesserts] = useState([]);
     console.log(store.desires);
-    // console.log(events);
-    // console.log(restaurants);
+    console.log(events);
+    console.log(restaurants);
 
 
 

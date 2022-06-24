@@ -7,6 +7,7 @@ import { Login } from "./login";
 import { LoginWindow } from "../layout";
 
 
+
 export const Home = () => {
   const { logStatus, setLogStatus } = useContext(LoginWindow)
 
