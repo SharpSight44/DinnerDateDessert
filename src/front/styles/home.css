@@ -89,6 +89,15 @@ img:hover {
   margin-right: 2000px;
   margin-bottom: -30px;
 }
+.googlelogo {
+  margin-right: 20px;
+}
+.applelogo {
+  margin-right: 15px;
+}
+.facebookicon {
+  margin-right: 10px;
+}
 /*
     home.css: This website contains selectors only used in home.css
 
