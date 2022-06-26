@@ -9,10 +9,12 @@ export const HeroBanner = () => {
         <div className="row g-0">
           <div className="col-md">
             <div className="homebanner">
-              <video className="fluid-video" controls autoplay muted loop playsinline>
+              <video className="fluid-video" style={{width:"975px"}} autoPlay muted loop playsinline>
                 <source src={couplevid} type="video/mp4" />
               </video>
+            
             </div>
+            
           </div>
         </div>
       </div>

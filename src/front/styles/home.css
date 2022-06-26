@@ -29,15 +29,16 @@ img:hover {
   border-radius: 1%;
   opacity: 80%;
 }
+/* changed display to inline block added overflow y and changed Width/Height  */
 .homebanner {
-  display: block;
+  display: inline-block;
   margin: auto;
   margin-top: 5rem;
   margin-bottom: 5rem;
   padding-bottom: 0%;
-  width: 50%;
-  height: 100%;
-  width: 100%;
+  height: 400px;
+  width: 90%;
+  overflow-y: hidden;
 }
 .fluid-video {
   height: auto;
@@ -45,6 +46,7 @@ img:hover {
 }
 .card-img-top {
   width: 375px;
+
 }
 .card {
   margin: auto;

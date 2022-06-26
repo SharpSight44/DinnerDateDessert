@@ -15,14 +15,18 @@ export const Testing = () => {
     const [luv, setLuv] = useState(false)
     const [loader, setLoader] = useState(false)
     const [imageZip, setImageZip] = useState(false)
+    const [city, setCity] =useState([]);
 
 
+    const sanFran = {name1: "SoMa", name2:"Misson", name3:"Marina", name4:"Upper Haight", img1:"https://www.hiusa.org/wp-content/uploads/2020/02/sanfrancisco-lights-2000-1075x840.jpg", img2:"https://gmcdn-sxcqif3sepi.netdna-ssl.com/city-guides/img/uploads/nhood/original/1492229650.75250.jpg", 
+    img3:"https://www.dylanstours.com/wp-content/uploads/2020/02/unnamed-2.png", zip1:94107, zip2: 94110, zip3:94133, zip4:94117};
+    const miami = {name1: "Wynwood", name2:"Brickell", name3:"South Beach", name4:"Doral", img1:"https://therealdeal.com/miami/wp-content/uploads/2019/06/Wynwood-Credit-Metro-1-650x365.jpg",
+  img2:"https://a.cdn-hotels.com/gdcs/production156/d397/81ce7a3b-5be9-4d0c-89e2-ab7920d94bb9.jpg", img3:"https://seeklogo.com/images/M/miami-beach-logo-C677AF8447-seeklogo.com.png",
+zip1:33127, zip2:33129,zip3:33139}
     const img33139 = "https://seeklogo.com/images/M/miami-beach-logo-C677AF8447-seeklogo.com.png"; 
     const img33127 = "https://therealdeal.com/miami/wp-content/uploads/2019/06/Wynwood-Credit-Metro-1-650x365.jpg";
     const img33129 = "https://a.cdn-hotels.com/gdcs/production156/d397/81ce7a3b-5be9-4d0c-89e2-ab7920d94bb9.jpg";
-    const img94133 = "https://www.dylanstours.com/wp-content/uploads/2020/02/unnamed-2.png";
-    const img94110="https://gmcdn-sxcqif3sepi.netdna-ssl.com/city-guides/img/uploads/nhood/original/1492229650.75250.jpg";
-    const img94107="https://www.hiusa.org/wp-content/uploads/2020/02/sanfrancisco-lights-2000-1075x840.jpg";
+
     
     const cityPicker =(img,zip) => {
       
@@ -30,7 +34,7 @@ export const Testing = () => {
   
       };
 
-  
+ 
   const run = ()=> {
 
     if(appear === false){
@@ -57,23 +61,26 @@ export const Testing = () => {
       
       
       <div><img style={{width:"300px", position:"absolute", top:"20px"}}src={imageZip}></img> <img style={{width:"200px",position:"absolute", left:"422px",top:"-10px", zIndex:"-1"}}src={select} /></div>
-      <Box
+    
+      <Box style={{position:"absolute", left:"25%"}}
       sx={{
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
         '& > *': {
           m: 1,
         },
       }}
     >
+      <ButtonGroup
+        orientation="vertical"
+        aria-label="vertical contained button group"
       
-      <ButtonGroup variant="text" aria-label="text button group">
-        <Button onClick={()=> cityPicker(img33127,33127) } style={{color:"#e8d190"}}>Wynwood</Button>
-        <Button onClick={()=> cityPicker(img33129,33129) } style={{color:"#e8d190"}}>Brickell</Button>
-        <Button onClick={()=> cityPicker(img33139,33139)} style={{color:"#e8d190"}}>South Beach</Button>
+      >
+        <button key="one" className="btn btn-danger btn-sm" onClick={()=> setCity(sanFran)}>San Fran</button>,
+  <button key="two" className="btn btn-danger btn-sm" onClick={()=> setCity(miami)}>Miami</button>,
+  <button key="three" className="btn btn-danger btn-sm" onClick={()=> setCity(sanFran)}>NYC</button>
       </ButtonGroup>
-    </Box>
+      </Box>
+  
     <Box
       sx={{
         display: 'flex',
@@ -86,9 +93,10 @@ export const Testing = () => {
     >
       
       <ButtonGroup variant="text" aria-label="text button group">
-        <Button onClick={()=> cityPicker(img94107,94107) } style={{color:"#e8d190"}}>Downtown SF</Button>
-        <Button onClick={()=> cityPicker(img94110,94110) } style={{color:"#e8d190"}}>Mission</Button>
-        <Button onClick={()=> cityPicker(img94133,94133)} style={{color:"#e8d190"}}>Fisherman's Wharf</Button>
+        <Button onClick={()=> cityPicker(city?.img1,city?.zip1) } style={{color:"#e8d190"}}>{city?.name1}</Button>
+        <Button onClick={()=> cityPicker(city?.img2,city?.zip2) } style={{color:"#e8d190"}}>{city?.name2}</Button>
+        <Button onClick={()=> cityPicker(city?.img3,city?.zip3)} style={{color:"#e8d190"}}>{city?.name3}</Button>
+        <Button onClick={()=> cityPicker(city?.img4,city?.zip4)} style={{color:"#e8d190"}}>{city?.name4}</Button>
       </ButtonGroup>
     </Box>
       <button type="button" className="btn btn-primary btn-sm" style={{marginLeft:"45%", marginTop:"1%"}} onClick={()=> run()} >Next Core Moment</button>
