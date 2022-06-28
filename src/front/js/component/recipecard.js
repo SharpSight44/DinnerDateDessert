@@ -15,6 +15,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Description } from "@mui/icons-material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -63,11 +64,8 @@ export default function RecipeReviewCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
+        <IconButton aria-label="completed outing">
+          <CheckCircleIcon />
         </IconButton>
         <ExpandMore
           expand={expanded}
@@ -85,12 +83,8 @@ export default function RecipeReviewCard(props) {
             Heat 1/2 cup of the broth in a pot until simmering, add saffron and
             set aside for 10 minutes.
           </Typography>
-          <Typography paragraph>
-            {props.description}
-          </Typography>
-          <Typography paragraph>
-            {props.description}
-          </Typography>
+          <Typography paragraph>{props.description}</Typography>
+          <Typography paragraph>{props.description}</Typography>
           <Typography>
             Set aside off of the heat to let rest for 10 minutes, and then
             serve.
