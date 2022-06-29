@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
+			// Adds desires to desires page
 			editDesires: (desire) => {
 				let found = getStore().desires.find(item => item.name == desire.name)
 				if (found) {

@@ -20,6 +20,7 @@ export const Home = () => {
       <div className="homebody">
 
         <div className="container">
+          <h1 className="homepage-title text-center text-white">Welcome to the future of date night</h1>
           <HeroBanner />
           <div className="row">
             <div className="col">
