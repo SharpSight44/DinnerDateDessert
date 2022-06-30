@@ -11,6 +11,8 @@ export const Footer = () => (
       <a href="" rel="noreferrer">
         <img className="footerlogo" src={glassesicon} alt="logo" />
       </a>
+    </div>
+    <div>
       <a
         href="https://play.google.com/store/games"
         rel="noreferrer"
