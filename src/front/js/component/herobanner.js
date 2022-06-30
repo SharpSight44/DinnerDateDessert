@@ -5,7 +5,7 @@ import couplevid2 from "../../Videos/couplevid2.mp4";
 export const HeroBanner = () => {
   return (
     <div className="container-fluid">
-      <div className="hero-banner rounded justify-content-center">
+      <div className="hero-banner rounded">
         <div className="row g-0">
           <div className="col-md">
             <div className="homebanner">

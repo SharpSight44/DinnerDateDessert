@@ -20,6 +20,9 @@
     rgba(16, 39, 33, 1) 67.1%,
     rgba(14, 75, 59, 1) 83%
   );
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
 }
 .homepage-title {
   padding-top: 2rem;
@@ -47,7 +50,6 @@ img:hover {
 }
 /* changed display to inline block added overflow y and changed Width/Height  */
 .homebanner {
-  display: inline-block;
   margin: auto;
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -61,7 +63,7 @@ img:hover {
   width: 100%;
 }
 .card-img-top {
-  width: 315pxpx;
+  width: 315px;
 }
 .card {
   margin: auto;
