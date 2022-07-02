@@ -1,6 +1,6 @@
 {
 	"name": "react-hello-webapp",
-	"homepage": "http://miamileo.com/",
+	
 	"engines": {
 		"node": "16.x"
 	},

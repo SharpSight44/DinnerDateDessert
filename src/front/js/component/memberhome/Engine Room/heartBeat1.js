@@ -4,7 +4,8 @@ import { GlobalZipCode } from "../../../layout";
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { miamiData } from "./activitesData";
+import { soMa, upperHaight, missionDistrict, theMarina } from "./activitesData";
+import { LensTwoTone } from "@mui/icons-material";
 
 
 
@@ -25,6 +26,18 @@ export const HeartBeat = () => {
 
 const sbacts = {name:"Beach Day ", image_url:"https://travel.home.sndimg.com/content/dam/images/travel/fullset/2015/12/04/south-beach-miami-florida.jpg.rend.hgtvcom.1280.960.suffix/1491581428208.jpeg"};
 
+const getActs = (zip) =>{
+ 
+  if(zip== 94107){
+    return setManDate(soMa);
+  } if (zip == 94110)
+  { return setManDate(missionDistrict);
+
+  } else {
+    return setManDate(upperHaight);
+  }
+
+};
   useEffect(() => {
     if(inX > 18)
      
@@ -38,7 +51,7 @@ const sbacts = {name:"Beach Day ", image_url:"https://travel.home.sndimg.com/con
           const dateZip = await getEngineDate(zipCode);
           const dessertZip = await getEngineDessert(zipCode);
          
-         return setDinner(dinnerZip),setDate(dateZip), setDessert(dessertZip),setManDate(sbacts); 
+         return setDinner(dinnerZip),setDate(dateZip), setDessert(dessertZip),getActs(zipCode); 
         };
         fn();
       }, [zipCode]);
@@ -129,13 +142,13 @@ const sbacts = {name:"Beach Day ", image_url:"https://travel.home.sndimg.com/con
                 <b style={{color:"white", fontSize:"16px"}}>{date[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img style={{width:"100%"}}  src={mandate?.image_url} />
+              <img style={{width:"100%"}}  src={date[inZ]?.image_url} />
               
               <FormControlLabel style={{color:"white"}}
         label="Activity"
         control={<Checkbox onChange={()=> selectedDate(date[inZ]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
       />
-                <b style={{color:"white", fontSize:"16px"}}>{mandate.name}</b>
+                <b style={{color:"white", fontSize:"16px"}}>{date[inZ]?.name}</b>
             </div>
             
              </div>
