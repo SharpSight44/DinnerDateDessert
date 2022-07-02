@@ -1,6 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import { getEngineDate, getEngineDessert, getEngineDinner } from "./apiEngine";
 import { GlobalZipCode } from "../../../layout";
+import Box from '@mui/material/Box';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import { miamiData } from "./activitesData";
 
 
 
@@ -13,12 +17,13 @@ export const HeartBeat = () => {
     const [dinner, setDinner] =useState([]);
     const [date, setDate] =useState([]);
     const [dessert, setDessert] =useState([]);
+    const [mandate, setManDate] = useState([]);
   const [inX, setInX] = useState(0);
   const [inY, setInY] = useState(1);
   const [inZ, setInZ] = useState(2);
 
 
-
+const sbacts = {name:"Beach Day ", image_url:"https://travel.home.sndimg.com/content/dam/images/travel/fullset/2015/12/04/south-beach-miami-florida.jpg.rend.hgtvcom.1280.960.suffix/1491581428208.jpeg"};
 
   useEffect(() => {
     if(inX > 18)
@@ -33,7 +38,7 @@ export const HeartBeat = () => {
           const dateZip = await getEngineDate(zipCode);
           const dessertZip = await getEngineDessert(zipCode);
          
-         return setDinner(dinnerZip),setDate(dateZip), setDessert(dessertZip); 
+         return setDinner(dinnerZip),setDate(dateZip), setDessert(dessertZip),setManDate(sbacts); 
         };
         fn();
       }, [zipCode]);
@@ -65,7 +70,11 @@ export const HeartBeat = () => {
         return localStorage.setItem("dessert",JSON.stringify(selectedId))
 
       };
-   
+   const handleCheck = (event) =>{
+    event.persist();
+
+    console.log(event);
+   };
    
     return (
         <>
@@ -73,17 +82,29 @@ export const HeartBeat = () => {
         <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}} src={dinner[inX]?.image_url} />
-              <button onClick={()=> selectedDinner(dinner[inX]?.id)}>Save/select</button>
+              
+              <FormControlLabel style={{color:"white"}}
+        label="Dinner"
+        control={<Checkbox onChange={()=> selectedDinner(dinner[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
                 <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dinner[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dinner[inY]?.image_url} />
-              <button onClick={()=> selectedDinner(dinner[inY]?.id)}>Save/select</button>
+            
+              <FormControlLabel style={{color:"white"}}
+        label="Dinner"
+        control={<Checkbox onChange={()=> selectedDinner(dinner[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
                 <b style={{color:"white", fontSize:"20px"}}>{dinner[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dinner[inZ]?.image_url} />
-              <button onClick={()=> selectedDinner(dinner[inZ]?.id)}>Save/select</button>
+             
+              <FormControlLabel style={{color:"white"}}
+        label="Dinner"
+        control={<Checkbox size="small" onChange={()=> selectedDinner(dinner[inZ]?.id)} sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
                 <b style={{color:"white", fontSize:"20px"}}>{dinner[inZ]?.name}</b>
             </div>
              </div>
@@ -91,18 +112,30 @@ export const HeartBeat = () => {
              <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}}  src={date[inX]?.image_url} />
-              <button onClick={()=> selectedDate(date[inX]?.id)}>Save/select</button>
+             
+              <FormControlLabel style={{color:"white"}}
+        label="Activity"
+        control={<Checkbox onChange={()=> selectedDate(date[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
                 <b style={{color:"white", fontSize:"16px", margin:"10px"}}>{date[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={date[inY]?.image_url} />
-              <button onClick={()=> selectedDate(date[inY]?.id)}>Save/select</button>
+              
+              <FormControlLabel style={{color:"white"}}
+        label="Activity"
+        control={<Checkbox onChange={()=> selectedDate(date[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
                 <b style={{color:"white", fontSize:"16px"}}>{date[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img style={{width:"100%"}}  src={date[inZ]?.image_url} />
-              <button onClick={()=> selectedDate(date[inZ]?.id)}>Save/select</button>
-                <b style={{color:"white", fontSize:"16px"}}>{date[inZ]?.name}</b>
+              <img style={{width:"100%"}}  src={mandate?.image_url} />
+              
+              <FormControlLabel style={{color:"white"}}
+        label="Activity"
+        control={<Checkbox onChange={()=> selectedDate(date[inZ]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
+                <b style={{color:"white", fontSize:"16px"}}>{mandate.name}</b>
             </div>
             
              </div>
@@ -110,17 +143,29 @@ export const HeartBeat = () => {
              <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inX]?.image_url} />
-              <button onClick={()=> selectedDessert(dessert[inX]?.id)}>Save/select</button>
+              
+              <FormControlLabel style={{color:"white"}}
+        label="Dessert"
+        control={<Checkbox onChange={()=> selectedDessert(dessert[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
                 <b style={{color:"white", fontSize:"20px", margin:"10px"}}>{dessert[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inY]?.image_url} />
-              <button onClick={()=> selectedDessert(dessert[inY]?.id)}>Save/select</button>
+              
+              <FormControlLabel style={{color:"white"}}
+        label="Dessert"
+        control={<Checkbox onChange={()=> selectedDessert(dessert[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
                 <b style={{color:"white", fontSize:"20px"}}>{dessert[inY]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inZ]?.image_url} />
-              <button onClick={()=> selectedDessert(dessert[inZ]?.id)}>Save/select</button>
+             
+              <FormControlLabel style={{color:"white"}}
+        label="Dessert"
+        control={<Checkbox onChange={()=> selectedDessert(dessert[inZ]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 20 }}} />}
+      />
                 <b style={{color:"white", fontSize:"20px"}}>{dessert[inZ]?.name}</b>
             </div>
              </div>

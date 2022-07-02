@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Switch from '@mui/material/Switch';
 import { MemberNavbar } from "../../memberNavbar";
 import RingLoader from "react-spinners/RingLoader";
@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import select from '/src/front/img/selectone.png';
 import { GlobalZipCode } from "../../../layout";
 import { HeartBeat } from "./heartBeat1";
+import { getUpComing, getUpComingEvent } from "../SavedOutings/upComingApi";
+
 
 export const Testing = () => {
   const {zipCode, setZipCode} = useContext(GlobalZipCode);
@@ -16,6 +18,28 @@ export const Testing = () => {
     const [loader, setLoader] = useState(false)
     const [imageZip, setImageZip] = useState(false)
     const [city, setCity] =useState([]);
+    const [dinner, setDinner] =useState([]);
+    const [date, setDate] =useState([]);
+    const [dessert, setDessert] =useState([]);
+    
+
+    
+
+ const sDinner = JSON.parse(localStorage.getItem("dinner"));
+ const sDate = JSON.parse(localStorage.getItem("date"));
+ const sDessert = JSON.parse(localStorage.getItem("dessert"));
+    
+    useEffect(() => {
+        const fn = async () => {
+          const apidinner = await getUpComing(sDinner);
+          const apievent = await getUpComingEvent(sDate);
+          const apidessert = await getUpComing(sDessert);
+        
+         
+         return setDinner(apidinner), setDate(apievent), setDessert(apidessert);
+        };
+        fn();
+      }, [sDinner,sDate, sDessert]);
 
 
     const sanFran = {name1: "SoMa", name2:"Misson", name3:"Marina", name4:"Upper Haight", img1:"https://www.hiusa.org/wp-content/uploads/2020/02/sanfrancisco-lights-2000-1075x840.jpg", img2:"https://gmcdn-sxcqif3sepi.netdna-ssl.com/city-guides/img/uploads/nhood/original/1492229650.75250.jpg", 
@@ -109,7 +133,13 @@ zip1:33127, zip2:33129,zip3:33139}
 
       <div style={{marginLeft:"1", marginTop:"1%"}}> { appear == false ? (<img style={{width:"400px", marginLeft:"37%",paddingBottom:"50px"}}src="https://i.pinimg.com/originals/43/13/7c/43137c93e81c667e01c6b32e340572df.png"  />):<div style={{width:"400px", marginLeft:"37%"}}><HeartBeat/></div> }</div>
      
+
+      <div id="house" style={{position:"absolute", right:"13%", bottom:"40%", background:"yellow"}}> 
+      <div className="selectedDinner"> <div> <img style={{width:"75px"}} src={dinner?.image_url} /></div><div>{dinner?.name} </div></div>
+       <div className="selectedDate"> <div> <img style={{width:"75px"}} src={date?.image_url} /> </div><div>{date?.name}</div></div>
+       <div className="selectedDessert"> <div> <img style={{width:"75px"}} src={dessert?.image_url} /></div><div>{dessert?.name}</div></div>  </div>
       </div>
+      
     </>
   );
 };
