@@ -133,9 +133,9 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
         <Button onClick={()=> cityPicker(city?.img4,city?.zip4)} style={{color:"#e8d190"}}>{city?.name4}</Button>
       </ButtonGroup>
     </Box>
-      <button type="button" className="btn btn-primary btn-sm" style={{marginLeft:"45%", marginTop:"1%"}} onClick={()=> run()} >Next Core Moment</button>
+      <button type="button" className="btn btn-primary btn-sm" style={{marginLeft:"45%", marginTop:"1%"}} onClick={()=> run()} >Best Options</button>
       
-      <Switch  color="secondary" onChange={()=> love()}/> <div style={{display:"inline-block", fontSize:"20px", color:"white"}}>Enable Love Lock</div>
+      <Switch  color="secondary" onChange={()=> love()}/> <div style={{display:"inline-block", fontSize:"20px", color:"white"}}>Summer Vibes</div>
 
       {loader == true ? (<div style={{position:"absolute", left:"37%", top:"11%", zIndex:"1",width:"400px", height:"400px", background:"rgb(16,39,33)", paddingLeft:"5%", paddingTop:"5%"}}><RingLoader size={222} loading={loader} margin={2} color={"rgb(62, 250, 247)"} /></div>):" " }
 
