@@ -12,6 +12,7 @@ import "/src/front/styles/test.css";
 import { typography } from '@mui/system';
 import { fontSize } from "@mui/system";
 import Typography from '@mui/material/Typography';
+import ActionAreaCard from "./muicard";
 
 
 
@@ -125,7 +126,8 @@ const getActs = (zip) =>{
         
         <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
-              <img style={{width:"100%"}} src={dinner[inX]?.image_url} />
+            <ActionAreaCard im={dinner[inX]?.image_url} title={dinner[inX]?.name} />
+          
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="14px" color="#cab105"> Dinner</Typography>}
@@ -136,10 +138,10 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px", margin:"10px"}}>{dinner[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img style={{width:"100%"}}  src={dinner[inY]?.image_url} />
+            <ActionAreaCard im={dinner[inY]?.image_url} title={dinner[inY]?.name} />
+             
             
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="14px" color="#cab105"> Dinner</Typography>}
@@ -150,10 +152,11 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px"}}>{dinner[inY]?.name}</b>
+               
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img style={{width:"100%"}}  src={dinner[inZ]?.image_url} />
+            <ActionAreaCard im={dinner[inZ]?.image_url} title={dinner[inZ]?.name} />
+            
              
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="14px" color="#cab105"> Dinner</Typography>}
@@ -164,13 +167,13 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px"}}>{dinner[inZ]?.name}</b>
             </div>
              </div>
 
              <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
-              <img style={{width:"100%"}}  src={mandate[inX]?.image_url} />
+            <ActionAreaCard im={mandate[inX]?.image_url} title={mandate[inX]?.name} />
+            
              
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
@@ -181,10 +184,11 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px", margin:"10px"}}>{mandate[inX]?.name}</b>
+              
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img style={{width:"100%"}}  src={mandate[inY]?.image_url} />
+            <ActionAreaCard im={mandate[inY]?.image_url} title={mandate[inY]?.name} />
+            
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
@@ -195,10 +199,11 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px"}}>{mandate[inY]?.name}</b>
+            
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img style={{width:"100%"}}  src={mandate[inZ]?.image_url} />
+            <ActionAreaCard im={mandate[inZ]?.image_url} title={mandate[inZ]?.name} />
+              
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
@@ -209,17 +214,18 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px"}}>{mandate[inZ]?.name}</b>
+        
             </div>
             
              </div>
 
              <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
-              <img style={{width:"100%"}}  src={dessert[inX]?.image_url} />
+            <ActionAreaCard im={dessert[inX]?.image_url} title={dessert[inX]?.name} />
+          
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-        label={<Typography  fontSize="12px" color="#ff2565">Dessert</Typography>}
+        label={<Typography  fontSize="13px" color="#ff2565">Dessert</Typography>}
         control={<Checkbox onChange={()=> selectedDessert(dessert[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#ff2565",
           '&.Mui-checked': {
@@ -227,13 +233,13 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px", margin:"10px"}}>{dessert[inX]?.name}</b>
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img style={{width:"100%"}}  src={dessert[inY]?.image_url} />
+            <ActionAreaCard im={dessert[inY]?.image_url} title={dessert[inY]?.name} />
+             
               
              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-        label={<Typography  fontSize="12px" color="#ff2565">Dessert</Typography>}
+        label={<Typography  fontSize="13px" color="#ff2565">Dessert</Typography>}
         control={<Checkbox onChange={()=> selectedDessert(dessert[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#ff2565",
           '&.Mui-checked': {
@@ -241,13 +247,14 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px"}}>{dessert[inY]?.name}</b>
+            
             </div>
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
-              <img style={{width:"100%"}}  src={dessert[inZ]?.image_url} />
+            <ActionAreaCard im={dessert[inZ]?.image_url} title={dessert[inZ]?.name} />
+            
              
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-              label={<Typography  fontSize="12px" color="#ff2565">Dessert</Typography>}
+              label={<Typography  fontSize="13px" color="#ff2565">Dessert</Typography>}
         
         control={<Checkbox onChange={()=> selectedDessert(dessert[inZ]?.id)} size="small"  sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#ff2565",
@@ -256,7 +263,7 @@ const getActs = (zip) =>{
           },
         }} />}
       />
-                <b style={{color:"white", fontSize:"16px"}}>{dessert[inZ]?.name}</b>
+            
                
             </div>
              </div>
