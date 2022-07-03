@@ -8,6 +8,11 @@ import { soMa, upperHaight, missionDistrict, theMarina, financial,southBeach, wy
 import { LensTwoTone } from "@mui/icons-material";
 import {pink} from '@mui/material/colors';
 import Button from '@mui/material/Button';
+import "/src/front/styles/test.css";
+import { typography } from '@mui/system';
+import { fontSize } from "@mui/system";
+import Typography from '@mui/material/Typography';
+
 
 
 
@@ -122,12 +127,12 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}} src={dinner[inX]?.image_url} />
               
-              <FormControlLabel style={{color:"white"}}
-        label="Dinner"
-        control={<Checkbox onChange={()=> selectedDinner(dinner[inX]?.id)} size="small" sx={{
-          color: pink[800],
+              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+        label={<Typography  fontSize="14px" color="#cab105"> Dinner</Typography>}
+        control={<Checkbox onChange={()=> selectedDinner(dinner[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#cab105",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#cab105",
           },
         }} />}
       />
@@ -136,12 +141,12 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dinner[inY]?.image_url} />
             
-              <FormControlLabel style={{color:"white"}}
-        label="Dinner"
-        control={<Checkbox onChange={()=> selectedDinner(dinner[inY]?.id)} size="small" sx={{
-          color: pink[800],
+              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+        label={<Typography  fontSize="14px" color="#cab105"> Dinner</Typography>}
+        control={<Checkbox onChange={()=> selectedDinner(dinner[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#cab105",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#cab105",
           },
         }} />}
       />
@@ -150,12 +155,12 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dinner[inZ]?.image_url} />
              
-              <FormControlLabel style={{color:"white", fontSize:"8px"}}
-        label="Dinner"
-        control={<Checkbox size="small" onChange={()=> selectedDinner(dinner[inZ]?.id)} sx={{
-          color: pink[800],
+              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+        label={<Typography  fontSize="14px" color="#cab105"> Dinner</Typography>}
+        control={<Checkbox size="small" onChange={()=> selectedDinner(dinner[inZ]?.id)} sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#cab105",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#cab105",
           },
         }} />}
       />
@@ -167,12 +172,12 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}}  src={mandate[inX]?.image_url} />
              
-              <FormControlLabel style={{color:"white"}}
-        label="Activity"
-        control={<Checkbox onChange={()=> selectedDate(date[inX]?.id)} size="small" sx={{
-          color: pink[800],
+              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+        label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
+        control={<Checkbox onChange={()=> selectedDate(date[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#2fcf18",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#2fcf18",
           },
         }} />}
       />
@@ -181,12 +186,12 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={mandate[inY]?.image_url} />
               
-              <FormControlLabel style={{color:"white"}}
-        label="Activity"
-        control={<Checkbox onChange={()=> selectedDate(date[inY]?.id)} size="small" sx={{
-          color: pink[800],
+              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+        label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
+        control={<Checkbox onChange={()=> selectedDate(date[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#2fcf18",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#2fcf18",
           },
         }} />}
       />
@@ -195,12 +200,12 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={mandate[inZ]?.image_url} />
               
-              <FormControlLabel style={{color:"white"}}
-        label="Activity"
-        control={<Checkbox onChange={()=> selectedDate(date[inZ]?.id)} size="small" sx={{
-          color: pink[800],
+              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+        label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
+        control={<Checkbox onChange={()=> selectedDate(date[inZ]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#2fcf18",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#2fcf18",
           },
         }} />}
       />
@@ -213,12 +218,12 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inX]?.image_url} />
               
-              <FormControlLabel style={{color:"white"}}
-        label="Dessert"
-        control={<Checkbox onChange={()=> selectedDessert(dessert[inX]?.id)} size="small" sx={{
-          color: pink[800],
+              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+        label={<Typography  fontSize="12px" color="#ff2565">Dessert</Typography>}
+        control={<Checkbox onChange={()=> selectedDessert(dessert[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#ff2565",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#ff2565",
           },
         }} />}
       />
@@ -227,12 +232,12 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inY]?.image_url} />
               
-              <FormControlLabel style={{color:"white"}}
-        label="Dessert"
-        control={<Checkbox onChange={()=> selectedDessert(dessert[inY]?.id)} size="small" sx={{
-          color: pink[800],
+             <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+        label={<Typography  fontSize="12px" color="#ff2565">Dessert</Typography>}
+        control={<Checkbox onChange={()=> selectedDessert(dessert[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#ff2565",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#ff2565",
           },
         }} />}
       />
@@ -241,16 +246,18 @@ const getActs = (zip) =>{
             <div style={{width:"110px",display:"inline-block",margin:"10px"}}>
               <img style={{width:"100%"}}  src={dessert[inZ]?.image_url} />
              
-              <FormControlLabel style={{color:"white"}}
-        label="Dessert"
-        control={<Checkbox onChange={()=> selectedDessert(dessert[inZ]?.id)} size="small" sx={{
-          color: pink[800],
+              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
+              label={<Typography  fontSize="12px" color="#ff2565">Dessert</Typography>}
+        
+        control={<Checkbox onChange={()=> selectedDessert(dessert[inZ]?.id)} size="small"  sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+          color: "#ff2565",
           '&.Mui-checked': {
-            color: pink[600],
+            color: "#ff2565",
           },
         }} />}
       />
                 <b style={{color:"white", fontSize:"16px"}}>{dessert[inZ]?.name}</b>
+               
             </div>
              </div>
              <div style={{marginLeft:"39%",marginTop:"3%"}}><button type="button" className="btn btn-primary btn-md" style={{background:"#e6e600", color:"#333300"}} onClick={()=>getMore()}   >More</button></div>

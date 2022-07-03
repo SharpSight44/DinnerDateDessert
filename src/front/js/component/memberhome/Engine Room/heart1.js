@@ -21,6 +21,7 @@ import dor from '/src/front/img/doral.png';
 import brook from '/src/front/img/brooklynnyc.jpg';
 import couple from '/src/front/img/you.png';
 import dates from '/src/front/img/dates.png';
+import { Typography } from "@mui/material";
 
 
 export const Testing = () => {
@@ -109,9 +110,9 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
         aria-label="vertical contained button group"
       
       >
-        <button key="one" className="btn btn-danger btn-sm" onClick={()=> setCity(sanFran)}>San Fran</button>,
-  <button key="two" className="btn btn-danger btn-sm" onClick={()=> setCity(miami)}>Miami</button>,
-  <button key="three" className="btn btn-danger btn-sm" onClick={()=> setCity(newYork)}>NYC</button>
+        <button key="one" className="btn  btn-sm" style={{background:"#582131"}} onClick={()=> setCity(sanFran)}>San Fran</button>,
+  <button key="two" className="btn  btn-sm" style={{background:"#00d5c8", color:"#9e0074"}} onClick={()=> setCity(miami)}>Miami</button>,
+  <button key="three" className="btn  btn-sm" style={{background:"#304674"}}onClick={()=> setCity(newYork)}>NYC</button>
       </ButtonGroup>
       </Box>
   
