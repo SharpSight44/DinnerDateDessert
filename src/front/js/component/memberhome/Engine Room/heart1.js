@@ -5,10 +5,22 @@ import RingLoader from "react-spinners/RingLoader";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
-import select from '/src/front/img/selectone.png';
+import bree from '/src/front/img/sel2.png';
 import { GlobalZipCode } from "../../../layout";
 import { HeartBeat } from "./heartBeat1";
 import { getUpComing, getUpComingEvent } from "../SavedOutings/upComingApi";
+import soho from '/src/front/img/GreenwichVillagenyc.jpg';
+import upperEast from '/src/front/img/uppereastsidenyc.jpg';
+import fini from '/src/front/img/Financenyc.jpg';
+import hai from '/src/front/img/haightSF.png';
+import marina1 from '/src/front/img/MarinaSF.jpg';
+import mission1 from '/src/front/img/MissionSF.png';
+import so from '/src/front/img/SoMA.png';
+import wyn from '/src/front/img/Wynwood.jpg';
+import dor from '/src/front/img/doral.png';
+import brook from '/src/front/img/brooklynnyc.jpg';
+import couple from '/src/front/img/you.png';
+import dates from '/src/front/img/dates.png';
 
 
 export const Testing = () => {
@@ -16,7 +28,7 @@ export const Testing = () => {
     const [appear, setAppear] = useState(false)
     const [luv, setLuv] = useState(false)
     const [loader, setLoader] = useState(false)
-    const [imageZip, setImageZip] = useState(false)
+    const [imageZip, setImageZip] = useState(dates);
     const [city, setCity] =useState([]);
     const [dinner, setDinner] =useState([]);
     const [date, setDate] =useState([]);
@@ -42,15 +54,13 @@ export const Testing = () => {
       }, [sDinner,sDate, sDessert]);
 
 
-    const sanFran = {name1: "SoMa", name2:"Misson", name3:"Marina", name4:"Upper Haight", img1:"https://www.hiusa.org/wp-content/uploads/2020/02/sanfrancisco-lights-2000-1075x840.jpg", img2:"https://gmcdn-sxcqif3sepi.netdna-ssl.com/city-guides/img/uploads/nhood/original/1492229650.75250.jpg", 
-    img3:"https://www.dylanstours.com/wp-content/uploads/2020/02/unnamed-2.png", zip1:94107, zip2: 94110, zip3:94133, zip4:94117};
-    const miami = {name1: "Wynwood", name2:"Brickell", name3:"South Beach", name4:"Doral", img1:"https://therealdeal.com/miami/wp-content/uploads/2019/06/Wynwood-Credit-Metro-1-650x365.jpg",
-  img2:"https://a.cdn-hotels.com/gdcs/production156/d397/81ce7a3b-5be9-4d0c-89e2-ab7920d94bb9.jpg", img3:"https://seeklogo.com/images/M/miami-beach-logo-C677AF8447-seeklogo.com.png",
-zip1:33127, zip2:33129,zip3:33139}
-    const img33139 = "https://seeklogo.com/images/M/miami-beach-logo-C677AF8447-seeklogo.com.png"; 
-    const img33127 = "https://therealdeal.com/miami/wp-content/uploads/2019/06/Wynwood-Credit-Metro-1-650x365.jpg";
-    const img33129 = "https://a.cdn-hotels.com/gdcs/production156/d397/81ce7a3b-5be9-4d0c-89e2-ab7920d94bb9.jpg";
-
+    const sanFran = {name1: "SoMa", name2:"Misson", name3:"Marina", name4:"Upper Haight", img1:so, img2:mission1, 
+    img3:marina1, img4:hai, zip1:94107, zip2: 94110, zip3: 94133, zip4: 94117};
+    const miami = {name1: "Wynwood", name2:"Brickell", name3:"South Beach", name4:"Doral", img1:wyn,
+  img2:"https://a.cdn-hotels.com/gdcs/production156/d397/81ce7a3b-5be9-4d0c-89e2-ab7920d94bb9.jpg", img3:"https://seeklogo.com/images/M/miami-beach-logo-C677AF8447-seeklogo.com.png",img4:dor,
+zip1: 33127, zip2: 33129, zip3: 33139, zip4: 33166};
+const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn",name4:"Financial District", img1:soho, img2:upperEast,img3:brook,img4:fini, zip1:10012,zip2:10065,zip3:11205,zip4:10004};
+    
     
     const cityPicker =(img,zip) => {
       
@@ -84,7 +94,7 @@ zip1:33127, zip2:33129,zip3:33139}
       <div></div><div style={luv === false ? {background:"",marginLeft:"200px", marginRight:"200px", position:"relative"}:{position:"relative",background:"rgba(255,182,193, 0.55)",marginLeft:"200px", marginRight:"200px", border:"3px dashed pink"}}>
       
       
-      <div><img style={{width:"300px", position:"absolute", top:"20px"}}src={imageZip}></img> <img style={{width:"200px",position:"absolute", left:"422px",top:"-10px", zIndex:"-1"}}src={select} /></div>
+      <div><img style={{width:"300px", position:"absolute", top:"20px", borderRadius:"5%"}}src={imageZip}></img> <img style={{width:"200px",position:"absolute", left:"433px",bottom:"320px", zIndex:"-1"}}src={bree}/></div>
     
       <Box style={{position:"absolute", left:"25%"}}
       sx={{
@@ -101,7 +111,7 @@ zip1:33127, zip2:33129,zip3:33139}
       >
         <button key="one" className="btn btn-danger btn-sm" onClick={()=> setCity(sanFran)}>San Fran</button>,
   <button key="two" className="btn btn-danger btn-sm" onClick={()=> setCity(miami)}>Miami</button>,
-  <button key="three" className="btn btn-danger btn-sm" onClick={()=> setCity(sanFran)}>NYC</button>
+  <button key="three" className="btn btn-danger btn-sm" onClick={()=> setCity(newYork)}>NYC</button>
       </ButtonGroup>
       </Box>
   
@@ -131,13 +141,13 @@ zip1:33127, zip2:33129,zip3:33139}
 
       
 
-      <div style={{marginLeft:"1", marginTop:"1%"}}> { appear == false ? (<img style={{width:"400px", marginLeft:"37%",paddingBottom:"50px"}}src="https://i.pinimg.com/originals/43/13/7c/43137c93e81c667e01c6b32e340572df.png"  />):<div style={{width:"400px", marginLeft:"37%"}}><HeartBeat/></div> }</div>
+      <div style={{marginLeft:"1", marginTop:"1%"}}> { appear == false ? (<img style={{width:"400px", marginLeft:"37%",borderRadius:"7%"}}src={couple}  />):<div style={{width:"400px", marginLeft:"37%"}}><HeartBeat/></div> }</div>
      
 
-      <div id="house" style={{position:"absolute", right:"13%", bottom:"40%", background:"yellow"}}> 
+      {/* <div id="house" style={{position:"absolute", right:"13%", bottom:"40%", background:"yellow"}}> 
       <div className="selectedDinner"> <div> <img style={{width:"75px"}} src={dinner?.image_url} /></div><div>{dinner?.name} </div></div>
        <div className="selectedDate"> <div> <img style={{width:"75px"}} src={date?.image_url} /> </div><div>{date?.name}</div></div>
-       <div className="selectedDessert"> <div> <img style={{width:"75px"}} src={dessert?.image_url} /></div><div>{dessert?.name}</div></div>  </div>
+       <div className="selectedDessert"> <div> <img style={{width:"75px"}} src={dessert?.image_url} /></div><div>{dessert?.name}</div></div>  </div> */}
       </div>
       
     </>

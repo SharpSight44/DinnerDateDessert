@@ -8,6 +8,7 @@ export const Version1 = () => {
 	return (
 		<>
         <Testing/>
+        <div style={{height:"100px"}}></div>
         <ExploreComponent/>
         
         
