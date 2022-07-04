@@ -115,12 +115,9 @@ const getActs = (zip) =>{
       };
 
       const selectedDate = (selectedId) =>{
-        const fn = async () => {
-          const apidate = await getUpComingEvent(selectedId);
 
-        return setSdate(apidate);
-        };
-        fn();
+        return setSdate(selectedId);
+        
 
 
       };
@@ -201,7 +198,7 @@ const getActs = (zip) =>{
              
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="14px" color="#2fcf18"> Activity</Typography>}
-        control={<Checkbox onChange={()=> selectedDate(date[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+        control={<Checkbox onChange={()=> selectedDate(mandate[inX])} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#2fcf18",
           '&.Mui-checked': {
             color: "#2fcf18",
@@ -216,7 +213,7 @@ const getActs = (zip) =>{
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="14px" color="#2fcf18"> Activity</Typography>}
-        control={<Checkbox onChange={()=> selectedDate(date[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+        control={<Checkbox onChange={()=> selectedDate(mandate[inY])} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#2fcf18",
           '&.Mui-checked': {
             color: "#2fcf18",
@@ -231,7 +228,7 @@ const getActs = (zip) =>{
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
         label={<Typography  fontSize="14px" color="#2fcf18"> Activity</Typography>}
-        control={<Checkbox onChange={()=> selectedDate(date[inZ]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
+        control={<Checkbox onChange={()=> selectedDate(mandate[inZ])} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#2fcf18",
           '&.Mui-checked': {
             color: "#2fcf18",
