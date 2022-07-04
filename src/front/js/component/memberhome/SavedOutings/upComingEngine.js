@@ -40,7 +40,7 @@ export const UpComingEngine = () => {
           Dinner
         </p>
        
-        <div>{list.map((x,i)=> ()=> collect(x?.dinner, x?.dessert) <div key={i}> 
+        <div>{list.map((x,i)=>  <div key={i}> {()=> collect(x?.dinner, x?.dessert)}
         <RecipeReviewCard name={dinner?.name} image={dinner?.image_url} description={dinner?.rating} location={dinner?.location?.display_address} />
         <RecipeReviewCard name={x?.dateName} image={x?.dateImg} description={x?.dateDes} location="" />
         <RecipeReviewCard name={dessert?.name} image={dessert?.image_url} description={dessert?.rating} location={dessert?.location?.display_address}  />

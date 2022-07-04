@@ -19,7 +19,7 @@ class User(db.Model):
         }
 
 class UpComing(db.Model):
-    __tablename__ = 'upComing'
+    __tablename__ = 'upcoming'
     id = db.Column(db.Integer, primary_key=True)
     dinner = db.Column(db.String(200))
     dessert = db.Column(db.String(200))
@@ -30,7 +30,7 @@ class UpComing(db.Model):
     user = db.relationship('User')
 
     def __repr__(self):
-        return f"<UpComing {self.id}>"
+        return f"<Upcoming {self.id}>"
     
     def serialize(self):
         return {
