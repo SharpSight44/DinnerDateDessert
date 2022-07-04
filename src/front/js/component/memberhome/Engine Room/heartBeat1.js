@@ -16,6 +16,9 @@ import ActionAreaCard from "./muicard";
 import ImgMediaCard from "./selectedCards";
 import { UpComingEngine } from "../SavedOutings/upComingEngine";
 import { getUpComing, getUpComingEvent } from "../SavedOutings/upComingApi";
+import { postUpcoming } from "./upComingApi";
+
+
 
 
 
@@ -36,6 +39,16 @@ export const HeartBeat = () => {
   const [inY, setInY] = useState(1);
   const [inZ, setInZ] = useState(2);
 
+  const saveStack = (dinnerId,dessertId,dateName,dateImg,dateDes) =>{
+
+    const setStack = {dinner:dinnerId, dessert:dessertId,dateName:dateName,dateImg:dateImg,dateDes:dateDes};
+
+
+
+    return postUpcoming(setStack);
+
+
+  };
 
 const getActs = (zip) =>{
  
@@ -143,7 +156,7 @@ const getActs = (zip) =>{
    
     return (
         <>
-        <div style={{display:"flex"}} claasName="allCardsContainer">
+        <div style={{display:"flex"}} className="allCardsContainer">
         <div style={{display:"inline-block"}} className="resultsCards">
         <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
@@ -301,6 +314,7 @@ const getActs = (zip) =>{
               <div style={{marginTop:"10px"}}>
                { sdes == false? "":(<ImgMediaCard im={sdes?.image_url} title="Selected dessert" des={sdes?.name} />)}
               </div>
+              { sdin == false? "":(<button className="btn  btn-sm" style={{marginLeft:"15%",background:"#44a11d"}} onClick={()=> saveStack(sdin?.id,sdes?.id,sdate?.name,sdate?.image_url,sdate?.description)}>Save Stack</button>)}
               </div>
              </div>
            
