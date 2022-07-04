@@ -73,7 +73,7 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
   const run = ()=> {
 
     if(appear === false){
-    return setTimeout(() => setLoader(false), 4000), setTimeout(() => setAppear(true), 3000),setLoader(true)}
+    return setTimeout(() => setLoader(false), 1000), setTimeout(() => setAppear(true), 1000),setLoader(true)}
     else {return setAppear(false)
     }
 
@@ -142,7 +142,7 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
 
       
 
-      <div style={{marginLeft:"1", marginTop:"1%"}}> { appear == false ? (<img style={{width:"400px", marginLeft:"37%",borderRadius:"7%"}}src={couple}  />):<div style={{width:"400px", marginLeft:"37%"}}><HeartBeat/></div> }</div>
+      <div style={{marginLeft:"1", marginTop:"1%"}}> { appear == false ? (<img style={{width:"400px", marginLeft:"37%",borderRadius:"7%"}}src={couple}  />):<div style={{width:"800px", marginLeft:"37%"}}><HeartBeat/></div> }</div>
      
 
       {/* <div id="house" style={{position:"absolute", right:"13%", bottom:"40%", background:"yellow"}}> 

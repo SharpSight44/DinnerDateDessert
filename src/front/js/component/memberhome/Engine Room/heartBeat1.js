@@ -13,6 +13,9 @@ import { typography } from '@mui/system';
 import { fontSize } from "@mui/system";
 import Typography from '@mui/material/Typography';
 import ActionAreaCard from "./muicard";
+import ImgMediaCard from "./selectedCards";
+import { UpComingEngine } from "../SavedOutings/upComingEngine";
+import { getUpComing, getUpComingEvent } from "../SavedOutings/upComingApi";
 
 
 
@@ -22,7 +25,9 @@ import ActionAreaCard from "./muicard";
 
 export const HeartBeat = () => {
     const {zipCode, setZipCode}= useContext(GlobalZipCode);
-    
+    const[sdin,setSdin] = useState([]);
+    const[sdate,setSdate] = useState([]);
+    const[sdes,setSdes] = useState([]);
     const [dinner, setDinner] =useState([]);
     const [date, setDate] =useState([]);
     const [dessert, setDessert] =useState([]);
@@ -100,21 +105,39 @@ const getActs = (zip) =>{
       };
    
       const selectedDinner = (selectedId) =>{
+        const fn = async () => {
+          const apidinner = await getUpComing(selectedId);
 
-        return localStorage.setItem("dinner",JSON.stringify(selectedId))
+        return setSdin(apidinner);
+        };
+        fn();
 
       };
 
       const selectedDate = (selectedId) =>{
+        const fn = async () => {
+          const apidate = await getUpComingEvent(selectedId);
 
-        return localStorage.setItem("date",JSON.stringify(selectedId))
+        return setSdate(apidate);
+        };
+        fn();
+
 
       };
       const selectedDessert = (selectedId) =>{
+        const fn = async () => {
+          const apidessert = await getUpComing(selectedId);
 
-        return localStorage.setItem("dessert",JSON.stringify(selectedId))
+        return setSdes(apidessert);
+        };
+        fn();
+
 
       };
+
+    
+
+
    const handleCheck = (event) =>{
     event.persist();
 
@@ -123,7 +146,8 @@ const getActs = (zip) =>{
    
     return (
         <>
-        
+        <div style={{display:"flex"}} claasName="allCardsContainer">
+        <div style={{display:"inline-block"}} className="resultsCards">
         <div style={{display:"flex"}}>
             <div style={{width:"110px",display:"inline-block", margin:"10px"}}>
             <ActionAreaCard im={dinner[inX]?.image_url} title={dinner[inX]?.name} />
@@ -176,7 +200,7 @@ const getActs = (zip) =>{
             
              
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-        label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
+        label={<Typography  fontSize="14px" color="#2fcf18"> Activity</Typography>}
         control={<Checkbox onChange={()=> selectedDate(date[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#2fcf18",
           '&.Mui-checked': {
@@ -191,7 +215,7 @@ const getActs = (zip) =>{
             
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-        label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
+        label={<Typography  fontSize="14px" color="#2fcf18"> Activity</Typography>}
         control={<Checkbox onChange={()=> selectedDate(date[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#2fcf18",
           '&.Mui-checked': {
@@ -206,7 +230,7 @@ const getActs = (zip) =>{
               
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-        label={<Typography  fontSize="13px" color="#2fcf18"> Activity</Typography>}
+        label={<Typography  fontSize="14px" color="#2fcf18"> Activity</Typography>}
         control={<Checkbox onChange={()=> selectedDate(date[inZ]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#2fcf18",
           '&.Mui-checked': {
@@ -225,7 +249,7 @@ const getActs = (zip) =>{
           
               
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-        label={<Typography  fontSize="13px" color="#ff2565">Dessert</Typography>}
+        label={<Typography  fontSize="14px" color="#ff2565">Dessert</Typography>}
         control={<Checkbox onChange={()=> selectedDessert(dessert[inX]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#ff2565",
           '&.Mui-checked': {
@@ -239,7 +263,7 @@ const getActs = (zip) =>{
              
               
              <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-        label={<Typography  fontSize="13px" color="#ff2565">Dessert</Typography>}
+        label={<Typography  fontSize="14px" color="#ff2565">Dessert</Typography>}
         control={<Checkbox onChange={()=> selectedDessert(dessert[inY]?.id)} size="small" sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#ff2565",
           '&.Mui-checked': {
@@ -254,7 +278,7 @@ const getActs = (zip) =>{
             
              
               <FormControlLabel labelPlacement="start" style={{marginInlineEnd:"15px"}}
-              label={<Typography  fontSize="13px" color="#ff2565">Dessert</Typography>}
+              label={<Typography  fontSize="14px" color="#ff2565">Dessert</Typography>}
         
         control={<Checkbox onChange={()=> selectedDessert(dessert[inZ]?.id)} size="small"  sx={{'& .MuiSvgIcon-root': { fontSize: 15 },
           color: "#ff2565",
@@ -268,6 +292,21 @@ const getActs = (zip) =>{
             </div>
              </div>
              <div style={{marginLeft:"39%",marginTop:"3%"}}><button type="button" className="btn btn-primary btn-md" style={{background:"#e6e600", color:"#333300"}} onClick={()=>getMore()}   >More</button></div>
+
+             </div>
+             <div style={{width:"500px", marginLeft:"70px"}}>
+              <div >
+               { sdin == false? "":(<ImgMediaCard im={sdin?.image_url} title="Selected Dinner" des={sdin?.name} />) }
+              </div>
+              <div style={{marginTop:"10px"}}>
+                { sdate ==false ? "":(<ImgMediaCard im={sdate?.image_url} title="Selected Activity" des={sdate?.name} />)}
+              </div>
+              <div style={{marginTop:"10px"}}>
+               { sdes == false? "":(<ImgMediaCard im={sdes?.image_url} title="Selected dessert" des={sdes?.name} />)}
+              </div>
+              </div>
+             </div>
+           
        
         </>
     );
