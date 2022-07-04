@@ -4,7 +4,7 @@ import { GlobalZipCode } from "../../../layout";
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { soMa, upperHaight, missionDistrict, theMarina, financial,southBeach, wynwood,doral,brickell } from "./activitesData";
+import { soMa, upperHaight, missionDistrict, theMarina, financial,southBeach, wynwood,doral,brickell, upperEastSide, soho, brooklyn } from "./activitesData";
 import { LensTwoTone } from "@mui/icons-material";
 import {pink} from '@mui/material/colors';
 import Button from '@mui/material/Button';
@@ -51,13 +51,13 @@ const getActs = (zip) =>{
 
   }if(zip== 100004){
     return setManDate(financial);
-  } if (zip == 94110)
-  { return setManDate(missionDistrict);
+  } if (zip == 10012)
+  { return setManDate(soho);
 
-  }if(zip== 33127){
-    return setManDate(soMa);
-  } if (zip == 33139)
-  { return setManDate(missionDistrict);
+  }if(zip== 10065){
+    return setManDate(upperEastSide);
+  } if (zip == 11205)
+  { return setManDate(brooklyn);
 
   }if(zip== 33129){
     return setManDate(brickell);
