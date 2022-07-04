@@ -38,6 +38,7 @@ class UpComing(db.Model):
             'dinner': self.dinner,
             'dessert': self.dessert,
             'dateName': self.dateName,
+            'dateImg': self.dateImg,
             'dateDes': self.dateDes
         }
 

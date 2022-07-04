@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { getEngineDate, getEngineDessert, getEngineDinner } from "./apiEngine";
-import { GlobalZipCode } from "../../../layout";
+import { DataBaseChange, GlobalZipCode } from "../../../layout";
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -27,6 +27,7 @@ import { postUpcoming } from "./upComingApi";
 
 
 export const HeartBeat = () => {
+  const {dataUpdate, setDataUpdate} = useContext(DataBaseChange);
     const {zipCode, setZipCode}= useContext(GlobalZipCode);
     const[sdin,setSdin] = useState([]);
     const[sdate,setSdate] = useState([]);
@@ -42,10 +43,11 @@ export const HeartBeat = () => {
   const saveStack = (dinnerId,dessertId,dateName,dateImg,dateDes) =>{
 
     const setStack = {dinner:dinnerId, dessert:dessertId,dateName:dateName,dateImg:dateImg,dateDes:dateDes};
+    const render = dataUpdate + 1 ;
 
 
 
-    return postUpcoming(setStack);
+    return postUpcoming(setStack), setDataUpdate(render);
 
 
   };

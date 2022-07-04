@@ -116,3 +116,13 @@ def handle_memories_post():
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200
+
+@api.route('/upcominglist', methods=['GET'])
+def handle_upcoming_list():
+    uplist = UpComing.query.all()
+
+    response = []
+    for u in uplist:
+        response.append(u.serialize())
+    
+    return jsonify(response)

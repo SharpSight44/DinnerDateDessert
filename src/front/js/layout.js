@@ -27,6 +27,7 @@ export const LoginWindow = React.createContext();
 export const ProtectedPath = React.createContext();
 export const UserProfile = React.createContext();
 export const GlobalZipCode = React.createContext();
+export const DataBaseChange = React.createContext();
 
 //create your first component
 const Layout = () => {
@@ -41,6 +42,9 @@ const Layout = () => {
   const userProfile = {user, setUser };
   const [zipCode, setZipCode] = useState(33139);
   const zipCodeGlobal = {zipCode, setZipCode };
+  const [dataUpdate, setDataUpdate] = useState(0);
+  const dataChange = {dataUpdate, setDataUpdate };
+
  
   return (
     <div>
@@ -51,6 +55,7 @@ const Layout = () => {
               <ProtectedPath.Provider value={access}>
                 <UserProfile.Provider value={userProfile}>
                   <GlobalZipCode.Provider value={zipCodeGlobal}>
+                  <DataBaseChange.Provider value={dataChange}>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -95,7 +100,8 @@ const Layout = () => {
                 <Goodbye />
                 
               </Route>
-          
+
+              </DataBaseChange.Provider>
               </GlobalZipCode.Provider>
               </UserProfile.Provider>
               </ProtectedPath.Provider>

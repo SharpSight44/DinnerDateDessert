@@ -1,26 +1,37 @@
 import React, { useContext, useState, useEffect } from "react";
+import { DataBaseChange } from "../../../layout";
 import RecipeReviewCard from "../../recipecard";
+import { getUpcomingList } from "../Engine Room/upComingApi";
 import { getUpComing, getUpComingEvent } from "./upComingApi";
 
 export const UpComingEngine = () => {
-  const [dinner, setDinner] = useState([]);
-  const [date, setDate] = useState([]);
+  const [list, setList] = useState([]);
+  const {dataUpdate, setDataUpdate} =useContext(DataBaseChange)
+  const [dinner, setDinner] =useState([]);
   const [dessert, setDessert] = useState([]);
-
-  const sDinner = JSON.parse(localStorage.getItem("dinner"));
-  const sDate = JSON.parse(localStorage.getItem("date"));
-  const sDessert = JSON.parse(localStorage.getItem("dessert"));
 
   useEffect(() => {
     const fn = async () => {
-      const apidinner = await getUpComing(sDinner);
-      const apievent = await getUpComingEvent(sDate);
-      const apidessert = await getUpComing(sDessert);
+      const apiList = await getUpcomingList();
 
-      return setDinner(apidinner), setDate(apievent), setDessert(apidessert);
+
+      return setList(apiList);
     };
     fn();
-  }, [sDinner, sDate, sDessert]);
+  }, [dataUpdate]);
+
+  const collect = (din,des) => {
+    const fn = async () => {
+      const fullDin = await getUpComing(din);
+      const fullDes = await getUpComing(des);
+
+
+      return setDinner(fullDin), setDessert(fullDes);
+    };
+    fn();
+
+    
+  };
 
   return (
     <>
@@ -28,34 +39,16 @@ export const UpComingEngine = () => {
         <p style={{ fontSize: "33px", fontWeight: "bold", color: "white" }}>
           Dinner
         </p>
-        <RecipeReviewCard
-          name={dinner?.name}
-          image={dinner?.image_url}
-          description={dinner?.rating}
-          location={dinner?.location?.display_address}
-        />
-      </div>
-      <div style={{ display: "inline-block", marginLeft: "30px" }}>
-        <p style={{ fontSize: "33px", fontWeight: "bold", color: "white" }}>
-          Date
-        </p>
-        <RecipeReviewCard
-          name={date?.name}
-          image={date?.image_url}
-          description={date?.description}
-          location={date?.location?.display_address}
-        />
-      </div>
-      <div style={{ display: "inline-block", marginLeft: "30px" }}>
-        <p style={{ fontSize: "33px", fontWeight: "bold", color: "white" }}>
-          Dessert
-        </p>
-        <RecipeReviewCard
-          name={dessert?.name}
-          image={dessert?.image_url}
-          description={dessert?.rating}
-          location={dessert?.location?.display_address}
-        />
+       
+        <div>{list.map((x,i)=> ()=> collect(x?.dinner, x?.dessert) <div key={i}> 
+        <RecipeReviewCard name={dinner?.name} image={dinner?.image_url} description={dinner?.rating} location={dinner?.location?.display_address} />
+        <RecipeReviewCard name={x?.dateName} image={x?.dateImg} description={x?.dateDes} location="" />
+        <RecipeReviewCard name={dessert?.name} image={dessert?.image_url} description={dessert?.rating} location={dessert?.location?.display_address}  />
+
+
+        
+        
+        </div>)}</div>
       </div>
     </>
   );
