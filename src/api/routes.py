@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Desires, UpComing
 from api.utils import generate_sitemap, APIException
 import requests
 import os
@@ -91,3 +91,20 @@ def handle_dessert(id):
     run = r.json()
     
     return jsonify(run), 200
+
+@api.route('/upcoming', methods=['POST'])
+def handle_upcoming_post():
+    payload = request.get_json()
+    info = UpComing(dinner=payload["dinner"], dessert=payload["dessert"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
+    db.session.add(info)
+    db.session.commit()
+    return "Successfully Added", 200
+
+
+@api.route('/desires', methods=['POST'])
+def handle_desires_post():
+    payload = request.get_json()
+    info = Desires(dinner=payload["dinner"], dessert=payload["dessert"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
+    db.session.add(info)
+    db.session.commit()
+    return "Successfully Added", 200
