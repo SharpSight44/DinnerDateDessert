@@ -20,27 +20,27 @@ export const UpComingEngine = () => {
     fn();
   }, [dataUpdate]);
 
-  const collect = (din,des) => {
-    const fn = async () => {
-      const fullDin = await getUpComing(din);
-      const fullDes = await getUpComing(des);
+  // const collect = (din,des) => {
+  //   const fn = async () => {
+  //     const fullDin = await getUpComing(din);
+  //     const fullDes = await getUpComing(des);
 
 
-      return setDinner(fullDin), setDessert(fullDes);
-    };
-    fn();
+  //     return setDinner(fullDin), setDessert(fullDes);
+  //   };
+  //   fn();
 
     
-  };
+  // };
 
   return (
     <>
       <div style={{ display: "inline-block", marginLeft: "30px" }}>
         <p style={{ fontSize: "33px", fontWeight: "bold", color: "white" }}>
-          Dinner
+          
         </p>
        
-        <div>{list.map((x,i)=>  <div key={i}> {()=> collect(x?.dinner, x?.dessert)}
+        <div>{list.map((x,i)=>  <div key={i}> 
         <RecipeReviewCard name={dinner?.name} image={dinner?.image_url} description={dinner?.rating} location={dinner?.location?.display_address} />
         <RecipeReviewCard name={x?.dateName} image={x?.dateImg} description={x?.dateDes} location="" />
         <RecipeReviewCard name={dessert?.name} image={dessert?.image_url} description={dessert?.rating} location={dessert?.location?.display_address}  />
