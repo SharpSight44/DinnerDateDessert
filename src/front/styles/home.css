@@ -71,6 +71,7 @@ img:hover {
   width: 315px;
 }
 .card-body {
+  height: 200px;
   width: 100%;
   font-family: "Playfair Display", serif;
   text-align: center;
