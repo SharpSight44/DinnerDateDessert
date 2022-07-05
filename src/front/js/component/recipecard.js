@@ -16,6 +16,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Description } from "@mui/icons-material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import logo from "../../img/logoGlass.png";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -35,24 +36,24 @@ export default function RecipeReviewCard(props) {
     setExpanded(!expanded);
   };
 
-  const apiName = name;
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-        avatar={<Avatar aria-label="recipe">R</Avatar>}
+        avatar={<Avatar aria-label="logo"><img style={{background:"#143b04"}} src={logo}/></Avatar>}
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
         title={props.name}
-        subheader="September 14, 2016"
+        subheader={props.d}
       />
       <CardMedia
         component="img"
         height="194"
         image={props.image}
-        alt="Paella dish"
+        alt="pic"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -74,17 +75,9 @@ export default function RecipeReviewCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
-          </Typography>
+        
           <Typography paragraph>{props.description}</Typography>
-          <Typography paragraph>{props.description}</Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then
-            serve.
-          </Typography>
+       
         </CardContent>
       </Collapse>
     </Card>
