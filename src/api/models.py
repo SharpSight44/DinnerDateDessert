@@ -22,7 +22,11 @@ class UpComing(db.Model):
     __tablename__ = 'upcoming'
     id = db.Column(db.Integer, primary_key=True)
     dinner = db.Column(db.String(200))
+    dinImg = db.Column(db.String(200))
+    dinLoc = db.Column(db.String(200))
     dessert = db.Column(db.String(200))
+    desImg = db.Column(db.String(200))
+    desLoc = db.Column(db.String(200))
     dateName = db.Column(db.String(200), nullable=True)
     dateImg = db.Column(db.String(200), nullable=True)
     dateDes = db.Column(db.String(200), nullable=True)
@@ -36,7 +40,11 @@ class UpComing(db.Model):
         return {
             'id': self.id,
             'dinner': self.dinner,
+            'dinImg': self.dinImg,
+            'dinLoc': self.dinLoc,
             'dessert': self.dessert,
+            'desImg': self.desImg,
+            'desLoc': self.desLoc,
             'dateName': self.dateName,
             'dateImg': self.dateImg,
             'dateDes': self.dateDes

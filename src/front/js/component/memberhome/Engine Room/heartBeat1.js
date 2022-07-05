@@ -40,9 +40,9 @@ export const HeartBeat = () => {
   const [inY, setInY] = useState(1);
   const [inZ, setInZ] = useState(2);
 
-  const saveStack = (dinnerId,dessertId,dateName,dateImg,dateDes) =>{
+  const saveStack = (dinner, dinImg, dinLoc, dessert,desImg, desLoc,dateName,dateImg,dateDes) =>{
 
-    const setStack = {dinner:dinnerId, dessert:dessertId,dateName:dateName,dateImg:dateImg,dateDes:dateDes};
+    const setStack = {dinner:dinner, dinImg:dinImg, dinLoc:dinLoc, dessert:dessert,desImg:desImg,desLoc:desLoc,dateName:dateName,dateImg:dateImg,dateDes:dateDes};
     const render = dataUpdate + 1 ;
 
 
@@ -316,7 +316,7 @@ const getActs = (zip) =>{
               <div style={{marginTop:"10px"}}>
                { sdes == false? "":(<ImgMediaCard im={sdes?.image_url} title="Selected dessert" des={sdes?.name} />)}
               </div>
-              { sdin == false? "":(<button className="btn  btn-sm" style={{marginLeft:"15%",background:"#44a11d"}} onClick={()=> saveStack(sdin?.id,sdes?.id,sdate?.name,sdate?.image_url,sdate?.description)}>Save Stack</button>)}
+              { sdin == false? "":(<button className="btn  btn-sm" style={{marginLeft:"15%",background:"#44a11d"}} onClick={()=> saveStack(sdin?.name,sdin?.image_url,sdin?.location?.display_address,sdes?.name,sdes?.image_url,sdes?.location?.display_address,sdate?.name,sdate?.image_url,sdate?.description)}>Save Stack</button>)}
               </div>
              </div>
            

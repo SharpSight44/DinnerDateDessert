@@ -95,7 +95,7 @@ def handle_dessert(id):
 @api.route('/upcoming', methods=['POST'])
 def handle_upcoming_post():
     payload = request.get_json()
-    info = UpComing(dinner=payload["dinner"], dessert=payload["dessert"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
+    info = UpComing(dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200

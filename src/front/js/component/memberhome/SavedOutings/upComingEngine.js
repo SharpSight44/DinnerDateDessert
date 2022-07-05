@@ -7,8 +7,8 @@ import { getUpComing, getUpComingEvent } from "./upComingApi";
 export const UpComingEngine = () => {
   const [list, setList] = useState([]);
   const {dataUpdate, setDataUpdate} =useContext(DataBaseChange)
-  const [dinner, setDinner] =useState([]);
-  const [dessert, setDessert] = useState([]);
+  // const [dinner, setDinner] =useState([]);
+  // const [dessert, setDessert] = useState([]);
 
   useEffect(() => {
     const fn = async () => {
@@ -41,9 +41,9 @@ export const UpComingEngine = () => {
         </p>
        
         <div>{list.map((x,i)=>  <div key={i}> 
-        <RecipeReviewCard name={dinner?.name} image={dinner?.image_url} description={dinner?.rating} location={dinner?.location?.display_address} />
+        <RecipeReviewCard name={x?.dinner} image={x?.dinImg} description="" location={x?.dinLoc} />
         <RecipeReviewCard name={x?.dateName} image={x?.dateImg} description={x?.dateDes} location="" />
-        <RecipeReviewCard name={dessert?.name} image={dessert?.image_url} description={dessert?.rating} location={dessert?.location?.display_address}  />
+        <RecipeReviewCard name={x?.dessert} image={x?.desImg} description="" location={x?.desLoc}  />
 
 
         
