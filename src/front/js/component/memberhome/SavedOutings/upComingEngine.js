@@ -40,7 +40,7 @@ export const UpComingEngine = () => {
           
         </p>
        
-        <div>{list.map((x,i)=>  <div key={i}> 
+        <div style={{display:"flex"}}>{list.map((x,i)=>  <div style={{marginLeft:"40px"}} key={i}> <h2 style={{color:"white",marginLeft:"35px"}}>Saved Outing #{i+1}</h2>
         <RecipeReviewCard name={x?.dinner} image={x?.dinImg} description="" location={x?.dinLoc} />
         <RecipeReviewCard name={x?.dateName} image={x?.dateImg} description={x?.dateDes} location="" />
         <RecipeReviewCard name={x?.dessert} image={x?.desImg} description="" location={x?.desLoc}  />
