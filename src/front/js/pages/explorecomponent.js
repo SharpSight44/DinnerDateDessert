@@ -2,11 +2,12 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/explore.css";
-import { getApiRestaurants, getApiDesserts, getApiEvents, postDinner, postDate, postDessert } from '../component/apiExplore';
+import { getApiRestaurants, getApiDesserts, postDinner, postDate, postDessert } from '../component/apiExplore';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill, BsFillHeartFill } from "react-icons/bs";
 import { BiHeartCircle } from "react-icons/bi";
 import { RiHeartsLine } from "react-icons/ri";
 import { DataBaseChange, GlobalZipCode } from '../layout';
+import { soMa, upperHaight, missionDistrict, theMarina, financial,southBeach, wynwood,doral,brickell, upperEastSide, soho, brooklyn } from '../component/memberhome/Engine Room/activitesData';
 
 
 export const ExploreComponent = () => {
@@ -61,18 +62,53 @@ export const ExploreComponent = () => {
     }, [zipCode]);
     useEffect(() => {
         const fn = async () => {
-            const apiParty = await getApiEvents();
-            return setEvents(apiParty);
+            const apiSweets = await getApiDesserts(zipCode);
+            return setDesserts(apiSweets);
         };
         fn();
     }, [zipCode]);
-    useEffect(() => {
-        const fn = async () => {
-            const apiDess = await getApiDesserts(zipCode);
-            return setDesserts(apiDess);
-        };
-        fn();
-    }, [zipCode]);
+  
+    useEffect(()=>{
+
+        if(zipCode== 94107){
+            return setEvents(soMa);
+          } if (zipCode == 94110)
+          { return setEvents(missionDistrict);
+        
+          } if(zipCode== 94133){
+            return setEvents(theMarina);
+          } if (zipCode == 94117)
+          { return setEvents(upperHaight);
+        
+          }if(zipCode== 100004){
+            return setEvents(financial);
+          } if (zipCode == 10012)
+          { return setEvents(soho);
+        
+          }if(zipCode== 10065){
+            return setEvents(upperEastSide);
+          } if (zipCode == 11205)
+          { return setEvents(brooklyn);
+        
+          }if(zipCode== 33129){
+            return setEvents(brickell);
+          } if (zipCode == 33139)
+          { return setEvents(southBeach);
+        
+          }if(zipCode== 33127){
+            return setEvents(wynwood);
+          } if (zipCode == 33166)
+          { return setEvents(doral);
+        
+          }
+          else {
+            return setEvents(upperHaight);
+          }
+
+
+    }, [zipCode]
+
+    ); 
 
     const saveDinner = (item)=>{
 
@@ -101,6 +137,7 @@ export const ExploreComponent = () => {
         return postDessert(itemData), setDataUpdate(render);
 
     };
+
 
 
     // addDesire={actions.addDesire}

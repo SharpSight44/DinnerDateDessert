@@ -40,7 +40,7 @@ const Layout = () => {
   const access = {approved, setApproved };
   const [user, setUser] = useState({});
   const userProfile = {user, setUser };
-  const [zipCode, setZipCode] = useState(33139);
+  const [zipCode, setZipCode] = useState(94133);
   const zipCodeGlobal = {zipCode, setZipCode };
   const [dataUpdate, setDataUpdate] = useState(0);
   const dataChange = {dataUpdate, setDataUpdate };

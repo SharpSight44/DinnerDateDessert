@@ -52,7 +52,7 @@ export const HeartBeat = () => {
 
   };
 
-const getActs = (zip) =>{
+ const getActs = (zip) =>{
  
   if(zip== 94107){
     return setManDate(soMa);
