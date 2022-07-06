@@ -2,10 +2,11 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/explore.css";
-import { getApiRestaurants, getApiDesserts, getApiEvents } from '../component/apiExplore';
+import { getApiRestaurants, getApiDesserts, getApiEvents, postDinner, postDate, postDessert } from '../component/apiExplore';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill, BsFillHeartFill } from "react-icons/bs";
 import { BiHeartCircle } from "react-icons/bi";
 import { RiHeartsLine } from "react-icons/ri";
+import { DataBaseChange, GlobalZipCode } from '../layout';
 
 
 export const ExploreComponent = () => {
@@ -13,6 +14,8 @@ export const ExploreComponent = () => {
     const [restaurants, setRestaurants] = useState([]);
     const [events, setEvents] = useState([]);
     const [desserts, setDesserts] = useState([]);
+    const {zipCode, setZipCode}= useContext(GlobalZipCode);
+    const {dataUpdate, setDataUpdate} = useContext(DataBaseChange);
     console.log(store.desires);
     // console.log(events);
     // console.log(restaurants);
@@ -51,25 +54,53 @@ export const ExploreComponent = () => {
 
     useEffect(() => {
         const fn = async () => {
-            const apiRest = await getApiRestaurants();
+            const apiRest = await getApiRestaurants(zipCode);
             return setRestaurants(apiRest);
         };
         fn();
-    }, []);
+    }, [zipCode]);
     useEffect(() => {
         const fn = async () => {
             const apiParty = await getApiEvents();
             return setEvents(apiParty);
         };
         fn();
-    }, []);
+    }, [zipCode]);
     useEffect(() => {
         const fn = async () => {
-            const apiDess = await getApiDesserts();
+            const apiDess = await getApiDesserts(zipCode);
             return setDesserts(apiDess);
         };
         fn();
-    }, []);
+    }, [zipCode]);
+
+    const saveDinner = (item)=>{
+
+
+        const itemData = {dinner:item?.name, dinImg:item?.image_url, dinLoc:item?.location?.display_address, dinRating:item?.rating};
+        const render = dataUpdate + 1 ;
+
+        return postDinner(itemData), setDataUpdate(render);
+
+    };
+    const saveDate = (item)=>{
+
+
+        const itemData = {dinner:item?.name, dinImg:item?.image_url, dinLoc:item?.location?.display_address, dinRating:item?.rating};
+        const render = dataUpdate + 1 ;
+
+        return postDate(itemData), setDataUpdate(render);
+
+    };
+    const saveDessert = (item)=>{
+
+
+        const itemData = {dessert:item?.name, desImg:item?.image_url, desLoc:item?.location?.display_address, desRating:item?.rating};
+        const render = dataUpdate + 1 ;
+
+        return postDessert(itemData), setDataUpdate(render);
+
+    };
 
 
     // addDesire={actions.addDesire}
@@ -87,7 +118,7 @@ export const ExploreComponent = () => {
                             <div className="card explorecard text-white text-end fw-bolder mx-2 bg-transparent border-0" key={index} style={{ width: "300px" }} >
                                 <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
                                 <div className="card-img-overlay d-flex align-items-end justify-content-between">
-                                    <button onClick={() => actions.editDesires(item)} className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
+                                    <button onClick={() => saveDinner(item) } className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
                                     <a className='locationname' href={item.url}><h2 className='locationname'>{item?.name} </h2></a>
                                 </div>
                             </div>
@@ -108,7 +139,7 @@ export const ExploreComponent = () => {
                             <div className="card explorecard text-white text-end fw-bolder mx-2 bg-transparent border-0" key={index} style={{ width: "300px" }} >
                                 <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
                                 <div className="card-img-overlay d-flex align-items-end justify-content-end">
-                                    <button onClick={() => actions.editDesires(item)} className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
+                                    <button onClick={() => saveDate(item)} className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
                                     <a className='locationname' href={item.event_site_url}><h2 className='locationname'>{item?.name} </h2></a>
                                 </div>
                             </div>)}
@@ -126,7 +157,7 @@ export const ExploreComponent = () => {
                             <div className="card explorecard text-white text-end fw-bolder mx-2 bg-transparent border-0" key={index} style={{ width: "300px" }} >
                                 <img src={item?.image_url} className="card-img" alt="..." style={{ width: "300px" }} />
                                 <div className="card-img-overlay d-flex align-items-end justify-content-end">
-                                    <button onClick={() => actions.editDesires(item)} className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
+                                    <button onClick={() => saveDessert(item)} className="favsicon bg-transparent border-0 d-flex justify-content-start rounded-circle border border-dark">♡</button>
                                     <a className='locationname' href={item.url}><h2 className='locationname'>{item?.name} </h2></a>
                                 </div>
                             </div>)}

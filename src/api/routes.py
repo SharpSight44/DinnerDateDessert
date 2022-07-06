@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Desires, UpComing, Memories
+from api.models import db, User, Desires, UpComing, Memories, Dinner, Dessert
 from api.utils import generate_sitemap, APIException
 import requests
 import os
@@ -32,11 +32,11 @@ def handle_eventDetails(name):
     
     return jsonify(run), 200
 
-@api.route('/exploredinner', methods=['GET'])
-def handle_exdinner():
+@api.route('/exploredinner/<int:id>', methods=['GET'])
+def handle_exdinner(id):
     
-    
-    r =requests.get('https://api.yelp.com/v3/businesses/search?location=miami,fl,33130&radius=10000&limit=10&term=restaurants&categories=dinner&sort_by=rating', headers=HEADERS)
+    url='https://api.yelp.com/v3/businesses/search?location={id}&radius=10000&limit=10&term=restaurants&categories=dinner&sort_by=rating'
+    r =requests.get(url.format(id=id), headers=HEADERS)
     run = r.json()
     
     return jsonify(run), 200
@@ -51,11 +51,11 @@ def handle_exdate():
     
     return jsonify(run), 200
 
-@api.route('/exploredessert', methods=['GET'])
-def handle_exdessert():
+@api.route('/exploredessert/<int:id>', methods=['GET'])
+def handle_exdessert(id):
     
-    
-    r =requests.get('https://api.yelp.com/v3/businesses/search?location=MIAMI,Florida,33130&radius=10000&limit=10&term=dessert&categories=desserts&sort_by=rating', headers=HEADERS)
+    url= 'https://api.yelp.com/v3/businesses/search?location={id}&radius=10000&limit=10&term=dessert&categories=desserts&sort_by=rating'
+    r =requests.get(url.format(id=id), headers=HEADERS)
     run = r.json()
     
     return jsonify(run), 200
@@ -101,10 +101,26 @@ def handle_upcoming_post():
     return "Successfully Added", 200
 
 
-@api.route('/desires', methods=['POST'])
-def handle_desires_post():
+@api.route('/desires/dinner', methods=['POST'])
+def handle_dinner_post():
     payload = request.get_json()
-    info = Desires(dinner=payload["dinner"], dessert=payload["dessert"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
+    info = Dinner(dinner=payload["dinner"],dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dinRating=payload["dinRating"] )
+    db.session.add(info)
+    db.session.commit()
+    return "Successfully Added", 200
+
+@api.route('/desires/dessert', methods=['POST'])
+def handle_dessert_post():
+    payload = request.get_json()
+    info = Dessert(dessert=payload["dessert"],desImg=payload["desImg"], desLoc=payload["desLoc"], desRating=payload["desRating"] )
+    db.session.add(info)
+    db.session.commit()
+    return "Successfully Added", 200
+
+@api.route('/desires/date', methods=['POST'])
+def handle_date_post():
+    payload = request.get_json()
+    info = Dinner(dinner=payload["dinner"],dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dinRating=payload["dinRating"] )
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200
@@ -120,6 +136,36 @@ def handle_memories_post():
 @api.route('/upcominglist', methods=['GET'])
 def handle_upcoming_list():
     uplist = UpComing.query.all()
+
+    response = []
+    for u in uplist:
+        response.append(u.serialize())
+    
+    return jsonify(response)
+
+@api.route('/dinnerlist', methods=['GET'])
+def handle_dinner_list():
+    uplist = Dinner.query.all()
+
+    response = []
+    for u in uplist:
+        response.append(u.serialize())
+    
+    return jsonify(response)
+
+@api.route('/datelist', methods=['GET'])
+def handle_date_list():
+    uplist = Desires.query.all()
+
+    response = []
+    for u in uplist:
+        response.append(u.serialize())
+    
+    return jsonify(response)
+
+@api.route('/dessertlist', methods=['GET'])
+def handle_dessert_list():
+    uplist = Dessert.query.all()
 
     response = []
     for u in uplist:

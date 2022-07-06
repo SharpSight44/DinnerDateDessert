@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class User(db.Model):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
@@ -54,7 +55,11 @@ class Desires(db.Model):
     __tablename__ = 'desires'
     id = db.Column(db.Integer, primary_key=True)
     dinner = db.Column(db.String(200))
+    dinImg = db.Column(db.String(200))
+    dinLoc = db.Column(db.String(200))
     dessert = db.Column(db.String(200))
+    desImg = db.Column(db.String(200))
+    desLoc = db.Column(db.String(200))
     dateName = db.Column(db.String(200), nullable=True)
     dateImg = db.Column(db.String(200), nullable=True)
     dateDes = db.Column(db.String(200), nullable=True)
@@ -68,6 +73,10 @@ class Desires(db.Model):
         return {
             'id': self.id,
             'dinner': self.dinner,
+            'dinImg': self.dinImg,
+            'dinLoc': self.dinLoc,
+            'desImg': self.desImg,
+            'desLoc': self.desLoc,
             'dessert': self.dessert,
             'dateName': self.dateName,
             'dateDes': self.dateDes
@@ -77,7 +86,11 @@ class Memories(db.Model):
     __tablename__ = 'memories'
     id = db.Column(db.Integer, primary_key=True)
     dinner = db.Column(db.String(200))
+    dinImg = db.Column(db.String(200))
+    dinLoc = db.Column(db.String(200))
     dessert = db.Column(db.String(200))
+    desImg = db.Column(db.String(200))
+    desLoc = db.Column(db.String(200))
     dateName = db.Column(db.String(200), nullable=True)
     dateImg = db.Column(db.String(200), nullable=True)
     dateDes = db.Column(db.String(200), nullable=True)
@@ -91,6 +104,10 @@ class Memories(db.Model):
         return {
             'id': self.id,
             'dinner': self.dinner,
+            'dinImg': self.dinImg,
+            'dinLoc': self.dinLoc,
+            'desImg': self.desImg,
+            'desLoc': self.desLoc,
             'dessert': self.dessert,
             'dateName': self.dateName,
             'dateDes': self.dateDes
@@ -99,12 +116,11 @@ class Memories(db.Model):
 class Dinner(db.Model):
     __tablename__ = 'dinner'
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120))
-    image1 = db.Column(db.String(200))
-    image2 = db.Column(db.String(200))
-    image3 = db.Column(db.String(200))
-    location = db.Column(db.String(120))
-    time = db.Column(db.String(120))
+    dinner = db.Column(db.String(120))
+    dinImg = db.Column(db.String(200))
+    dinLoc = db.Column(db.String(200))
+    dinRating = db.Column(db.String(200))
+
 
     def __repr__(self):
         return self.title
@@ -112,12 +128,10 @@ class Dinner(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "title": self.title,
-            "image1": self.image1,
-            "image2": self.image2,
-            "image3": self.image3,
-            "location": self.location,
-            "time": self.time
+            "dinner": self.dinner,
+            "dinImg": self.dinImg,
+            "dinLoc": self.dinLoc,
+            "dinRating": self.dinRating
             # do not serialize the password, its a security breach
         }
 class Fridate(db.Model):
@@ -145,12 +159,11 @@ class Fridate(db.Model):
         }
 class Dessert(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120))
-    image1 = db.Column(db.String(200))
-    image2 = db.Column(db.String(200))
-    image3 = db.Column(db.String(200))
-    location = db.Column(db.String(120))
-    time = db.Column(db.String(120))
+    dessert = db.Column(db.String(120))
+    desImg = db.Column(db.String(200))
+    desLoc = db.Column(db.String(200))
+    desRating = db.Column(db.String(200))
+   
 
     def __repr__(self):
         return f'<Dessert {self.title}>'
@@ -158,11 +171,10 @@ class Dessert(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "title": self.title,
-            "image1": self.image1,
-            "image2": self.image2,
-            "image3": self.image3,
-            "location": self.location,
-            "time": self.time
+            "dessert": self.dessert,
+            "desImg": self.desImg,
+            "desLoc": self.desLoc,
+            "desRating": self.desRating
+            
             # do not serialize the password, its a security breach
         }
