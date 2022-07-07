@@ -2,17 +2,70 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
+from flask_migrate import Migrate
+from flask_swagger import swagger
+from flask_cors import CORS
 from api.models import db, User, Desires, UpComing, Memories, Dinner, Dessert, Date
 from api.utils import generate_sitemap, APIException
 import requests
 import os
-
+from argon2 import PasswordHasher
+from flask_jwt_extended import create_access_token, jwt_required,get_jwt_identity,JWTManager
 
 
 api = Blueprint('api', __name__)
+api.config["JWT_SECRET_KEY"] = "very-long-secret-nobody-know" 
+jwt = JWTManager(api)
+
+
+ph = PasswordHasher()
+
+
+
+
+
 
 API_KEY = os.environ['API_KEY']
 HEADERS = {'Authorization': 'Bearer %s' % API_KEY}
+
+
+@api.route('/register', methods=['POST'])
+def register():
+    payload = request.get_json()
+
+    user = User(
+        email=payload['email'], 
+        password=ph.hash(payload['password']), 
+        is_active=True
+    )
+
+    db.session.add(user)
+    db.session.commit()
+
+    return "user registered", 200
+
+@api.route('/login', methods=['POST'])
+def login():
+    payload = request.get_json()
+
+    user = User.query.filter(User.email == payload['email']).first()
+    if user is None:
+        return 'failed-auth', 401
+
+    try:
+        ph.verify(user.password, payload['password'])
+    except: 
+        return 'failed-auth', 401
+
+    token = create_access_token(identity=user.id)
+    
+    return jsonify({ 'token': token })
+
+
+
+
+
+
 
 
 
@@ -128,7 +181,7 @@ def handle_date_post():
 @api.route('/memories', methods=['POST'])
 def handle_memories_post():
     payload = request.get_json()
-    info = Memories(dinner=payload["dinner"], dessert=payload["dessert"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
+    info = Memories(dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200
@@ -172,3 +225,17 @@ def handle_dessert_list():
         response.append(u.serialize())
     
     return jsonify(response)
+
+@api.route('/memorieslist', methods=['GET'])
+def handle_memories_list():
+    uplist = Memories.query.all()
+
+    response = []
+    for u in uplist:
+        response.append(u.serialize())
+    
+    return jsonify(response)
+
+
+if __name__ == "__main__":
+    api.run()

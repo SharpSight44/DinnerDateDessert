@@ -18,6 +18,11 @@ gunicorn = "*"
 cloudinary = "*"
 flask-admin = "*"
 requests = "*"
+argon2-cffi = "*"
+jwt = "*"
+flask-jwt-extended = "*"
+argon2 = "*"
+pyjwt = "*"
 
 [requires]
 python_version = "3.8"

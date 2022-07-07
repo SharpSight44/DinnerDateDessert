@@ -6,7 +6,7 @@ class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(300), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
     def __repr__(self):
@@ -141,7 +141,7 @@ class Fridate(db.Model):
     image2 = db.Column(db.String(200))
     image3 = db.Column(db.String(200))
     location = db.Column(db.String(120))
-    time = db.Column(db.String(120))
+    
 
     def __repr__(self):
         return f'<Fridate {self.title}>'
@@ -154,7 +154,7 @@ class Fridate(db.Model):
             "image2": self.image2,
             "image3": self.image3,
             "location": self.location,
-            "time": self.time
+            
             # do not serialize the password, its a security breach
         }
 class Dessert(db.Model):
