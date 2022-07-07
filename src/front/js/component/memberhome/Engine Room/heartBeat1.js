@@ -17,6 +17,7 @@ import ImgMediaCard from "./selectedCards";
 import { UpComingEngine } from "../SavedOutings/upComingEngine";
 import { getUpComing, getUpComingEvent } from "../SavedOutings/upComingApi";
 import { postUpcoming } from "./upComingApi";
+import BasicModal from "./modal";
 
 
 
@@ -39,6 +40,7 @@ export const HeartBeat = () => {
   const [inX, setInX] = useState(0);
   const [inY, setInY] = useState(1);
   const [inZ, setInZ] = useState(2);
+  const [modal,setModal]= useState(false);
 
   const saveStack = (dinner, dinImg, dinLoc, dessert,desImg, desLoc,dateName,dateImg,dateDes) =>{
 
@@ -47,7 +49,7 @@ export const HeartBeat = () => {
 
 
 
-    return postUpcoming(setStack), setDataUpdate(render);
+    return setModal(true), setTimeout(()=> setModal(false),4000) ,postUpcoming(setStack), setDataUpdate(render), setSdin([]), setSdate([]), setSdes([]);
 
 
   };
@@ -317,7 +319,11 @@ export const HeartBeat = () => {
                { sdes == false? "":(<ImgMediaCard im={sdes?.image_url} title="Selected dessert" des={sdes?.name} />)}
               </div>
               { sdin == false? "":(<button className="btn  btn-sm" style={{marginLeft:"15%",background:"#44a11d"}} onClick={()=> saveStack(sdin?.name,sdin?.image_url,sdin?.location?.display_address,sdes?.name,sdes?.image_url,sdes?.location?.display_address,sdate?.name,sdate?.image_url,sdate?.description)}>Save Stack</button>)}
+              <BasicModal status={modal} />
               </div>
+
+             
+              
              </div>
            
        
