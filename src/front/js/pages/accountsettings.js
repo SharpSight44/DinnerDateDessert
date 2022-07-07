@@ -14,7 +14,7 @@ export const AccountSettings = () => {
                 <legend className="text-white mb-5">Update Account Settings</legend>
                 <div className="mb-5">
                     <label for="disabledTextInput" className="form-label text-white">Account Email</label>
-                    <input type="text" id="disabledTextInput" className="form-control" placeholder="Cannot Change Account Email at this time" />
+                    <input type="text" id="disabledTextInput" className="form-control" placeholder="Enter Account Email" />
                 </div>
                 <div className="mb-5">
                     <label for="inputPassword5" className="form-label text-white">Current Password</label>
