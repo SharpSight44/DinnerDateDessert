@@ -179,16 +179,17 @@ const selectDessert =(object)=>{
             
             </div>
             
-            <div style={{width:"500px", marginLeft:"70px", marginTop:"4%"}}>
-              <div style={{position:"sticky", top:"4%"}}>
-                <div>
-                <h1 style={{color:"white", fontSize:"22px"}}> Build Desired Outing</h1>
+            <div style={{width:"400px", marginLeft:"70px", marginTop:"4%"}}>
+              <div style={{position:"sticky", top:"4%", paddingLeft:"10px"}}>
+              <h1 style={{color:"white", fontSize:"22px"}}> Build Desired Outing</h1>
+                <div style={{marginTop:"10px", padding:"15px", backgroundColor:"rgba(214, 187, 4, .5)", width:"300px"}}>
+                
                { sdin == false? "":(<ImgMediaCard im={sdin?.dinImg} title="Selected Dinner" des={sdin?.dinner} />) }
               </div>
-              <div style={{marginTop:"10px"}}>
+              <div style={{marginTop:"10px",  padding:"15px", backgroundColor:"rgba(35, 166, 17, .5)", width:"300px"}}>
                 { sdate ==false ? "":(<ImgMediaCard im={sdate?.dateImg} title="Selected Activity" des={sdate?.date} />)}
               </div>
-              <div style={{marginTop:"10px"}}>
+              <div style={{marginTop:"10px",  padding:"15px", backgroundColor:"rgba(255, 18, 140, .5)", width:"300px"}}>
                { sdes == false? "":(<ImgMediaCard im={sdes?.desImg} title="Selected dessert" des={sdes?.dessert} />)}
               </div>
               { sdin == false? "":(<button className="btn  btn-sm" style={{marginLeft:"15%",background:"#44a11d"}} onClick={()=> saveStack(sdin?.dinner,sdin?.dinImg,sdin?.dinLoc,sdes?.dessert,sdes?.desImg,sdes?.desLoc,sdate?.date,sdate?.dateImg,sdate?.dateDes)}>Save Stack</button>)}
