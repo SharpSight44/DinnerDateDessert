@@ -9,7 +9,7 @@ import { Demo } from "./pages/demo";
 import injectContext from "./store/appContext";
 
 import { QuestionnairePage } from "./pages/questionnairepage";
-import { Accountsettings } from "./component/memberhome/accountsettings";
+import { AccountSettings } from "./pages/accountsettings";
 import { Tailor } from "./component/memberhome/tailor";
 import { Desires } from "./component/memberhome/desires";
 import { Memories } from "./component/memberhome/memories";
@@ -37,15 +37,15 @@ const Layout = () => {
   const [logStatus, setLogStatus] = useState(false);
   const value = { logStatus, setLogStatus };
   const [approved, setApproved] = useState(false);
-  const access = {approved, setApproved };
+  const access = { approved, setApproved };
   const [user, setUser] = useState({});
-  const userProfile = {user, setUser };
+  const userProfile = { user, setUser };
   const [zipCode, setZipCode] = useState(94133);
-  const zipCodeGlobal = {zipCode, setZipCode };
+  const zipCodeGlobal = { zipCode, setZipCode };
   const [dataUpdate, setDataUpdate] = useState(0);
-  const dataChange = {dataUpdate, setDataUpdate };
+  const dataChange = { dataUpdate, setDataUpdate };
 
- 
+
   return (
     <div>
       <BrowserRouter basename={basename}>
@@ -55,55 +55,55 @@ const Layout = () => {
               <ProtectedPath.Provider value={access}>
                 <UserProfile.Provider value={userProfile}>
                   <GlobalZipCode.Provider value={zipCodeGlobal}>
-                  <DataBaseChange.Provider value={dataChange}>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/about">
-                <About />
-              </Route>
-              <Route exact path="/testing">
-                <Testing />
-              </Route>
-              <Route exact path="/version1">
-                <Version1 />
-              </Route>
-              <Route exact path="/exploretest">
-                <ExploreTest />
-              </Route>
-              <Route exact path="/questionnaire">
-                <QuestionnairePage />
-              </Route>
-              <Route exact path="/upcomingoutings">
-                <Upcomingoutingspage />
-              </Route>
-              <Route exact path="/accountsettings">
-                <Accountsettings />
-              </Route>
-              <Route exact path="/tailor">
-                <Tailor />
-              </Route>
-              <Route exact path="/desires">
-                <Desires />
-              </Route>
-              <Route exact path="/memories">
-                <Memories />
-              </Route>
-              <Route exact path="/memberhome">
-                <MemberHome />
-              </Route>
-              <Route exact path="/explore">
-                <Explore />
-                
-              </Route>
-              <Route exact path="/goodbye">
-                <Goodbye />
-                
-              </Route>
+                    <DataBaseChange.Provider value={dataChange}>
+                      <Route exact path="/">
+                        <Home />
+                      </Route>
+                      <Route exact path="/about">
+                        <About />
+                      </Route>
+                      <Route exact path="/testing">
+                        <Testing />
+                      </Route>
+                      <Route exact path="/version1">
+                        <Version1 />
+                      </Route>
+                      <Route exact path="/exploretest">
+                        <ExploreTest />
+                      </Route>
+                      <Route exact path="/questionnaire">
+                        <QuestionnairePage />
+                      </Route>
+                      <Route exact path="/upcomingoutings">
+                        <Upcomingoutingspage />
+                      </Route>
+                      <Route exact path="/accountsettings">
+                        <AccountSettings />
+                      </Route>
+                      <Route exact path="/tailor">
+                        <Tailor />
+                      </Route>
+                      <Route exact path="/desires">
+                        <Desires />
+                      </Route>
+                      <Route exact path="/memories">
+                        <Memories />
+                      </Route>
+                      <Route exact path="/memberhome">
+                        <MemberHome />
+                      </Route>
+                      <Route exact path="/explore">
+                        <Explore />
 
-              </DataBaseChange.Provider>
-              </GlobalZipCode.Provider>
-              </UserProfile.Provider>
+                      </Route>
+                      <Route exact path="/goodbye">
+                        <Goodbye />
+
+                      </Route>
+
+                    </DataBaseChange.Provider>
+                  </GlobalZipCode.Provider>
+                </UserProfile.Provider>
               </ProtectedPath.Provider>
             </LoginWindow.Provider>
           </Switch>
