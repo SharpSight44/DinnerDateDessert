@@ -122,7 +122,7 @@ export const ExploreComponent = () => {
     const saveDate = (item) => {
 
 
-        const itemData = { dinner: item?.name, dinImg: item?.image_url, dinLoc: item?.location?.display_address, dinRating: item?.rating };
+        const itemData = { date: item?.name, dateImg: item?.image_url, dateDes: item?.description};
         const render = dataUpdate + 1;
 
         return postDate(itemData), setDataUpdate(render);

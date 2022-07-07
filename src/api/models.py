@@ -178,3 +178,24 @@ class Dessert(db.Model):
             
             # do not serialize the password, its a security breach
         }
+
+class Date(db.Model):
+    __tablename__ = 'date'
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.String(120))
+    dateImg = db.Column(db.String(200))
+    dateDes = db.Column(db.String(200))
+
+
+    def __repr__(self):
+        return self.title
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "date": self.date,
+            "dateImg": self.dateImg,
+            "dateDes": self.dateDes
+            
+            # do not serialize the password, its a security breach
+        }
