@@ -13,8 +13,7 @@ from flask_jwt_extended import create_access_token, jwt_required,get_jwt_identit
 from google.oauth2 import id_token
 
 api = Blueprint('api', __name__)
-api.config["JWT_SECRET_KEY"] = "very-long-secret-nobody-know" 
-jwt = JWTManager(api)
+
 
 
 ph = PasswordHasher()
