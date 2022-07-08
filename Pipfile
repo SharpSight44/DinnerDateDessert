@@ -23,6 +23,7 @@ jwt = "*"
 flask-jwt-extended = "*"
 argon2 = "*"
 pyjwt = "*"
+google-auth = "*"
 
 [requires]
 python_version = "3.8"
