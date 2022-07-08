@@ -41,3 +41,13 @@ export async function getUpcomingList() {
                     
                     return payload
                 }
+                export async function removeStack(i) {
+                    const response = await fetch(
+                        process.env.BACKEND_URL + "/api/deletestack/" + i, {
+                            method:"DELETE"
+                        }
+                        );
+                        const payload = await response.json();
+                        
+                        return payload
+                    }

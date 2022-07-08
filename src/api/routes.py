@@ -4,7 +4,6 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from flask_migrate import Migrate
 from flask_swagger import swagger
-from flask_cors import CORS
 from api.models import db, User, Desires, UpComing, Memories, Dinner, Dessert, Date
 from api.utils import generate_sitemap, APIException
 import requests
@@ -61,6 +60,16 @@ def login():
     
     return jsonify({ 'token': token })
 
+@api.route('/deletestack/<int:id>', methods=['DELETE'])
+def delete(id):
+    upcoming_delete = UpComing.query.get(id)
+
+    try: 
+        db.session.delete(upcoming_delete)
+        db.session.commit()
+        return "good",200
+    except:
+        return "error"
 
 
 
@@ -236,6 +245,3 @@ def handle_memories_list():
     
     return jsonify(response)
 
-
-if __name__ == "__main__":
-    api.run()

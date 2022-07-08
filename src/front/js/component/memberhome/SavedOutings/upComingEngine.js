@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { DataBaseChange } from "../../../layout";
 import RecipeReviewCard from "../../recipecard";
-import { getUpcomingList, postMemories } from "../Engine Room/upComingApi";
+import { getUpcomingList, postMemories, removeStack } from "../Engine Room/upComingApi";
 import { getUpComing, getUpComingEvent } from "./upComingApi";
 
 export const UpComingEngine = () => {
@@ -32,10 +32,12 @@ export const UpComingEngine = () => {
 
     
   // };
-const submitMemories =(dinner, dinImg, dinLoc, dessert,desImg, desLoc,dateName,dateImg,dateDes) => {
+const submitMemories =(dinner, dinImg, dinLoc, dessert,desImg, desLoc,dateName,dateImg,dateDes,id) => {
   const setStack = {dinner:dinner, dinImg:dinImg, dinLoc:dinLoc, dessert:dessert,desImg:desImg,desLoc:desLoc,dateName:dateName,dateImg:dateImg,dateDes:dateDes};
   const render = dataUpdate + 1 ;
-  return postMemories(setStack), setDataUpdate(render);
+  setTimeout(()=> removeStack(id), 3)
+  
+  return postMemories(setStack), setDataUpdate(render) ;
 };
   return (
     <>
@@ -44,11 +46,11 @@ const submitMemories =(dinner, dinImg, dinLoc, dessert,desImg, desLoc,dateName,d
           
         </p>
        
-        <div >{list.map((x,i)=>  <div style={{marginLeft:"40px"}} key={i}> <h2 style={{color:"white",marginLeft:"35px"}}>Saved Outing #{i+1}</h2>
+        <div >{list.map((x,i)=>  <div style={{marginLeft:"40px", marginBottom:"24px"}} key={x?.id}> <h2 style={{color:"white",marginLeft:"35px"}}>Saved Outing #{i+1}</h2>
         
-        <div style={{display:"flex"}}><RecipeReviewCard name={x?.dinner} image={x?.dinImg} d="Dinner" description="" location={x?.dinLoc} />
-        <RecipeReviewCard name={x?.dateName} image={x?.dateImg} description={x?.dateDes} d="Activity" location="" />
-        <RecipeReviewCard name={x?.dessert} image={x?.desImg} description="" d="Dessert" location={x?.desLoc}  /> <button onClick={()=> submitMemories(x?.dinner, x?.dinImg, x?.dinLoc, x?.dessert,x?.desImg, x?.desLoc,x?.dateName,x?.dateImg, x?.dateDes)} className="btn  btn-sm"> Completed Outing</button></div>
+        <div style={{display:"flex"}}><RecipeReviewCard  name={x?.dinner} image={x?.dinImg} d="Dinner" description="" location={x?.dinLoc} />
+        <RecipeReviewCard  name={x?.dateName} image={x?.dateImg} description={x?.dateDes} d="Activity" location="" />
+        <RecipeReviewCard  name={x?.dessert} image={x?.desImg} description="" d="Dessert" location={x?.desLoc}  /> <button onClick={()=> submitMemories(x?.dinner, x?.dinImg, x?.dinLoc, x?.dessert,x?.desImg, x?.desLoc,x?.dateName,x?.dateImg, x?.dateDes, x?.id)} className="btn  btn-sm"> Completed Outing</button></div>
 
 
         
