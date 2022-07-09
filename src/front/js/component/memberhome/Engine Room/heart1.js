@@ -95,8 +95,9 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
       <div></div><div style={luv === false ? {background:"",marginLeft:"200px", marginRight:"200px", position:"relative"}:{position:"relative",background:"rgba(255,182,193, 0.55)",marginLeft:"200px", marginRight:"200px", border:"3px dashed pink"}}>
       
       
-      <div><img style={{width:"300px", position:"absolute", top:"20px", borderRadius:"5%"}}src={imageZip}></img> <img style={{width:"200px",position:"absolute", left:"433px",bottom:"320px", zIndex:"-1"}}src={bree}/></div>
-    
+      <div><img style={{width:"300px", position:"absolute", top:"20px", borderRadius:"5%"}}src={imageZip}></img> <img style={{width:"200px",position:"absolute", left:"433px",bottom:"320px", zIndex:"-1"}}src={bree}/><br/>
+</div>
+
       <Box style={{position:"absolute", left:"25%"}}
       sx={{
         display: 'flex',
@@ -110,7 +111,7 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
         aria-label="vertical contained button group"
       
       >
-        <button key="one" className="btn  btn-sm" style={{background:"#582131"}} onClick={()=> setCity(sanFran)}>San Fran</button>,
+        <button key="one" className="btn  btn-sm" style={{background:"#582131"}} onClick={()=> setCity(sanFran)}> S F</button>,
   <button key="two" className="btn  btn-sm" style={{background:"#00d5c8", color:"#9e0074"}} onClick={()=> setCity(miami)}>Miami</button>,
   <button key="three" className="btn  btn-sm" style={{background:"#304674"}}onClick={()=> setCity(newYork)}>NYC</button>
       </ButtonGroup>
@@ -133,12 +134,15 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
         <Button onClick={()=> cityPicker(city?.img3,city?.zip3)} style={{color:"#e8d190"}}>{city?.name3}</Button>
         <Button onClick={()=> cityPicker(city?.img4,city?.zip4)} style={{color:"#e8d190"}}>{city?.name4}</Button>
       </ButtonGroup>
+
     </Box>
       <button type="button" className="btn btn-primary btn-sm" style={{marginLeft:"45%", marginTop:"1%"}} onClick={()=> run()} >Best Options</button>
-      
-      <Switch  color="secondary" onChange={()=> love()}/> <div style={{display:"inline-block", fontSize:"20px", color:"white"}}>Cupid Shuffle</div>
 
-      {loader == true ? (<div style={{position:"absolute", left:"37%", top:"11%", zIndex:"1",width:"400px", height:"400px", background:"rgb(16,39,33)", paddingLeft:"5%", paddingTop:"5%"}}><RingLoader size={222} loading={loader} margin={2} color={"rgb(62, 250, 247)"} /></div>):" " }
+      
+      <Switch  color="secondary" onChange={()=> love()}/> <div style={{marginLeft:"15px",display:"inline-block", fontSize:"20px", color:"white"}}>Cupid Shuffle</div>
+
+
+      {loader == true ? (<div style={{position:"absolute", left:"37%", top:"11%", zIndex:"1",width:"400px", height:"400px", paddingLeft:"5%", paddingTop:"5%"}}><RingLoader size={322} loading={loader} margin={2} color={"rgb(62, 250, 247)"} /></div>):" " }
 
       
 

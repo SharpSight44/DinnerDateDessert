@@ -71,38 +71,38 @@ export const ExploreComponent = () => {
     useEffect(() => {
 
         if (zipCode == 94107) {
-            return setEvents(soMa);
+            return setEvents(soMa.slice(0,9));
         } if (zipCode == 94110) {
-            return setEvents(missionDistrict);
+            return setEvents(missionDistrict.slice(0,9));
 
         } if (zipCode == 94133) {
-            return setEvents(theMarina);
+            return setEvents(theMarina.slice(0,9));
         } if (zipCode == 94117) {
-            return setEvents(upperHaight);
+            return setEvents(upperHaight.slice(0,9));
 
         } if (zipCode == 100004) {
-            return setEvents(financial);
+            return setEvents(financial.slice(0,9));
         } if (zipCode == 10012) {
-            return setEvents(soho);
+            return setEvents(soho.slice(0,9));
 
         } if (zipCode == 10065) {
-            return setEvents(upperEastSide);
+            return setEvents(upperEastSide.slice(0,9));
         } if (zipCode == 11205) {
-            return setEvents(brooklyn);
+            return setEvents(brooklyn.slice(0,9));
 
         } if (zipCode == 33129) {
-            return setEvents(brickell);
+            return setEvents(brickell.slice(0,9));
         } if (zipCode == 33139) {
-            return setEvents(southBeach);
+            return setEvents(southBeach.slice(0,9));
 
         } if (zipCode == 33127) {
-            return setEvents(wynwood);
+            return setEvents(wynwood.slice(0,9));
         } if (zipCode == 33166) {
-            return setEvents(doral);
+            return setEvents(doral.slice(0,9));
 
         }
         else {
-            return setEvents(upperHaight);
+            return setEvents(upperHaight.slice(0,9));
         }
 
 

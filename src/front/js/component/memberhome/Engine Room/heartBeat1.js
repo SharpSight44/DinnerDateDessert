@@ -308,14 +308,14 @@ export const HeartBeat = () => {
              <div style={{marginLeft:"39%",marginTop:"3%"}}><button type="button" className="btn btn-primary btn-md" style={{background:"#e6e600", color:"#333300"}} onClick={()=>getMore()}   >More</button></div>
 
              </div>
-             <div style={{width:"500px", marginLeft:"70px"}}>
-              <div >
+             <div style={{width:"500px", marginLeft:"70px", marginTop:"-15px"}}>
+              <div style={{padding:"2px 0px 2px 10px", backgroundColor:"rgba(214, 187, 4, .5)", width:"300px"}} >
                { sdin == false? "":(<ImgMediaCard im={sdin?.image_url} title="Selected Dinner" des={sdin?.name} />) }
               </div>
-              <div style={{marginTop:"10px"}}>
+              <div style={{marginTop:"10px", padding:"2px 0px 2px 10px", width:"300px",backgroundColor:"rgba(35, 166, 17, .5)"}}>
                 { sdate ==false ? "":(<ImgMediaCard im={sdate?.image_url} title="Selected Activity" des={sdate?.name} />)}
               </div>
-              <div style={{marginTop:"10px"}}>
+              <div style={{marginTop:"10px", padding:"2px 0px 2px 10px",  width:"300px", backgroundColor:"rgba(255, 18, 140, .5)"}}>
                { sdes == false? "":(<ImgMediaCard im={sdes?.image_url} title="Selected dessert" des={sdes?.name} />)}
               </div>
               { sdin == false? "":(<button className="btn  btn-sm" style={{marginLeft:"15%",background:"#44a11d"}} onClick={()=> saveStack(sdin?.name,sdin?.image_url,sdin?.location?.display_address,sdes?.name,sdes?.image_url,sdes?.location?.display_address,sdate?.name,sdate?.image_url,sdate?.description)}>Save Stack</button>)}

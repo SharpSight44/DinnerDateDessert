@@ -153,7 +153,7 @@ def handle_dessert(id):
     
     return jsonify(run), 200
 
-@api.route('/upcoming', methods=['POST'])
+@api.route('/upcoming', methods=['POST'], )
 def handle_upcoming_post():
     payload = request.get_json()
     info = UpComing(dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
@@ -173,6 +173,7 @@ def handle_dinner_post():
 @api.route('/desires/dessert', methods=['POST'])
 def handle_dessert_post():
     payload = request.get_json()
+    
     info = Dessert(dessert=payload["dessert"],desImg=payload["desImg"], desLoc=payload["desLoc"], desRating=payload["desRating"] )
     db.session.add(info)
     db.session.commit()
