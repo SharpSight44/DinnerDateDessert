@@ -1,17 +1,19 @@
 import React from "react";
-import friends from "../../img/friends.jpg";
+import "../../styles/goodbye.css"
+import { Navbar } from "../component/navbar";
 
 
 export const Goodbye = () => {
   return (
     <>
-    <h1 style={{fontSize:"100px", color:"white", marginLeft:"35%", marginTop:"5%"}}> See You Soon</h1>
-    <div style={{marginLeft:"27%", display:"flex", marginTop:"2%"}}>
-        
-         <img style={{width:"720px"}} src="https://www.myjourney.rocks/wp-content/uploads/2019/02/fun-with-friends.jpg" />
-     <div>
-        <img style={{width:"400px"}} src={friends}/></div>
-
+      <Navbar />
+      <div className="container">
+        <h1 className="goodbye text-center">See You Again Soon!</h1>
+        <div className="row">
+          <div className="col-md-12 d-flex justify-content-center">
+            <img src="https://images.unsplash.com/photo-1562593326-19d00710d9bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80" className="goodbyepic d-flex justify-content-center" alt="..." />
+          </div>
+        </div>
       </div>
     </>
   );
