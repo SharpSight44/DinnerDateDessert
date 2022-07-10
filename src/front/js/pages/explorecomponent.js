@@ -123,7 +123,7 @@ export const ExploreComponent = () => {
     const saveDate = (item) => {
 
 
-        const itemData = { date: item?.name, dateImg: item?.image_url, dateDes: item?.description};
+        const itemData = { date: item?.name, dateImg: item?.image_url, dateDes: item?.description };
         const render = dataUpdate + 1;
 
         return postDate(itemData,token), setDataUpdate(render);
@@ -147,7 +147,7 @@ export const ExploreComponent = () => {
 
             <div className='container'>
                 <h1 className="pagetitle text-center">Explore </h1>
-                
+               
                 <div className='mb-3'>
                     <h1 className="categories">A Bite to Eat</h1>
                     <div className="d-flex justify-content-center align-items-center">
