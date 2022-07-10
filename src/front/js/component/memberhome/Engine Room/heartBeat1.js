@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { getEngineDate, getEngineDessert, getEngineDinner } from "./apiEngine";
-import { DataBaseChange, GlobalZipCode } from "../../../layout";
+import { DataBaseChange, GlobalZipCode, TokenIssued } from "../../../layout";
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -30,6 +30,7 @@ import BasicModal from "./modal";
 export const HeartBeat = () => {
   const {dataUpdate, setDataUpdate} = useContext(DataBaseChange);
     const {zipCode, setZipCode}= useContext(GlobalZipCode);
+    const {token, setToken} =useContext(TokenIssued);
     const[sdin,setSdin] = useState([]);
     const[sdate,setSdate] = useState([]);
     const[sdes,setSdes] = useState([]);
@@ -49,7 +50,7 @@ export const HeartBeat = () => {
 
 
 
-    return setModal(true), setTimeout(()=> setModal(false),4000) ,postUpcoming(setStack), setDataUpdate(render), setSdin([]), setSdate([]), setSdes([]);
+    return setModal(true), setTimeout(()=> setModal(false),4000) ,postUpcoming(setStack,token), setDataUpdate(render), setSdin([]), setSdate([]), setSdes([]);
 
 
   };

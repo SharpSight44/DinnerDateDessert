@@ -15,7 +15,8 @@ class User(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "email": self.email,
+            "email": self.email
+            
             # do not serialize the password, its a security breach
         }
 
@@ -120,6 +121,8 @@ class Dinner(db.Model):
     dinImg = db.Column(db.String(200))
     dinLoc = db.Column(db.String(200))
     dinRating = db.Column(db.String(200))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User')
 
 
     def __repr__(self):
@@ -163,6 +166,8 @@ class Dessert(db.Model):
     desImg = db.Column(db.String(200))
     desLoc = db.Column(db.String(200))
     desRating = db.Column(db.String(200))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User')
    
 
     def __repr__(self):
@@ -185,6 +190,8 @@ class Date(db.Model):
     date = db.Column(db.String(120))
     dateImg = db.Column(db.String(200))
     dateDes = db.Column(db.String(200))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User')
 
 
     def __repr__(self):

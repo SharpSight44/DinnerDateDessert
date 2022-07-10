@@ -6,7 +6,7 @@ import { getApiRestaurants, getApiDesserts, postDinner, postDate, postDessert } 
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill, BsFillHeartFill } from "react-icons/bs";
 import { BiHeartCircle } from "react-icons/bi";
 import { RiHeartsLine } from "react-icons/ri";
-import { DataBaseChange, GlobalZipCode } from '../layout';
+import { DataBaseChange, GlobalZipCode, TokenIssued } from '../layout';
 import { soMa, upperHaight, missionDistrict, theMarina, financial, southBeach, wynwood, doral, brickell, upperEastSide, soho, brooklyn } from '../component/memberhome/Engine Room/activitesData';
 
 
@@ -17,6 +17,7 @@ export const ExploreComponent = () => {
     const [desserts, setDesserts] = useState([]);
     const { zipCode, setZipCode } = useContext(GlobalZipCode);
     const { dataUpdate, setDataUpdate } = useContext(DataBaseChange);
+    const {token, setToken} =useContext(TokenIssued);
     console.log(store.desires);
     // console.log(events);
     // console.log(restaurants);
@@ -116,7 +117,7 @@ export const ExploreComponent = () => {
         const itemData = { dinner: item?.name, dinImg: item?.image_url, dinLoc: item?.location?.display_address, dinRating: item?.rating };
         const render = dataUpdate + 1;
 
-        return postDinner(itemData), setDataUpdate(render);
+        return postDinner(itemData,token), setDataUpdate(render);
 
     };
     const saveDate = (item) => {
@@ -125,7 +126,7 @@ export const ExploreComponent = () => {
         const itemData = { date: item?.name, dateImg: item?.image_url, dateDes: item?.description};
         const render = dataUpdate + 1;
 
-        return postDate(itemData), setDataUpdate(render);
+        return postDate(itemData,token), setDataUpdate(render);
 
     };
     const saveDessert = (item) => {
@@ -134,7 +135,7 @@ export const ExploreComponent = () => {
         const itemData = { dessert: item?.name, desImg: item?.image_url, desLoc: item?.location?.display_address, desRating: item?.rating };
         const render = dataUpdate + 1;
 
-        return postDessert(itemData), setDataUpdate(render);
+        return postDessert(itemData,token), setDataUpdate(render);
 
     };
 
@@ -146,7 +147,7 @@ export const ExploreComponent = () => {
 
             <div className='container'>
                 <h1 className="pagetitle text-center">Explore </h1>
-                <Link to="/desires"><button>Click Me</button></Link>
+                
                 <div className='mb-3'>
                     <h1 className="categories">A Bite to Eat</h1>
                     <div className="d-flex justify-content-center align-items-center">

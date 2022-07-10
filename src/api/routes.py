@@ -12,7 +12,9 @@ from argon2 import PasswordHasher
 from flask_jwt_extended import create_access_token, jwt_required,get_jwt_identity,JWTManager
 from google.oauth2 import id_token
 
+
 api = Blueprint('api', __name__)
+
 
 
 
@@ -60,7 +62,9 @@ def login():
     return jsonify({ 'token': token })
 
 @api.route('/deletestack/<int:id>', methods=['DELETE'])
+@jwt_required()
 def delete(id):
+    user_id = get_jwt_identity()
     upcoming_delete = UpComing.query.get(id)
 
     try: 
@@ -118,6 +122,7 @@ def handle_exdessert(id):
     url= 'https://api.yelp.com/v3/businesses/search?location={id}&radius=10000&limit=10&term=dessert&categories=desserts&sort_by=rating'
     r =requests.get(url.format(id=id), headers=HEADERS)
     run = r.json()
+   
     
     return jsonify(run), 200
 
@@ -153,51 +158,65 @@ def handle_dessert(id):
     
     return jsonify(run), 200
 
-@api.route('/upcoming', methods=['POST'], )
+@api.route('/upcoming', methods=['POST'] )
+@jwt_required()
 def handle_upcoming_post():
+    user_id = get_jwt_identity()
     payload = request.get_json()
-    info = UpComing(dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
+    
+    info = UpComing(user_id=user_id,dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200
 
 
 @api.route('/desires/dinner', methods=['POST'])
+@jwt_required()
 def handle_dinner_post():
+    user_id = get_jwt_identity()
     payload = request.get_json()
-    info = Dinner(dinner=payload["dinner"],dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dinRating=payload["dinRating"] )
+    info = Dinner(user_id=user_id,dinner=payload["dinner"],dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dinRating=payload["dinRating"] )
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200
 
 @api.route('/desires/dessert', methods=['POST'])
+@jwt_required()
 def handle_dessert_post():
+    user_id = get_jwt_identity()
     payload = request.get_json()
     
-    info = Dessert(dessert=payload["dessert"],desImg=payload["desImg"], desLoc=payload["desLoc"], desRating=payload["desRating"] )
+    info = Dessert(user_id=user_id,dessert=payload["dessert"],desImg=payload["desImg"], desLoc=payload["desLoc"], desRating=payload["desRating"] )
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200
 
 @api.route('/desires/date', methods=['POST'])
+@jwt_required()
 def handle_date_post():
+    user_id = get_jwt_identity()
     payload = request.get_json()
-    info = Date(date=payload["date"],dateImg=payload["dateImg"], dateDes=payload["dateDes"] )
+    info = Date(user_id=user_id,date=payload["date"],dateImg=payload["dateImg"], dateDes=payload["dateDes"] )
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200
 
 @api.route('/memories', methods=['POST'])
+@jwt_required()
 def handle_memories_post():
+    user_id = get_jwt_identity()
     payload = request.get_json()
-    info = Memories(dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
+    info = Memories(user_id=user_id,dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
     db.session.add(info)
     db.session.commit()
     return "Successfully Added", 200
 
 @api.route('/upcominglist', methods=['GET'])
+@jwt_required()
 def handle_upcoming_list():
-    uplist = UpComing.query.all()
+    user_id = get_jwt_identity()
+    uplist = UpComing.query.filter(UpComing.user_id== user_id).all()
+    
 
     response = []
     for u in uplist:
@@ -206,8 +225,10 @@ def handle_upcoming_list():
     return jsonify(response)
 
 @api.route('/dinnerlist', methods=['GET'])
+@jwt_required()
 def handle_dinner_list():
-    uplist = Dinner.query.all()
+    user_id = get_jwt_identity()
+    uplist = Dinner.query.filter(Dinner.user_id== user_id).all()
 
     response = []
     for u in uplist:
@@ -216,9 +237,10 @@ def handle_dinner_list():
     return jsonify(response)
 
 @api.route('/datelist', methods=['GET'])
+@jwt_required()
 def handle_date_list():
-    uplist = Date.query.all()
-
+    user_id = get_jwt_identity()
+    uplist = Date.query.filter(Date.user_id== user_id).all()
     response = []
     for u in uplist:
         response.append(u.serialize())
@@ -226,8 +248,11 @@ def handle_date_list():
     return jsonify(response)
 
 @api.route('/dessertlist', methods=['GET'])
+@jwt_required()
 def handle_dessert_list():
-    uplist = Dessert.query.all()
+    
+    user_id = get_jwt_identity()
+    uplist = Dessert.query.filter(Dessert.user_id== user_id).all()
 
     response = []
     for u in uplist:
@@ -236,8 +261,10 @@ def handle_dessert_list():
     return jsonify(response)
 
 @api.route('/memorieslist', methods=['GET'])
+@jwt_required()
 def handle_memories_list():
-    uplist = Memories.query.all()
+    user_id = get_jwt_identity()
+    uplist = Memories.query.filter(Memories.user_id== user_id).all()
 
     response = []
     for u in uplist:
@@ -247,14 +274,14 @@ def handle_memories_list():
 
 @api.route('/google', methods=['POST'])
 def handle_google_post():
-    payload = request.get_json()
+    payload = request._json()
     token = payload['idtoken']
     try:
         idinfo = id_token.verify_oauth2_token(token, requests.Request(), "396032578158-dv3petmhr394s7fsdcot1aui3g3a363c.apps.googleusercontent.com" )
         userid = idinfo['sub']
         google_name = idinfo['given_name']
-        print(google_name)
+        
     except ValueError:
         pass
 
-    return jsonify(google_name), 200
+    return jsonify(idinfo), 200

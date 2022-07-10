@@ -26,11 +26,11 @@ export async function getApiRestaurants(zip) {
                 return payload.businesses
             }
 //POST TO Desires 
-export async function postDinner(data) {
+export async function postDinner(data,token) {
     const response = await fetch(
         process.env.BACKEND_URL + "/api/desires/dinner", {
             method:"POST",
-            headers: { "Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json", "Authorization": "Bearer "+ token},
             body: JSON.stringify(data)
         } 
         );
@@ -38,11 +38,11 @@ export async function postDinner(data) {
         
         return payload
     }
-    export async function postDate(data) {
+    export async function postDate(data,token) {
         const response = await fetch(
             process.env.BACKEND_URL + "/api/desires/date", {
                 method:"POST",
-                headers: { "Content-Type": "application/json"},
+                headers: { "Content-Type": "application/json", "Authorization": "Bearer "+ token},
                 body: JSON.stringify(data)
             } 
             );
@@ -52,11 +52,11 @@ export async function postDinner(data) {
         }
 
 
-        export async function postDessert(data) {
+        export async function postDessert(data,token) {
             const response = await fetch(
                 process.env.BACKEND_URL + "/api/desires/dessert", {
                     method:"POST",
-                    headers: { "Content-Type": "application/json"},
+                    headers: { "Content-Type": "application/json", "Authorization": "Bearer "+ token},
                     body: JSON.stringify(data)
                 } 
                 );
@@ -64,27 +64,39 @@ export async function postDinner(data) {
                 
                 return payload
             }
-    export async function getDinnerList() {
+    export async function getDinnerList(token) {
         const response = await fetch(
-            process.env.BACKEND_URL + "/api/dinnerlist" 
+            process.env.BACKEND_URL + "/api/dinnerlist",{
+                method:"GET",
+                headers: { "Authorization": "Bearer "+ token },
+                
+            }   
             );
             const payload = await response.json();
             
             return payload
         }
 
-        export async function getDateList() {
+        export async function getDateList(token) {
             const response = await fetch(
-                process.env.BACKEND_URL + "/api/datelist" 
+                process.env.BACKEND_URL + "/api/datelist",{
+                    method:"GET",
+                    headers: { "Authorization": "Bearer "+ token },
+                    
+                }   
                 );
                 const payload = await response.json();
                 
                 return payload
             }
 
-            export async function getDessertList() {
+            export async function getDessertList(token) {
                 const response = await fetch(
-                    process.env.BACKEND_URL + "/api/dessertlist" 
+                    process.env.BACKEND_URL + "/api/dessertlist",{
+                        method:"GET",
+                        headers: { "Authorization": "Bearer "+ token },
+                        
+                    }   
                     );
                     const payload = await response.json();
                     

@@ -6,15 +6,15 @@ import ListSubheader from "@mui/material/ListSubheader";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 import { getMemories } from "./Engine Room/upComingApi";
-import { DataBaseChange } from "../../layout";
+import { DataBaseChange, TokenIssued } from "../../layout";
 
 export default function TitlebarImageList() {
  const [list, setList] = React.useState([]);
  const {dataUpdate, setDataUpdate} = React.useContext(DataBaseChange)
-
+const {token, setToken}= React.useContext(TokenIssued);
  React.useEffect(()=>{
   const fn = async () => {
-    const apiList = await getMemories();
+    const apiList = await getMemories(token);
 
 
     return setList(apiList);

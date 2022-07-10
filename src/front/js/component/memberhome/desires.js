@@ -5,7 +5,7 @@ import "../../../styles/desires.css";
 import { TbStar } from "react-icons/tb";
 import { RiStarFill } from "react-icons/ri";
 import { getDateList, getDessertList, getDinnerList } from "../apiExplore";
-import { DataBaseChange } from "../../layout";
+import { DataBaseChange, TokenIssued } from "../../layout";
 import { postUpcoming } from "./Engine Room/upComingApi";
 import BasicModal from "./Engine Room/modal";
 import ImgMediaCard from "./Engine Room/selectedCards";
@@ -18,6 +18,7 @@ import Typography from '@mui/material/Typography';
 export const Desires = () => {
     
     const {dataUpdate, setDataUpdate} = useContext(DataBaseChange);
+    const {token, setToken} =useContext(TokenIssued);
     const [dinnerList, setDinnerList] = useState([]);
     const [dateList, setDateList] = useState([]);
     const [dessertList, setDessertList] = useState([]);
@@ -40,7 +41,7 @@ const selectDessert =(object)=>{
 
     useEffect(() => {
         const fn = async () => {
-            const apiRest = await getDinnerList();
+            const apiRest = await getDinnerList(token);
             return setDinnerList(apiRest), console.log(dinnerList);
         };
         fn();
@@ -48,7 +49,7 @@ const selectDessert =(object)=>{
 
     useEffect(() => {
         const fn = async () => {
-            const apiRest = await getDateList();
+            const apiRest = await getDateList(token);
             return setDateList(apiRest);
         };
         fn();
@@ -56,7 +57,7 @@ const selectDessert =(object)=>{
 
     useEffect(() => {
         const fn = async () => {
-            const apiRest = await getDessertList();
+            const apiRest = await getDessertList(token);
             return setDessertList(apiRest);
         };
         fn();
@@ -69,7 +70,7 @@ const selectDessert =(object)=>{
     
     
     
-        return setModal(true), setTimeout(()=> setModal(false),4000) ,postUpcoming(setStack), setDataUpdate(render), setSdin([]), setSdate([]), setSdes([]);
+        return setModal(true), setTimeout(()=> setModal(false),4000) ,postUpcoming(setStack,token), setDataUpdate(render), setSdin([]), setSdate([]), setSdes([]);
     
     
       };

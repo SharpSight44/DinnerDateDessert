@@ -28,6 +28,7 @@ export const ProtectedPath = React.createContext();
 export const UserProfile = React.createContext();
 export const GlobalZipCode = React.createContext();
 export const DataBaseChange = React.createContext();
+export const TokenIssued = React.createContext();
 
 //create your first component
 const Layout = () => {
@@ -44,6 +45,8 @@ const Layout = () => {
   const zipCodeGlobal = { zipCode, setZipCode };
   const [dataUpdate, setDataUpdate] = useState(0);
   const dataChange = { dataUpdate, setDataUpdate };
+  const [token, setToken] = useState("");
+  const jwtToken = { token, setToken };
 
 
   return (
@@ -56,6 +59,7 @@ const Layout = () => {
                 <UserProfile.Provider value={userProfile}>
                   <GlobalZipCode.Provider value={zipCodeGlobal}>
                     <DataBaseChange.Provider value={dataChange}>
+                      <TokenIssued.Provider value={jwtToken}>
                       <Route exact path="/">
                         <Home />
                       </Route>
@@ -100,7 +104,7 @@ const Layout = () => {
                         <Goodbye />
 
                       </Route>
-
+                      </TokenIssued.Provider>
                     </DataBaseChange.Provider>
                   </GlobalZipCode.Provider>
                 </UserProfile.Provider>

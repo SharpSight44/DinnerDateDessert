@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
 import bree from '/src/front/img/sel2.png';
-import { GlobalZipCode } from "../../../layout";
+import { GlobalZipCode, TokenIssued } from "../../../layout";
 import { HeartBeat } from "./heartBeat1";
 import { getUpComing, getUpComingEvent } from "../SavedOutings/upComingApi";
 import soho from '/src/front/img/GreenwichVillagenyc.jpg';
@@ -26,6 +26,7 @@ import { Typography } from "@mui/material";
 
 export const Testing = () => {
   const {zipCode, setZipCode} = useContext(GlobalZipCode);
+  const {token, setToken} = useContext(TokenIssued);
     const [appear, setAppear] = useState(false)
     const [luv, setLuv] = useState(false)
     const [loader, setLoader] = useState(false)
@@ -137,6 +138,7 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
 
     </Box>
       <button type="button" className="btn btn-primary btn-sm" style={{marginLeft:"45%", marginTop:"1%"}} onClick={()=> run()} >Best Options</button>
+    
 
       
       <Switch  color="secondary" onChange={()=> love()}/> <div style={{marginLeft:"15px",display:"inline-block", fontSize:"20px", color:"white"}}>Cupid Shuffle</div>

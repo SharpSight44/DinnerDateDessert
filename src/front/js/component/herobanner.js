@@ -9,7 +9,7 @@ export const HeroBanner = () => {
         <div className="row g-0">
           <div className="col-md">
             <div className="homebanner">
-              <video className="fluid-video rounded float-start" style={{ width: "930px" }} autoPlay muted loop playsinline>
+              <video className="fluid-video rounded float-start" style={{ width: "930px" }} autoPlay muted loop playsInline>
                 <source src={couplevid2} type="video/mp4" />
               </video>
               <div>

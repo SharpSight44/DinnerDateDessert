@@ -23,7 +23,7 @@ export const MemberNavbar = () => {
         </div>
         <div >
           <Link to="/version1">
-            <button className="btn btn-dark">Version 1 Page</button>
+            <button className="btn btn-dark">Plan Outing</button>
           </Link>
         </div>
         <div >
