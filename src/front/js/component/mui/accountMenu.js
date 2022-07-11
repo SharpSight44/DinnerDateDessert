@@ -14,9 +14,10 @@ import Logout from '@mui/icons-material/Logout';
 import { UserProfile } from '../../layout';
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function AccountMenu() {
-    const {user, setUser} = useContext(UserProfile);
+  const { user, setUser } = useContext(UserProfile);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -28,14 +29,14 @@ export default function AccountMenu() {
 
   const history = useHistory();
 
-  const exeLogOut = ()=>{
-   return history.push('/')
+  const exeLogOut = () => {
+    return history.push('/')
 
 
   };
-  const logOutNow =()=>{
+  const logOutNow = () => {
 
-    return history.push('/goodbye'), setTimeout(()=> exeLogOut(), 8000);
+    return history.push('/goodbye'), setTimeout(() => exeLogOut(), 8000);
 
   };
   return (
@@ -89,7 +90,7 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        
+
         <MenuItem>
           <Avatar><img src={user.picture} /></Avatar> My account
         </MenuItem>
@@ -102,11 +103,15 @@ export default function AccountMenu() {
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            <Settings fontSize="small" />
+            <Link to="/accountsettings">
+              <button>
+                <Settings fontSize="small" />
+              </button>
+            </Link>
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={()=> logOutNow()}>
+        <MenuItem onClick={() => logOutNow()}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
