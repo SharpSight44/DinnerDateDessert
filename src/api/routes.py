@@ -10,7 +10,7 @@ import requests
 import os
 from argon2 import PasswordHasher
 from flask_jwt_extended import create_access_token, jwt_required,get_jwt_identity,JWTManager
-from google.oauth2 import id_token
+
 
 
 api = Blueprint('api', __name__)
@@ -279,17 +279,3 @@ def handle_memories_list():
         response.append(u.serialize())
     
     return jsonify(response)
-
-@api.route('/google', methods=['POST'])
-def handle_google_post():
-    payload = request._json()
-    token = payload['idtoken']
-    try:
-        idinfo = id_token.verify_oauth2_token(token, requests.Request(), "396032578158-dv3petmhr394s7fsdcot1aui3g3a363c.apps.googleusercontent.com" )
-        userid = idinfo['sub']
-        google_name = idinfo['given_name']
-        
-    except ValueError:
-        pass
-
-    return jsonify(idinfo), 200

@@ -16,7 +16,7 @@ export const MemberNavbar = () => {
             <img src={logosize300x268} height={80} width={170} alt="logo" />
           </span>
         <div >
-          <Link to="/tailor">
+          <Link to="/questionnaire">
             <button className="btn btn-dark">Preferences</button>
           </Link>
         </div>

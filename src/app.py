@@ -7,12 +7,13 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS, cross_origin
 from api.utils import APIException, generate_sitemap
-from api.models import db
+from api.models import db, User
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
 from flask_jwt_extended import create_access_token, jwt_required,get_jwt_identity,JWTManager
-
+from google.oauth2 import id_token
+from google.auth.transport import requests
 
 
 #from models import Person
@@ -67,7 +68,31 @@ def serve_any_other_file(path):
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0 # avoid cache memory
     return response
+@app.route('/google', methods=['POST'])
+def handle_google_post():
+    payload = request.get_json()
+    token = payload['idtoken']
+    try:
+        idinfo = id_token.verify_oauth2_token(token, requests.Request(), "396032578158-dv3petmhr394s7fsdcot1aui3g3a363c.apps.googleusercontent.com" )
+        userid = idinfo['sub']
+        google_name = idinfo['given_name']
+        gmail = idinfo['email']
+        
+    except ValueError:
+        pass
+    parse_id = userid[-3:]
+    user = User.query.filter(User.email == gmail ).first()
+    new_user = User(id=parse_id, email=gmail, password=idinfo['jti'], is_active=True)
+    token = create_access_token(identity=parse_id)
+    if user is None:
+        db.session.add(new_user)
+        db.session.commit()
 
+        return jsonify({'token':token})
+
+    
+
+    return jsonify({'token':token})
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
