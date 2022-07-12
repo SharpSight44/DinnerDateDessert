@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
-import { Link, Redirect } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory} from "react-router-dom";
 import AccountMenu from "./mui/accountMenu";
 import { UserProfile } from "../layout";
 import logosize300x268 from "../../img/logosize300x268.jpg";

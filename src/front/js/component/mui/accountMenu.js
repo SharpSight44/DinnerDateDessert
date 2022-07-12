@@ -13,8 +13,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { UserProfile } from '../../layout';
 import { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 export default function AccountMenu() {
   const { user, setUser } = useContext(UserProfile);

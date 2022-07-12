@@ -42,7 +42,8 @@ def register():
     db.session.add(user)
     db.session.commit()
 
-    return "user registered", 200
+    good = "successfully Added"
+    return jsonify(good)
 
 @api.route('/login', methods=['POST'])
 def login():
@@ -70,7 +71,9 @@ def delete(id):
     try: 
         db.session.delete(upcoming_delete)
         db.session.commit()
-        return "good",200
+        good = "successfully Deleted"
+        return jsonify(good)
+        
     except:
         return "error"
 
@@ -167,7 +170,8 @@ def handle_upcoming_post():
     info = UpComing(user_id=user_id,dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
     db.session.add(info)
     db.session.commit()
-    return "Successfully Added", 200
+    good = "successfully Added"
+    return jsonify(good)
 
 
 @api.route('/desires/dinner', methods=['POST'])
@@ -178,7 +182,8 @@ def handle_dinner_post():
     info = Dinner(user_id=user_id,dinner=payload["dinner"],dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dinRating=payload["dinRating"] )
     db.session.add(info)
     db.session.commit()
-    return "Successfully Added", 200
+    good = "successfully Added"
+    return jsonify(good)
 
 @api.route('/desires/dessert', methods=['POST'])
 @jwt_required()
@@ -189,7 +194,8 @@ def handle_dessert_post():
     info = Dessert(user_id=user_id,dessert=payload["dessert"],desImg=payload["desImg"], desLoc=payload["desLoc"], desRating=payload["desRating"] )
     db.session.add(info)
     db.session.commit()
-    return "Successfully Added", 200
+    good = "successfully Added"
+    return jsonify(good)
 
 @api.route('/desires/date', methods=['POST'])
 @jwt_required()
@@ -199,7 +205,8 @@ def handle_date_post():
     info = Date(user_id=user_id,date=payload["date"],dateImg=payload["dateImg"], dateDes=payload["dateDes"] )
     db.session.add(info)
     db.session.commit()
-    return "Successfully Added", 200
+    good = "successfully Added"
+    return jsonify(good)
 
 @api.route('/memories', methods=['POST'])
 @jwt_required()
@@ -209,7 +216,8 @@ def handle_memories_post():
     info = Memories(user_id=user_id,dinner=payload["dinner"], dinImg=payload["dinImg"], dinLoc=payload["dinLoc"], dessert=payload["dessert"], desImg=payload["desImg"], desLoc=payload["desLoc"], dateName=payload["dateName"],dateImg=payload["dateImg"],dateDes=payload["dateDes"])
     db.session.add(info)
     db.session.commit()
-    return "Successfully Added", 200
+    good = "successfully Added"
+    return jsonify(good)
 
 @api.route('/upcominglist', methods=['GET'])
 @jwt_required()
