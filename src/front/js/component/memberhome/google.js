@@ -35,7 +35,7 @@ async function postGoogle(id) {
         );
         const payload = await response.json();
         console.log(payload);
-        return setToken(payload.token), setTimeout(()=> history.push('/version1'),4000 );
+        return setToken(payload.token), setTimeout(()=> history.push('/version1'),2000 );
     }
   useEffect(() => {
     /* global google*/

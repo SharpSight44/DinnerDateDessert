@@ -74,7 +74,7 @@ const newYork = {name1:"Greenwhich/SoHo",name2:"Upper East Side",name3:"Brooklyn
   const run = ()=> {
 
     if(appear === false){
-    return setTimeout(() => setLoader(false), 1000), setTimeout(() => setAppear(true), 1000),setLoader(true)}
+    return setTimeout(() => setLoader(false), 4000), setTimeout(() => setAppear(true), 1000),setLoader(true)}
     else {return setAppear(false)
     }
 
